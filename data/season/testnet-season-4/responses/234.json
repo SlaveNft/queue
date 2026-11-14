@@ -1,0 +1,26 @@
+{
+  "job": 234,
+  "source": "near-ai",
+  "chatId": "48c4bc2ceeb84a5cba57aacd97bbb16d",
+  "latencyMs": 900,
+  "usage": {
+    "prompt_tokens": 98,
+    "completion_tokens": 219
+  },
+  "requestSha256": "5bda0f23ba1e6b3a71e5fd43e2704eda98cb8ce13138251624f0326799a99d35",
+  "responseSha256": "49e2e93d0183097b1170266b01f970221f7bdd9dbef9faaae342e24dd36a4fc9",
+  "response": "{\"id\":\"48c4bc2ceeb84a5cba57aacd97bbb16d\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"I cannot access real-time operational data, internal logs, or specific incident reports for the `market4.queue-demo.testnet` environment. To summarize last week's latency incidents for your weekly ops note, please provide the specific incident details or logs.\\n\\nHowever, here is a template for how you might structure the 3 bullets once you have the data:\\n\\n*   **Incident 1:** [Date/Time] – [Brief description of latency spike, e.g., \\\"P99 latency exceeded 500ms due to database connection pool exhaustion\\\"], resolved by [Action taken].\\n*   **Incident 2:** [Date/Time] – [Brief description, e.g., \\\"Intermittent 504 Gateway Timeouts observed on queue-demo endpoints\\\"], root cause identified as [Cause], mitigated via [Fix].\\n*   **Incident 3:** [Date/Time] – [Brief description, e.g., \\\"Increased tail latency during peak traffic windows\\\"], impact limited to [Scope], addressed by [Optimization/Scaling action].\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600878,\"usage\":{\"prompt_tokens\":98,\"total_tokens\":317,\"completion_tokens\":219,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:5bda0f23ba1e6b3a71e5fd43e2704eda98cb8ce13138251624f0326799a99d35:49e2e93d0183097b1170266b01f970221f7bdd9dbef9faaae342e24dd36a4fc9",
+    "signature": "7e5f3b1062d4104538546a759622f4cb9176c14eeb3e6de32e6207382c0c811b6da95c4b49f28639c114f706b86ab71ee7a7f07cbf58d00fd52a14e277f75e0b",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "7e5f3b1062d4104538546a759622f4cb9176c14eeb3e6de32e6207382c0c811b6da95c4b49f28639c114f706b86ab71ee7a7f07cbf58d00fd52a14e277f75e0b"
+  }
+}

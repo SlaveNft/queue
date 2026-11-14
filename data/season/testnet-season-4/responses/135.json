@@ -1,0 +1,26 @@
+{
+  "job": 135,
+  "source": "near-ai",
+  "chatId": "2d1f84e9252843709fb39f7f50efb2b9",
+  "latencyMs": 1571,
+  "usage": {
+    "prompt_tokens": 125,
+    "completion_tokens": 236
+  },
+  "requestSha256": "49c4f8b4ad470dd982f780ba4c593ef97b99b155e508aabcd53fee46ce4a8274",
+  "responseSha256": "3be5f33a906790b4caf90260da8b23df149311186c35e3621c7d6a7b65c7b3d9",
+  "response": "{\"id\":\"2d1f84e9252843709fb39f7f50efb2b9\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"**Likely Cause:** The deploy (4412) likely introduced a regression in cache key generation, cache invalidation logic, or a dependency that bypassed the cache (e.g., forcing DB reads), causing a \\\"cache stampede\\\" or reduced hit rate, leading to increased database load and latency.\\n\\n**Ordered Steps:**\\n\\n1. **Rollback or Hotfix:** Immediately rollback to the previous stable version (pre-deploy 4412) or deploy a hotfix that restores the previous cache behavior to mitigate latency and restore hit rates.\\n2. **Analyze Diff & Metrics:** Compare code changes in deploy 4412 focusing on cache-related components (keys, TTLs, invalidation triggers). Review logs for increased DB query volume, cache miss errors, or slow queries correlated with the latency spike.\\n3. **Fix & Validate:** Implement a targeted fix for the identified regression (e.g., correct cache key format, restore invalidation logic). Deploy in a staging environment, verify cache hit rates return to baseline and p95 latency drops below 200ms, then roll out to production with enhanced monitoring.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794599617,\"usage\":{\"prompt_tokens\":125,\"total_tokens\":361,\"completion_tokens\":236,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:49c4f8b4ad470dd982f780ba4c593ef97b99b155e508aabcd53fee46ce4a8274:3be5f33a906790b4caf90260da8b23df149311186c35e3621c7d6a7b65c7b3d9",
+    "signature": "29bf5e73ff20045c17bacf9d35699c79869c1d0873d6805da0964f9ebddd6a4b86474a32c6af1a7fdc42e10258804284bf4637a3a3e05ae74c03d68511008301",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "29bf5e73ff20045c17bacf9d35699c79869c1d0873d6805da0964f9ebddd6a4b86474a32c6af1a7fdc42e10258804284bf4637a3a3e05ae74c03d68511008301"
+  }
+}

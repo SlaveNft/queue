@@ -1,0 +1,37 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.99.1
+          targets: wasm32-unknown-unknown
+          components: clippy
+      - run: cargo test --manifest-path contracts/queue/Cargo.toml
+      - run: cargo build --manifest-path contracts/queue/Cargo.toml --target wasm32-unknown-unknown --release
+      # v2: unit tests, random-history invariants (proptest) and the simulator-parity replay
+      - run: cargo test --manifest-path contracts/queue-v2/Cargo.toml
+      - run: cargo clippy --manifest-path contracts/queue-v2/Cargo.toml --all-targets -- -D warnings
+      - run: cargo build --manifest-path contracts/queue-v2/Cargo.toml --target wasm32-unknown-unknown --release
+      # v3: the same three suites plus the stake, liability, timelock and storage-refund rules
+      - run: cargo test --manifest-path contracts/queue-v3/Cargo.toml
+      - run: cargo clippy --manifest-path contracts/queue-v3/Cargo.toml --all-targets -- -D warnings
+      - run: cargo build --manifest-path contracts/queue-v3/Cargo.toml --target wasm32-unknown-unknown --release
+      - run: npm run test:season
+      # known advisories in dependencies (RustSec); the wasm build's own tree is reported in docs/SECURITY.md
+      - run: cargo install cargo-audit --locked && (cd contracts/queue-v2 && cargo audit || true)

@@ -1,0 +1,26 @@
+{
+  "job": 186,
+  "source": "near-ai",
+  "chatId": "acfa2155b19141eeb642a0f53a1bae56",
+  "latencyMs": 927,
+  "usage": {
+    "prompt_tokens": 102,
+    "completion_tokens": 138
+  },
+  "requestSha256": "86fa39d29ce0d4a4cd11d727e891d8ab2e8178e29499a8961a335828510dc138",
+  "responseSha256": "fe53083b6eafb950129f73a9952690005743642d5bd2f69bf402fe914c5055fe",
+  "response": "{\"id\":\"acfa2155b19141eeb642a0f53a1bae56\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"1. Time-Slicing: Preemptively switches contexts between requests to ensure fairness, but incurs high context-switching overhead and latency.\\n2. Weighted Fair Queuing: Assigns priority weights to different users or models to guarantee proportional share, but requires accurate weight tuning and can be complex to implement.\\n3. First-Come-First-Served (FCFS): Processes requests in arrival order, ensuring simplicity and no starvation, but suffers from long-tail latency and unfairness for large requests.\\n4. Proportional Share Scheduling: Dynamically allocates GPU time based on current demand or usage metrics, balancing load effectively but requiring continuous monitoring and adjustment.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600292,\"usage\":{\"prompt_tokens\":102,\"total_tokens\":240,\"completion_tokens\":138,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:86fa39d29ce0d4a4cd11d727e891d8ab2e8178e29499a8961a335828510dc138:fe53083b6eafb950129f73a9952690005743642d5bd2f69bf402fe914c5055fe",
+    "signature": "1092225a74a41e49e32efbc9cec17f7cb4225c4ba1281937e95f5d3796d9f4be07e1f2b33329fb714e5cebada7909a58e955c8e1c1cae5ddc558352ff3316008",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "1092225a74a41e49e32efbc9cec17f7cb4225c4ba1281937e95f5d3796d9f4be07e1f2b33329fb714e5cebada7909a58e955c8e1c1cae5ddc558352ff3316008"
+  }
+}

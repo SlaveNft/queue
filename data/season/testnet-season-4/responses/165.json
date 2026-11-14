@@ -1,0 +1,26 @@
+{
+  "job": 165,
+  "source": "near-ai",
+  "chatId": "a7f7e2809e8147f3ac76e3ab493e61dd",
+  "latencyMs": 778,
+  "usage": {
+    "prompt_tokens": 102,
+    "completion_tokens": 133
+  },
+  "requestSha256": "a96c47c251ceacdf5c71a9a2657bb9cb280a6cfba460cf71cd675a1b460f4ff2",
+  "responseSha256": "ce56ee368d4c9469ccc27a31a7bca2cfc2af437242ed97392f246db159c7ac0c",
+  "response": "{\"id\":\"a7f7e2809e8147f3ac76e3ab493e61dd\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"1. Time-Slicing: Divides GPU time into fixed intervals per user; trade-off is high latency overhead and context-switching costs.\\n2. Dynamic Batching: Groups incoming requests to maximize throughput; trade-off is increased tail latency for individual requests due to waiting for batch completion.\\n3. Priority-Based Scheduling: Allocates resources based on request priority or user tier; trade-off is potential starvation of low-priority requests and complexity in priority management.\\n4. Fair Queuing (e.g., WFQ): Distributes GPU capacity proportionally among active users; trade-off is computational overhead for maintaining fair share calculations and potential underutilization.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600047,\"usage\":{\"prompt_tokens\":102,\"total_tokens\":235,\"completion_tokens\":133,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:a96c47c251ceacdf5c71a9a2657bb9cb280a6cfba460cf71cd675a1b460f4ff2:ce56ee368d4c9469ccc27a31a7bca2cfc2af437242ed97392f246db159c7ac0c",
+    "signature": "e224724f6c3b0335ca627b04eaaa0e9d94fc17ed464d7a221c5e9a28d0dd134da122e7bd18a5b05d7526725b58fd7050fbbcd4a5fff4e4c8f2a7fd3bb2d9f805",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "e224724f6c3b0335ca627b04eaaa0e9d94fc17ed464d7a221c5e9a28d0dd134da122e7bd18a5b05d7526725b58fd7050fbbcd4a5fff4e4c8f2a7fd3bb2d9f805"
+  }
+}

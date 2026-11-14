@@ -1,0 +1,13 @@
+{
+  "note": "synthetic fixture: a locally generated ed25519 key standing in for a NEAR AI TEE key; same text format",
+  "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+  "signer": "222fe97305f5b8c68e5199b6e7d220e6e7f774dc0cc32fee7f71827f5891bd93",
+  "request": "{\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"messages\":[{\"role\":\"system\",\"content\":\"You are the QUEUE worker.\"},{\"role\":\"user\",\"content\":\"job 1: summarize the latency escalation in 3 bullets\"}],\"temperature\":0,\"max_tokens\":300}",
+  "request_hash": "7fbb50ab59eb7da8228fdbed7b143591724b3bb9c77384ec05a9408d9e221262",
+  "response": "{\"id\":\"chatcmpl-test\",\"object\":\"chat.completion\",\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"- p95 rose 4x after deploy\\n- cache misses\\n- roll back\"},\"finish_reason\":\"stop\"}]}",
+  "response_hash": "51c4c9f781f2e2ad1e41ee8e4e6d29fec1e3a354d1a57c54cd2cb8395f5d1f38",
+  "text_provider": "Qwen/Qwen3.6-35B-A3B-FP8:7fbb50ab59eb7da8228fdbed7b143591724b3bb9c77384ec05a9408d9e221262:51c4c9f781f2e2ad1e41ee8e4e6d29fec1e3a354d1a57c54cd2cb8395f5d1f38",
+  "signature_provider": "0fc4236c4a4ed71cdfca02f626543b28554be1340fc29754de880146877b903275ad715e5c8544d1f8bd62bb10af03d81cb547651462a10db4b5aedd66443d03",
+  "text_gateway": "7fbb50ab59eb7da8228fdbed7b143591724b3bb9c77384ec05a9408d9e221262:51c4c9f781f2e2ad1e41ee8e4e6d29fec1e3a354d1a57c54cd2cb8395f5d1f38",
+  "signature_gateway": "dac28f548f0f24cb29baa6f8cbe2b0efbace1631ee9478f50f7962aab8f5bea380ada532fb1fe5e75f983c4f87408a22a518877ff7991a985fd2975e74116b06"
+}

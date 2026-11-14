@@ -1,0 +1,21 @@
+{
+  "name": "@queue/client",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "QUEUE client for agents: a small SDK, a CLI and an MCP server for the v3 contract on NEAR testnet.",
+  "exports": {
+    ".": "./src/index.mjs",
+    "./mcp": "./src/mcp.mjs"
+  },
+  "bin": {
+    "queue": "./src/cli.mjs",
+    "queue-mcp": "./src/mcp.mjs"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "near-api-js": "^7.4.0"
+  }
+}

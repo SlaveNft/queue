@@ -1,0 +1,26 @@
+{
+  "job": 271,
+  "source": "near-ai",
+  "chatId": "f4129ac9e980404fa3f0b60de4ec869d",
+  "latencyMs": 1015,
+  "usage": {
+    "prompt_tokens": 116,
+    "completion_tokens": 52
+  },
+  "requestSha256": "091860a524ccd3462081be6281b508a8975caca39bb1359b066fd2aeda20a809",
+  "responseSha256": "aad28cba1bb22c6fdc01657a91c9723a29c7d2368ff182e425ebf8a570d122c6",
+  "response": "{\"id\":\"f4129ac9e980404fa3f0b60de4ec869d\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"GMV rose 4% and CAC remained flat, but refunds surged 11%.\\nCustomer satisfaction declined, with NPS dropping from 41 to 38.\\nGrowth was offset by rising refund rates and lower customer loyalty.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794601348,\"usage\":{\"prompt_tokens\":116,\"total_tokens\":168,\"completion_tokens\":52,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:091860a524ccd3462081be6281b508a8975caca39bb1359b066fd2aeda20a809:aad28cba1bb22c6fdc01657a91c9723a29c7d2368ff182e425ebf8a570d122c6",
+    "signature": "3b9fd941c458e14bbb6272d63b01b526b28b6c3cd1b0784a7f396f562250b23628ff94ccdd06a78e68d88dffa6507c1dda9d63fdb7a36ece3f7a964bb14eb40c",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "3b9fd941c458e14bbb6272d63b01b526b28b6c3cd1b0784a7f396f562250b23628ff94ccdd06a78e68d88dffa6507c1dda9d63fdb7a36ece3f7a964bb14eb40c"
+  }
+}

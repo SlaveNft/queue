@@ -1,0 +1,26 @@
+{
+  "job": 214,
+  "source": "near-ai",
+  "chatId": "c99dd371ee3041c5b73ba252a492d119",
+  "latencyMs": 691,
+  "usage": {
+    "prompt_tokens": 128,
+    "completion_tokens": 97
+  },
+  "requestSha256": "49c2b971a7eb7c754571d3ed6bdd25e13d8e237da39721b3a1ffa92300debd27",
+  "responseSha256": "72846cf0052f6d452a3668da275d6996dd5280671f25c84fc0d677fc2ad3eda1",
+  "response": "{\"id\":\"c99dd371ee3041c5b73ba252a492d119\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The most likely cause is a sustained connectivity or processing failure at the PSP, indicated by repeated timeouts within a short window.\\nThis pattern suggests the PSP’s API endpoint is unreachable or overwhelmed, rather than isolated transient network glitches.\\nThe immediate next check is to verify the PSP’s operational status via their status page or support channel for known outages.\\nSimultaneously, inspect local logs for specific HTTP status codes or connection errors to confirm if the issue is upstream or local.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600619,\"usage\":{\"prompt_tokens\":128,\"total_tokens\":225,\"completion_tokens\":97,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:49c2b971a7eb7c754571d3ed6bdd25e13d8e237da39721b3a1ffa92300debd27:72846cf0052f6d452a3668da275d6996dd5280671f25c84fc0d677fc2ad3eda1",
+    "signature": "2bb58bb1927a9d853ec10ccc800f4a8f66edaa9cb1acba8b8455edfaf217bb55ed8d350f4ef78b361bbc010509b1fd42e8a11c9df56202471b6de63ddafe6302",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "2bb58bb1927a9d853ec10ccc800f4a8f66edaa9cb1acba8b8455edfaf217bb55ed8d350f4ef78b361bbc010509b1fd42e8a11c9df56202471b6de63ddafe6302"
+  }
+}

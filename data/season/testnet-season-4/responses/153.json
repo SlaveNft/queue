@@ -1,0 +1,26 @@
+{
+  "job": 153,
+  "source": "near-ai",
+  "chatId": "69deaef8059942338ab4dab04e1e0302",
+  "latencyMs": 1137,
+  "usage": {
+    "prompt_tokens": 129,
+    "completion_tokens": 67
+  },
+  "requestSha256": "627d37bf9c008d0ef924c6c14174cb0f91b1369bb80fb4fa95d084e0b470749c",
+  "responseSha256": "f26b35a050c656fce59311f43e48b016875b97caa34b944a3545257f118d6cdd",
+  "response": "{\"id\":\"69deaef8059942338ab4dab04e1e0302\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The repeated timeouts from the same PSP suggest a connectivity issue or PSP-side processing bottleneck.\\nVerify network stability and firewall rules between your gateway and the PSP’s endpoint.\\nCheck the PSP’s status page or support channels for reported outages or maintenance.\\nReview transaction logs for specific error codes indicating payload size or protocol mismatches.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794599872,\"usage\":{\"prompt_tokens\":129,\"total_tokens\":196,\"completion_tokens\":67,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:627d37bf9c008d0ef924c6c14174cb0f91b1369bb80fb4fa95d084e0b470749c:f26b35a050c656fce59311f43e48b016875b97caa34b944a3545257f118d6cdd",
+    "signature": "8545b8ce8d14c741f5ae6bf24ea99c521b28fac0e55b207eece4ea33300d6a3d983fd0cc3f7a6fdae7dc6d314ac74c2a2c1249b88e0a5c07665a2f4526ec240c",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "8545b8ce8d14c741f5ae6bf24ea99c521b28fac0e55b207eece4ea33300d6a3d983fd0cc3f7a6fdae7dc6d314ac74c2a2c1249b88e0a5c07665a2f4526ec240c"
+  }
+}

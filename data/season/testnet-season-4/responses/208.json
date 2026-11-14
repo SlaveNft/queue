@@ -1,0 +1,26 @@
+{
+  "job": 208,
+  "source": "near-ai",
+  "chatId": "315c0767309d444b81d6cb947e1b926f",
+  "latencyMs": 1016,
+  "usage": {
+    "prompt_tokens": 102,
+    "completion_tokens": 71
+  },
+  "requestSha256": "fc7700a6bb5890fbae1ce0d3e52b570758c629884cc941188f800b6da3ee0119",
+  "responseSha256": "36e0d821c1f1e313a99714fda4296d2a26eb8d27b03b7a826a9e80c712963613",
+  "response": "{\"id\":\"315c0767309d444b81d6cb947e1b926f\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"We are piloting priority queues for AI agents on testnet. This feature allows agents to manage task urgency more effectively, ensuring critical jobs are processed first. The pilot runs on market4.queue-demo.testnet. We invite you to test the system and provide feedback on performance and reliability. Your input helps us refine the infrastructure for future mainnet deployment.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600559,\"usage\":{\"prompt_tokens\":102,\"total_tokens\":173,\"completion_tokens\":71,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:fc7700a6bb5890fbae1ce0d3e52b570758c629884cc941188f800b6da3ee0119:36e0d821c1f1e313a99714fda4296d2a26eb8d27b03b7a826a9e80c712963613",
+    "signature": "6863119ea39d2a754e35bebd11688a9b16e5c5ea6fd4c41eabe7a14ae5d94a021fe877debca2fe02fb21e91a3c22a9980c2e84caf44bf80fe76a7484a2634d01",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "6863119ea39d2a754e35bebd11688a9b16e5c5ea6fd4c41eabe7a14ae5d94a021fe877debca2fe02fb21e91a3c22a9980c2e84caf44bf80fe76a7484a2634d01"
+  }
+}

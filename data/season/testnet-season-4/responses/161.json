@@ -1,0 +1,26 @@
+{
+  "job": 161,
+  "source": "near-ai",
+  "chatId": "792575b7d4ad41a78a87a2170d0b5918",
+  "latencyMs": 1031,
+  "usage": {
+    "prompt_tokens": 102,
+    "completion_tokens": 82
+  },
+  "requestSha256": "ea092a58e2e3844767b1954b8aaed5f50ef015448e58cafc258120df576c8b98",
+  "responseSha256": "fef78cdf38815224b05f70cbe10a43c0f8e13157c954ad45da2940528c047fdc",
+  "response": "{\"id\":\"792575b7d4ad41a78a87a2170d0b5918\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"1. Verify the merchant’s legal entity registration and physical presence within the EU.\\n2. Conduct a comprehensive KYC/KYB process to identify beneficial owners and assess business legitimacy.\\n3. Perform a thorough AML/CFT screening against sanctions lists and politically exposed persons (PEPs).\\n4. Evaluate the merchant’s transaction patterns and risk profile to ensure compliance with PSD2 and local regulations.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794599999,\"usage\":{\"prompt_tokens\":102,\"total_tokens\":184,\"completion_tokens\":82,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:ea092a58e2e3844767b1954b8aaed5f50ef015448e58cafc258120df576c8b98:fef78cdf38815224b05f70cbe10a43c0f8e13157c954ad45da2940528c047fdc",
+    "signature": "aba73c84f85f39c62f1e69ec67acd7f8bb0df92a29c36febaebbcdf8c8690e87e26acbe5af98ef5dd06ed2bf3dbf0b82d715b3f8fc080216948ce18e5d96fb03",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "aba73c84f85f39c62f1e69ec67acd7f8bb0df92a29c36febaebbcdf8c8690e87e26acbe5af98ef5dd06ed2bf3dbf0b82d715b3f8fc080216948ce18e5d96fb03"
+  }
+}

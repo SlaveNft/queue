@@ -1,0 +1,26 @@
+{
+  "job": 238,
+  "source": "near-ai",
+  "chatId": "67a5c49fd7fa4a62a6a7ea9f7a5480c0",
+  "latencyMs": 1001,
+  "usage": {
+    "prompt_tokens": 102,
+    "completion_tokens": 61
+  },
+  "requestSha256": "7f64407a98aaa7059ca501ee9adc55d33cabcd2a6705befbb8c5d5208e58629c",
+  "responseSha256": "39dac2764b6f0d2028df62565fa3183eb0cba18ff194dd877005bf3783a90e8e",
+  "response": "{\"id\":\"67a5c49fd7fa4a62a6a7ea9f7a5480c0\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"1. Verify legal entity existence and valid business registration documents.\\n2. Conduct comprehensive KYC/KYB checks on beneficial owners and directors.\\n3. Perform sanctions screening against EU and international restricted party lists.\\n4. Assess AML risk profile and ensure compliance with local EU payment regulations.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600924,\"usage\":{\"prompt_tokens\":102,\"total_tokens\":163,\"completion_tokens\":61,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:7f64407a98aaa7059ca501ee9adc55d33cabcd2a6705befbb8c5d5208e58629c:39dac2764b6f0d2028df62565fa3183eb0cba18ff194dd877005bf3783a90e8e",
+    "signature": "48bc8a7fe6497326fd626af09f4ed4a85d147fa5ba28c50224976abaaa59ba17826be7ba35816f1ac7b4aeacdcc01f8225702a05167ee09409cb41468b557d06",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "48bc8a7fe6497326fd626af09f4ed4a85d147fa5ba28c50224976abaaa59ba17826be7ba35816f1ac7b4aeacdcc01f8225702a05167ee09409cb41468b557d06"
+  }
+}

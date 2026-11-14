@@ -1,0 +1,26 @@
+{
+  "job": 226,
+  "source": "near-ai",
+  "chatId": "2a073941169842a0a3545ed19a5bcc4f",
+  "latencyMs": 1013,
+  "usage": {
+    "prompt_tokens": 102,
+    "completion_tokens": 77
+  },
+  "requestSha256": "71da0ec7c48b7cbc9d4a38b6396f23418005f4a160de6fbf86e3e903a004718d",
+  "responseSha256": "fefeb9def8acf3e367cfd31f2bfedc910a3fcad33c3097a2cc07035de68ba0b2",
+  "response": "{\"id\":\"2a073941169842a0a3545ed19a5bcc4f\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"1. Verify the merchant’s legal entity registration and physical presence within the EU.\\n2. Conduct comprehensive KYC/KYB due diligence to confirm beneficial ownership and business legitimacy.\\n3. Perform AML and sanctions screening to ensure no links to prohibited activities or restricted parties.\\n4. Assess the merchant’s risk profile and transaction patterns to ensure compliance with local regulatory requirements.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600761,\"usage\":{\"prompt_tokens\":102,\"total_tokens\":179,\"completion_tokens\":77,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:71da0ec7c48b7cbc9d4a38b6396f23418005f4a160de6fbf86e3e903a004718d:fefeb9def8acf3e367cfd31f2bfedc910a3fcad33c3097a2cc07035de68ba0b2",
+    "signature": "5e4388ef4e6dca6ca987743d3d497a3de8f697f13eb7c2597796b70275150a432d3d183cdb918a5e2bfc5300c801b9e68d35802de51576518c2f83c190d3860f",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "5e4388ef4e6dca6ca987743d3d497a3de8f697f13eb7c2597796b70275150a432d3d183cdb918a5e2bfc5300c801b9e68d35802de51576518c2f83c190d3860f"
+  }
+}

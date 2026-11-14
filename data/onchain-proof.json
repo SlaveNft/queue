@@ -1,0 +1,497 @@
+{
+  "ok": true,
+  "deployed": true,
+  "network": "testnet",
+  "contractId": "market.queue-demo.testnet",
+  "deployTx": "4tXjEXfWXHWpFD2ANhkSbzZ6JvM9asCgjevVPnogwUj1",
+  "wasmSha256": "10546489ceb8c1127939023e043cf15ac13e3481b708d184e828c92b516396d6",
+  "generatedAt": "2026-11-13T09:01:51.640Z",
+  "explorer": "https://testnet.nearblocks.io",
+  "explorerLinks": {
+    "contract": "https://testnet.nearblocks.io/address/market.queue-demo.testnet",
+    "priority": "https://testnet.nearblocks.io/txns/BRzJWn6FYMcxU9ci5aAY7XpgXQP4Ma1x9XUPQs7PNr4t",
+    "start": "https://testnet.nearblocks.io/txns/C9VtTYiqFpoDjSaXdMvBxKViDVxQjvAM7MCmCVekkn2G",
+    "complete": "https://testnet.nearblocks.io/txns/FbD6kcsftHArx7CyviNcL5hK24bTZEYSmRZzRW3Y7RVK",
+    "withdraw": "https://testnet.nearblocks.io/txns/9XDikNtd59Hxs2EaRXMVAGninzXDCRMJjm97wKtoSVUQ",
+    "refusal": "https://testnet.nearblocks.io/txns/CvUazoMTWsvWozwd1x4BJFyo4Fy4wzhi4pxCcj5hdcRi"
+  },
+  "transactions": [
+    {
+      "hash": "6bgDRmJMFjFb9o6RCB2tf7aHaKTb5oBBDuAEvqUqW3w2",
+      "label": "submit mira job 1"
+    },
+    {
+      "hash": "CJpoTZdkYK1qkTNFYtVDpWsMkzuCYgwEjPFxr2buywiQ",
+      "label": "submit atlas job 2"
+    },
+    {
+      "hash": "AscuHryzuiiHKhtWz6HYNYQneWvUV3Hm4hNhYcacbubV",
+      "label": "submit vale job 3"
+    },
+    {
+      "hash": "DCdkMQxPDCcVU23Fk1YMRRHFKQYx2JaJkqAuZvfvNPoR",
+      "label": "submit juno job 4"
+    },
+    {
+      "hash": "GH2KChRDoRynFs1fFbcvQrcGiTu12W6zMfdEjRDpcM7j",
+      "label": "submit kestrel job 5"
+    },
+    {
+      "hash": "BRzJWn6FYMcxU9ci5aAY7XpgXQP4Ma1x9XUPQs7PNr4t",
+      "label": "priority purchase"
+    },
+    {
+      "hash": "C9VtTYiqFpoDjSaXdMvBxKViDVxQjvAM7MCmCVekkn2G",
+      "label": "start urgent job"
+    },
+    {
+      "hash": "FbD6kcsftHArx7CyviNcL5hK24bTZEYSmRZzRW3Y7RVK",
+      "label": "deliver artifact"
+    },
+    {
+      "hash": "7m4Jqsjt2pPWZNme3dJ4drHsMHXCnduWGpPRY6EaKpiE",
+      "label": "start mira job 1"
+    },
+    {
+      "hash": "71zqnXqfmLUY2Teuz43gdDcDp4YZoU3DvpJXoFiWHAtK",
+      "label": "deliver mira job 1 on time"
+    },
+    {
+      "hash": "5xGmvvSLXU1UL1vVX9cVJLE8JLCDkPKGMbmx2JQg7BMy",
+      "label": "start atlas job 2"
+    },
+    {
+      "hash": "HRuUdKFDSnpLssewjuYWyFeNWg7AcfhTQF35VtJSS1yV",
+      "label": "deliver atlas job 2 on time"
+    },
+    {
+      "hash": "926xJcrtoPCwqRgoBFwWJYuRUeiuh7ujAGP4cBbnBtpV",
+      "label": "start vale job 3"
+    },
+    {
+      "hash": "6qRkAGe2Stc5LMbqsnt6yYARN1DXRyDuFnQAkzZrtCpa",
+      "label": "deliver vale job 3 on time"
+    },
+    {
+      "hash": "FAtvGCAUhMtjPpt5sHLhaky6eStpkvg4PjU4JqLaMStt",
+      "label": "start juno job 4"
+    },
+    {
+      "hash": "CPfji1WZY6TNj289WyJYzVewcaPVj4xSAgYpJMcZo94x",
+      "label": "deliver juno job 4 on time"
+    },
+    {
+      "hash": "9XDikNtd59Hxs2EaRXMVAGninzXDCRMJjm97wKtoSVUQ",
+      "label": "withdraw mira credit"
+    },
+    {
+      "hash": "HHwPZsVikUA1pP7jHw6LGLiZ1HSYK6qkNrREuMbPrqiN",
+      "label": "withdraw atlas credit"
+    },
+    {
+      "hash": "i5mQcn4NMwCmGkeT2szCZoWgmaPLefkkMuvuZRz9XQS",
+      "label": "withdraw vale credit"
+    },
+    {
+      "hash": "9KSFrxJMqyQfLEyk4SAfaqvDsndwsamyj6PSm7X63B7x",
+      "label": "withdraw juno credit"
+    },
+    {
+      "hash": "Hp3AiZ84kos5XF5s8xp1PWGEvM9weYd6J4yFYkTaQy8S",
+      "label": "submit orion job 6 (tight deadline)"
+    },
+    {
+      "hash": "9rJofpPHwDSpXxQWphA9G2zqsfzmrsdNMzqcoRdQWHK4",
+      "label": "submit kestrel job 7 (60s)"
+    },
+    {
+      "hash": "CvUazoMTWsvWozwd1x4BJFyo4Fy4wzhi4pxCcj5hdcRi",
+      "label": "REFUSED jump: contract panics"
+    },
+    {
+      "hash": "8cbaHYiketoN5cDbwTwXzFQn3uBuwP4QSNkcMNmHdc6k",
+      "label": "start orion job 6"
+    },
+    {
+      "hash": "89uiy8rqbwpGTpiZxZRk8z9x2bvUFUS7E3ruYcYeDRgQ",
+      "label": "deliver orion job 6 on time"
+    },
+    {
+      "hash": "ETN1Bd8DDd4qJAmNF61ZHKpVDrHKysdAH8j3wEQtWXbq",
+      "label": "start kestrel job 7"
+    },
+    {
+      "hash": "XEsgDR5dXXvzJDSQhnakQdKWFNA4oK5pPRGGyoAc6ca",
+      "label": "deliver kestrel job 7 on time"
+    }
+  ],
+  "operator": "worker.queue-demo.testnet",
+  "treasury": "treasury.queue-demo.testnet",
+  "buyer": "kestrel.queue-demo.testnet",
+  "artifact": {
+    "file": "data/onchain-artifact.md",
+    "sha256": "5159aede574aa3d9c8c872702bab483344731f97c767ba4ca893e5a9657c9259",
+    "fileSha256": "5159aede574aa3d9c8c872702bab483344731f97c767ba4ca893e5a9657c9259",
+    "bytes": 2036,
+    "checks": [
+      {
+        "key": "input",
+        "label": "Source log present",
+        "ok": true,
+        "detail": "15 non-empty lines."
+      },
+      {
+        "key": "signals",
+        "label": "Signals extracted",
+        "ok": true,
+        "detail": "9 error/latency lines found."
+      },
+      {
+        "key": "numbers",
+        "label": "Key numbers preserved",
+        "ok": true,
+        "detail": "5xx 18.4% · 8,410 stuck orders"
+      },
+      {
+        "key": "format",
+        "label": "Board-ready structure",
+        "ok": true,
+        "detail": "Situation, trigger, impact, risks, actions, evidence."
+      }
+    ]
+  },
+  "jobId": 5,
+  "queue": [],
+  "quote": {
+    "job_id": 5,
+    "now": 1794560281,
+    "latest_start_at": 1794560287,
+    "insert_index": 0,
+    "projected_start_at": 1794560281,
+    "projected_finish_at": 1794560293,
+    "compensation": "20040000000000000000000",
+    "fee": "200400000000000000000",
+    "total": "20240400000000000000000",
+    "displaced": [
+      {
+        "job_id": 1,
+        "owner": "mira.queue-demo.testnet",
+        "amount": "5040000000000000000000",
+        "delay_secs": 12,
+        "new_finish_at": 1794560304,
+        "deadline_at": 1794560445,
+        "slack_secs": 141
+      },
+      {
+        "job_id": 2,
+        "owner": "atlas.queue-demo.testnet",
+        "amount": "6960000000000000000000",
+        "delay_secs": 12,
+        "new_finish_at": 1794560313,
+        "deadline_at": 1794560448,
+        "slack_secs": 135
+      },
+      {
+        "job_id": 3,
+        "owner": "vale.queue-demo.testnet",
+        "amount": "4320000000000000000000",
+        "delay_secs": 12,
+        "new_finish_at": 1794560323,
+        "deadline_at": 1794560453,
+        "slack_secs": 130
+      },
+      {
+        "job_id": 4,
+        "owner": "juno.queue-demo.testnet",
+        "amount": "3720000000000000000000",
+        "delay_secs": 12,
+        "new_finish_at": 1794560335,
+        "deadline_at": 1794560456,
+        "slack_secs": 121
+      }
+    ],
+    "feasible": true,
+    "reason": "",
+    "checks": [
+      {
+        "key": "job_queued",
+        "label": "Job is waiting in the queue",
+        "ok": true,
+        "detail": "Job position is 5."
+      },
+      {
+        "key": "latest_start",
+        "label": "Latest start is not in the past",
+        "ok": true,
+        "detail": "now = 1794560281, latest_start_at = 1794560287."
+      },
+      {
+        "key": "insertion_slot",
+        "label": "A slot satisfies the cutoff and urgent deadline",
+        "ok": true,
+        "detail": "Insert index 0 starts at 1794560281 (cutoff 1794560287) and finishes by 1794560325."
+      },
+      {
+        "key": "urgent_deadline",
+        "label": "Urgent job still meets its deadline",
+        "ok": true,
+        "detail": "Finishes at 1794560293; deadline is 1794560325."
+      },
+      {
+        "key": "displaced_deadlines",
+        "label": "Every displaced deadline still holds",
+        "ok": true,
+        "detail": "4 job(s) move back 12s; every deadline still holds."
+      }
+    ]
+  },
+  "finalJob": {
+    "id": 5,
+    "owner": "kestrel.queue-demo.testnet",
+    "title": "Board brief: checkout incident",
+    "input_hash": "a60124a2de7389c0fbe9d2caabf7b872a8510902090f8d1488b579c82c8668db",
+    "input_uri": "queue://demo/kestrel",
+    "duration_secs": 12,
+    "deadline_at": 1794560325,
+    "submitted_at": 1794560280,
+    "reward": "5000000000000000000000",
+    "bond": "5000000000000000000000",
+    "ask_per_sec": "0",
+    "status": "DONE",
+    "expedited": true,
+    "priority_id": 1,
+    "priority_spend": "20240400000000000000000",
+    "moved_compensation": "0",
+    "started_at": 1794560289,
+    "finished_at": 1794560305,
+    "artifact_hash": "5159aede574aa3d9c8c872702bab483344731f97c767ba4ca893e5a9657c9259",
+    "failure_hash": null,
+    "moves": [],
+    "move_count": 0,
+    "position": 0,
+    "projected_start_at": 1794560289,
+    "projected_finish_at": 1794560305
+  },
+  "stats": {
+    "submitted": 7,
+    "completed": 7,
+    "missed": 0,
+    "cancelled": 0,
+    "running": 0,
+    "queued": 0,
+    "moves": 4,
+    "total_priority": "20240400000000000000000",
+    "total_compensation": "20040000000000000000000",
+    "total_fees": "200400000000000000000",
+    "on_time_bps": 10000,
+    "total_escrow": "0",
+    "total_credits": "200400000000000000000"
+  },
+  "scenarioStats": {
+    "submitted": 7,
+    "completed": 7,
+    "missed": 0,
+    "cancelled": 0,
+    "moves": 4,
+    "totalPriority": "20240400000000000000000",
+    "totalCompensation": "20040000000000000000000",
+    "totalFees": "200400000000000000000"
+  },
+  "statsBefore": {
+    "submitted": 0,
+    "completed": 0,
+    "missed": 0,
+    "cancelled": 0,
+    "running": 0,
+    "queued": 0,
+    "moves": 0,
+    "total_priority": "0",
+    "total_compensation": "0",
+    "total_fees": "0",
+    "on_time_bps": 0,
+    "total_escrow": "0",
+    "total_credits": "0"
+  },
+  "historyNote": "scenarioStats is the delta for this run. The contract state was re-initialised once before this run (see docs/ONCHAIN.md), so stats and scenarioStats agree.",
+  "displacedDeliveries": [
+    {
+      "owner": "mira",
+      "jobId": 1,
+      "startTx": "7m4Jqsjt2pPWZNme3dJ4drHsMHXCnduWGpPRY6EaKpiE",
+      "completeTx": "71zqnXqfmLUY2Teuz43gdDcDp4YZoU3DvpJXoFiWHAtK",
+      "artifactSha256": "b9a29d3b8fbbf6427f09fba562883908c90a3b36cae3c5944716e34a69c6703f",
+      "artifactFile": "data/onchain-artifacts/job-1-mira.md",
+      "finishedAt": 1794560326,
+      "deadlineAt": 1794560445,
+      "secondsEarly": 119
+    },
+    {
+      "owner": "atlas",
+      "jobId": 2,
+      "startTx": "5xGmvvSLXU1UL1vVX9cVJLE8JLCDkPKGMbmx2JQg7BMy",
+      "completeTx": "HRuUdKFDSnpLssewjuYWyFeNWg7AcfhTQF35VtJSS1yV",
+      "artifactSha256": "043cbb2687f6ae2ccaa0226408f63ee0a6c0771a82818bcd0898a2737fd62901",
+      "artifactFile": "data/onchain-artifacts/job-2-atlas.md",
+      "finishedAt": 1794560345,
+      "deadlineAt": 1794560448,
+      "secondsEarly": 103
+    },
+    {
+      "owner": "vale",
+      "jobId": 3,
+      "startTx": "926xJcrtoPCwqRgoBFwWJYuRUeiuh7ujAGP4cBbnBtpV",
+      "completeTx": "6qRkAGe2Stc5LMbqsnt6yYARN1DXRyDuFnQAkzZrtCpa",
+      "artifactSha256": "da119376935fdd6f6fa9786dd16d09618edecac0ff175a28f00cd487c7a86f6e",
+      "artifactFile": "data/onchain-artifacts/job-3-vale.md",
+      "finishedAt": 1794560365,
+      "deadlineAt": 1794560453,
+      "secondsEarly": 88
+    },
+    {
+      "owner": "juno",
+      "jobId": 4,
+      "startTx": "FAtvGCAUhMtjPpt5sHLhaky6eStpkvg4PjU4JqLaMStt",
+      "completeTx": "CPfji1WZY6TNj289WyJYzVewcaPVj4xSAgYpJMcZo94x",
+      "artifactSha256": "edb8173386729eb096621c0f4b8192463209617d63be6a0ebdac5064fcc8ac37",
+      "artifactFile": "data/onchain-artifacts/job-4-juno.md",
+      "finishedAt": 1794560386,
+      "deadlineAt": 1794560456,
+      "secondsEarly": 70
+    }
+  ],
+  "withdrawals": [
+    {
+      "owner": "mira",
+      "tx": "9XDikNtd59Hxs2EaRXMVAGninzXDCRMJjm97wKtoSVUQ",
+      "amount": "5040000000000000000000"
+    },
+    {
+      "owner": "atlas",
+      "tx": "HHwPZsVikUA1pP7jHw6LGLiZ1HSYK6qkNrREuMbPrqiN",
+      "amount": "6960000000000000000000"
+    },
+    {
+      "owner": "vale",
+      "tx": "i5mQcn4NMwCmGkeT2szCZoWgmaPLefkkMuvuZRz9XQS",
+      "amount": "4320000000000000000000"
+    },
+    {
+      "owner": "juno",
+      "tx": "9KSFrxJMqyQfLEyk4SAfaqvDsndwsamyj6PSm7X63B7x",
+      "amount": "3720000000000000000000"
+    }
+  ],
+  "refusal": {
+    "tightJob": {
+      "id": 6,
+      "owner": "orion.queue-demo.testnet",
+      "durationSecs": 8,
+      "deadlineSecs": 60,
+      "submitTx": "Hp3AiZ84kos5XF5s8xp1PWGEvM9weYd6J4yFYkTaQy8S"
+    },
+    "jumpingJob": {
+      "id": 7,
+      "owner": "kestrel.queue-demo.testnet",
+      "durationSecs": 60,
+      "submitTx": "9rJofpPHwDSpXxQWphA9G2zqsfzmrsdNMzqcoRdQWHK4"
+    },
+    "latestStartAt": 1794560422,
+    "quote": {
+      "feasible": false,
+      "reason": "displaced job 6 would finish at 1794560484, after its deadline 1794560471"
+    },
+    "tx": "CvUazoMTWsvWozwd1x4BJFyo4Fy4wzhi4pxCcj5hdcRi",
+    "contractError": "priority infeasible: displaced job 6 would finish at 1794560487, after its deadline 1794560471",
+    "attachedYocto": "20000000000000000000000",
+    "queueOrderUnchanged": true,
+    "jumpingJobExpedited": false,
+    "tightJobCreditYocto": "0",
+    "buyerSpentYocto": "218789196164800000000"
+  },
+  "refusalDeliveries": [
+    {
+      "owner": "orion",
+      "jobId": 6,
+      "startTx": "8cbaHYiketoN5cDbwTwXzFQn3uBuwP4QSNkcMNmHdc6k",
+      "completeTx": "89uiy8rqbwpGTpiZxZRk8z9x2bvUFUS7E3ruYcYeDRgQ",
+      "artifactSha256": "5d1642473c4820228da5ae18c50232adafb92964d60e933b2a1f12f84297ffa1",
+      "artifactFile": "data/onchain-artifacts/job-6-orion.md",
+      "finishedAt": 1794560438,
+      "deadlineAt": 1794560471,
+      "secondsEarly": 33
+    },
+    {
+      "owner": "kestrel",
+      "jobId": 7,
+      "startTx": "ETN1Bd8DDd4qJAmNF61ZHKpVDrHKysdAH8j3wEQtWXbq",
+      "completeTx": "XEsgDR5dXXvzJDSQhnakQdKWFNA4oK5pPRGGyoAc6ca",
+      "artifactSha256": "c2ec18d5e942f12ef860501f714a7a961e4c6f5a5632deaa06c75d1d06399fc9",
+      "artifactFile": "data/onchain-artifacts/job-7-kestrel.md",
+      "finishedAt": 1794560508,
+      "deadlineAt": 1794560655,
+      "secondsEarly": 147
+    }
+  ],
+  "credits": {
+    "afterPurchase": {
+      "mira": "5040000000000000000000",
+      "atlas": "6960000000000000000000",
+      "vale": "4320000000000000000000",
+      "juno": "3720000000000000000000"
+    },
+    "final": {
+      "mira": "0",
+      "atlas": "0",
+      "vale": "0",
+      "juno": "0"
+    }
+  },
+  "txs": {
+    "submit": [
+      {
+        "owner": "mira",
+        "tx": "6bgDRmJMFjFb9o6RCB2tf7aHaKTb5oBBDuAEvqUqW3w2",
+        "jobId": 1
+      },
+      {
+        "owner": "atlas",
+        "tx": "CJpoTZdkYK1qkTNFYtVDpWsMkzuCYgwEjPFxr2buywiQ",
+        "jobId": 2
+      },
+      {
+        "owner": "vale",
+        "tx": "AscuHryzuiiHKhtWz6HYNYQneWvUV3Hm4hNhYcacbubV",
+        "jobId": 3
+      },
+      {
+        "owner": "juno",
+        "tx": "DCdkMQxPDCcVU23Fk1YMRRHFKQYx2JaJkqAuZvfvNPoR",
+        "jobId": 4
+      },
+      {
+        "owner": "kestrel",
+        "tx": "GH2KChRDoRynFs1fFbcvQrcGiTu12W6zMfdEjRDpcM7j",
+        "jobId": 5
+      }
+    ],
+    "priority": "BRzJWn6FYMcxU9ci5aAY7XpgXQP4Ma1x9XUPQs7PNr4t",
+    "start": "C9VtTYiqFpoDjSaXdMvBxKViDVxQjvAM7MCmCVekkn2G",
+    "complete": "FbD6kcsftHArx7CyviNcL5hK24bTZEYSmRZzRW3Y7RVK",
+    "withdraw": "9XDikNtd59Hxs2EaRXMVAGninzXDCRMJjm97wKtoSVUQ"
+  },
+  "setup": [],
+  "verification": {
+    "displacedJobs": 4,
+    "allDisplacedPaid": true,
+    "deliveredOnTime": true,
+    "artifactHashMatches": true,
+    "withdrawClearedCredit": true,
+    "allCreditsWithdrawn": true,
+    "displacedDeliveredOnTime": true,
+    "jobsCompleted": 7,
+    "jobsMissed": 0,
+    "refusalRecorded": true,
+    "refusalMovedNothing": true,
+    "protectedJobDeliveredOnTime": true
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "job": 173,
+  "source": "near-ai",
+  "chatId": "d072f0086eae45bab7951bf4889abc6b",
+  "latencyMs": 896,
+  "usage": {
+    "prompt_tokens": 102,
+    "completion_tokens": 143
+  },
+  "requestSha256": "e33b19f47741683713f82ec6996efba6af77216e99f7bc064cb74fdeeb643f6f",
+  "responseSha256": "68abb653754562251aaea284bce1d4d49d787104ddecd7d4c62f3402c318d71e",
+  "response": "{\"id\":\"d072f0086eae45bab7951bf4889abc6b\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"1. **Time-Slicing (Round-Robin):** Divides GPU time into fixed intervals per user; trade-off is high latency for long requests due to context switching overhead.\\n2. **Fair Queuing (Weighted):** Assigns weights to users to guarantee proportional bandwidth; trade-off is complexity in weight tuning and potential starvation if weights are misconfigured.\\n3. **Demand-Driven Batching:** Dynamically groups requests based on arrival rate and size; trade-off is increased latency for individual requests to maximize throughput.\\n4. **Priority-Based Scheduling:** Preempts lower-priority jobs for high-priority ones; trade-off is potential unfairness and starvation of low-priority users.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600151,\"usage\":{\"prompt_tokens\":102,\"total_tokens\":245,\"completion_tokens\":143,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:e33b19f47741683713f82ec6996efba6af77216e99f7bc064cb74fdeeb643f6f:68abb653754562251aaea284bce1d4d49d787104ddecd7d4c62f3402c318d71e",
+    "signature": "bf7da2c6beabebdd47a5c805764afeb8e1c4ad3e551b9d070bfc1ba4c27f338e46e22e20e8facd7a207c4fb869e16c6b35a2dd85a14d969412d05bea67536d0c",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "bf7da2c6beabebdd47a5c805764afeb8e1c4ad3e551b9d070bfc1ba4c27f338e46e22e20e8facd7a207c4fb869e16c6b35a2dd85a14d969412d05bea67536d0c"
+  }
+}

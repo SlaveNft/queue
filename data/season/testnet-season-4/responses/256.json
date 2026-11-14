@@ -1,0 +1,26 @@
+{
+  "job": 256,
+  "source": "near-ai",
+  "chatId": "1980ab3063974312b78c335c58cda163",
+  "latencyMs": 1115,
+  "usage": {
+    "prompt_tokens": 129,
+    "completion_tokens": 78
+  },
+  "requestSha256": "a20a1a9d0d3860416511844740b7a3fc33dae83b5ba75763949fab51584b87d9",
+  "responseSha256": "4d5ccfda1ab8766dd198287cc381d1e5ead95356c21ab29877a59df0e3029cd5",
+  "response": "{\"id\":\"1980ab3063974312b78c335c58cda163\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The most likely cause is a persistent network connectivity issue or PSP-side outage affecting that specific provider.\\nThe timeouts occurring at regular intervals suggest the gateway is waiting for a response that never arrives.\\nCheck the PSP’s status page or contact their support to confirm if they are experiencing an outage.\\nVerify local firewall rules and outbound connectivity to the PSP’s IP addresses for any recent changes.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794601184,\"usage\":{\"prompt_tokens\":129,\"total_tokens\":207,\"completion_tokens\":78,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:a20a1a9d0d3860416511844740b7a3fc33dae83b5ba75763949fab51584b87d9:4d5ccfda1ab8766dd198287cc381d1e5ead95356c21ab29877a59df0e3029cd5",
+    "signature": "9db0900f86b52a2f6830a2e0960a8654cf3d6f947c6a1aac6dd57725f891d3e3278d9a23f2a4e36fc7819fb32dccd141b55e6b7d203788044eb087d2a9463a06",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "9db0900f86b52a2f6830a2e0960a8654cf3d6f947c6a1aac6dd57725f891d3e3278d9a23f2a4e36fc7819fb32dccd141b55e6b7d203788044eb087d2a9463a06"
+  }
+}

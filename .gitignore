@@ -1,0 +1,25 @@
+node_modules/
+dist/
+build/
+*.tsbuildinfo
+.DS_Store
+
+# Never commit secrets
+.env
+.env.local
+.testnet/
+*.pem
+*.key
+
+# Runtime state and generated build output
+data/queue.db
+data/queue.db-*
+apps/web/dist
+apps/web/dist-pages
+contracts/queue/target/
+coverage/
+.playwright/
+contracts/queue-v2/target/
+contracts/queue-v3/target/
+data/season/*/comparison.recomputed.json
+mutants.out/

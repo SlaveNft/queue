@@ -1,0 +1,26 @@
+{
+  "job": 143,
+  "source": "near-ai",
+  "chatId": "4aada59656c44675ac3a95970afd0ab1",
+  "latencyMs": 1332,
+  "usage": {
+    "prompt_tokens": 125,
+    "completion_tokens": 137
+  },
+  "requestSha256": "ecee1da8452099d933682bb50b16c0b0fbf6378aa3092aeb1d177a57b2a91246",
+  "responseSha256": "cbc8a76d859816a0be7ab6c7dfcc9a8948ffcf1ba52988f8704ceebc6f3e9ee9",
+  "response": "{\"id\":\"4aada59656c44675ac3a95970afd0ab1\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"**Likely Cause:** Deploy 4412 introduced a regression in cache key generation or cache invalidation logic (e.g., changing key structure, missing TTL, or premature eviction), causing cache misses and forcing expensive database reads.\\n\\n**Ordered Steps:**\\n1. **Rollback** deploy 4412 immediately to restore p95 latency and cache hit rates.\\n2. **Analyze** the diff in deploy 4412 specifically for changes to cache keys, invalidation triggers, or serialization logic.\\n3. **Re-deploy** the fix with enhanced monitoring on cache hit/miss ratios and p95 latency to verify resolution.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794599711,\"usage\":{\"prompt_tokens\":125,\"total_tokens\":262,\"completion_tokens\":137,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:ecee1da8452099d933682bb50b16c0b0fbf6378aa3092aeb1d177a57b2a91246:cbc8a76d859816a0be7ab6c7dfcc9a8948ffcf1ba52988f8704ceebc6f3e9ee9",
+    "signature": "15fcb64f730e29d4fba4f78d86250539ef9cd641c823dba8103f650e2f50f4525de2b97b9656d2f8047f56ea99e92a55d3d7cbbf7150a7fa90cb75171814760d",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "15fcb64f730e29d4fba4f78d86250539ef9cd641c823dba8103f650e2f50f4525de2b97b9656d2f8047f56ea99e92a55d3d7cbbf7150a7fa90cb75171814760d"
+  }
+}

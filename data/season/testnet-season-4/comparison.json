@@ -1,0 +1,136 @@
+{
+  "run": "testnet-season-4",
+  "mode": "testnet",
+  "contractId": "market4.queue-demo.testnet",
+  "line": "market 135 of 138 on time, FIFO 134 of 138, EDF 138 of 138, blind fee 134 of 138 (4 promises broken); 0.09650 NEAR paid to agents who moved back; 7 refused by the contract (2 buyer's own cutoff or deadline unreachable, 1 nothing to buy, 1 protected a moved job's deadline, 1 job already started, 2 hopeless job refused at submission); 135 jobs settled with an answer signed by the pinned NEAR AI model key (135 of them on time)",
+  "market": {
+    "jobs": 138,
+    "onTime": 135,
+    "valueOnTime": 5.894839999999999,
+    "attested": 135,
+    "paidToMovedNear": 0.0965,
+    "movedJobs": 5,
+    "purchases": 4,
+    "jumpedAndLate": 0,
+    "onTimeUnderFifoButLate": 0,
+    "ofThoseMovedByAPurchase": 0,
+    "ofThoseMovedAndLateOnChain": 0,
+    "ofThoseNeverMoved": 0,
+    "boughtAndMissed": []
+  },
+  "fifo": {
+    "onTime": 134,
+    "valueOnTime": 5.81642,
+    "honestJobs": 138,
+    "honestOnTime": 134
+  },
+  "edf": {
+    "onTime": 138,
+    "valueOnTime": 6.079589999999999,
+    "honestJobs": 138,
+    "honestOnTime": 138,
+    "promisesBroken": 0,
+    "paidToMovedNear": 0,
+    "note": "earliest claimed deadline runs next; nobody who is passed is paid; scored on true deadlines"
+  },
+  "welfare": null,
+  "strategicDeadlines": null,
+  "blindFee": {
+    "onTime": 134,
+    "valueOnTime": 5.74552,
+    "honestJobs": 138,
+    "honestOnTime": 134,
+    "promisesBroken": 4,
+    "paidToOperatorNear": 0.26317,
+    "paidToMovedNear": 0
+  },
+  "assumptions": {
+    "serviceTime": "each job keeps its real service time (finished_at - started_at on chain)",
+    "gapSecs": 3.93,
+    "gap": "mean worker overhead between two jobs, measured only when the next job was already waiting",
+    "unstartedServiceRatio": 0.594,
+    "startRule": "a head that cannot finish by its deadline (2 s margin) is settled as missed, as in the contract",
+    "unstartedService": "a job that never started is charged its declared duration x the run's mean real/declared service ratio",
+    "replayOfRealOrder": {
+      "onTime": 135,
+      "realOnTime": 135,
+      "errorJobs": 0
+    },
+    "blindBid": "full private value if the job would be late under FIFO, else 0; highest bid runs next",
+    "values": "private task values come from the agents' logs, not the chain",
+    "sensitivity": [
+      {
+        "gapSecs": 2.93,
+        "replayOfMarket": 138,
+        "fifo": 138,
+        "blindFee": 138,
+        "edf": 138
+      },
+      {
+        "gapSecs": 3.18,
+        "replayOfMarket": 136,
+        "fifo": 136,
+        "blindFee": 138,
+        "edf": 138
+      },
+      {
+        "gapSecs": 3.43,
+        "replayOfMarket": 136,
+        "fifo": 136,
+        "blindFee": 136,
+        "edf": 138
+      },
+      {
+        "gapSecs": 3.68,
+        "replayOfMarket": 135,
+        "fifo": 135,
+        "blindFee": 134,
+        "edf": 138
+      },
+      {
+        "gapSecs": 3.93,
+        "replayOfMarket": 135,
+        "fifo": 134,
+        "blindFee": 134,
+        "edf": 138
+      },
+      {
+        "gapSecs": 4.18,
+        "replayOfMarket": 133,
+        "fifo": 132,
+        "blindFee": 132,
+        "edf": 138
+      },
+      {
+        "gapSecs": 4.43,
+        "replayOfMarket": 132,
+        "fifo": 131,
+        "blindFee": 132,
+        "edf": 138
+      },
+      {
+        "gapSecs": 4.68,
+        "replayOfMarket": 131,
+        "fifo": 130,
+        "blindFee": 131,
+        "edf": 138
+      },
+      {
+        "gapSecs": 4.93,
+        "replayOfMarket": 130,
+        "fifo": 128,
+        "blindFee": 130,
+        "edf": 138
+      }
+    ],
+    "sensitivityNote": "FIFO and blind fee are replays with one constant worker gap; the band shows them, and a replay of the market's real order, across ±1 s of the measured mean"
+  },
+  "refusalKinds": {
+    "buyer's own cutoff or deadline unreachable": 2,
+    "nothing to buy": 1,
+    "protected a moved job's deadline": 1,
+    "job already started": 1,
+    "hopeless job refused at submission": 2
+  },
+  "checksFailed": 0
+}

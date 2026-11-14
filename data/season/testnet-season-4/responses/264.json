@@ -1,0 +1,26 @@
+{
+  "job": 264,
+  "source": "near-ai",
+  "chatId": "07ff7241a85e4371a882d655bd750b0e",
+  "latencyMs": 1123,
+  "usage": {
+    "prompt_tokens": 104,
+    "completion_tokens": 41
+  },
+  "requestSha256": "79c476dec0ca9a81d92f15db082731eb5a42696a11facc42525ff9adca2a618c",
+  "responseSha256": "0112569888ed3976c5270ef745286823294aa1befb364b3cf8c14dbcd5d9b9ac",
+  "response": "{\"id\":\"07ff7241a85e4371a882d655bd750b0e\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"Rates flat as markets await further Fed clarity.\\nOil surges +3% on tightening supply concerns.\\nA large tech earnings beat after hours lifts sentiment.\\nPre-open mood is cautiously optimistic.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794601273,\"usage\":{\"prompt_tokens\":104,\"total_tokens\":145,\"completion_tokens\":41,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:79c476dec0ca9a81d92f15db082731eb5a42696a11facc42525ff9adca2a618c:0112569888ed3976c5270ef745286823294aa1befb364b3cf8c14dbcd5d9b9ac",
+    "signature": "8598fa744deca82b26518d12fce32ae5ce80da6a30c102f8b6ea86aad5d564c9e9e84896e04ae058a5126027e478773b32bf93e9dce10e89e033927c25374f0e",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "8598fa744deca82b26518d12fce32ae5ce80da6a30c102f8b6ea86aad5d564c9e9e84896e04ae058a5126027e478773b32bf93e9dce10e89e033927c25374f0e"
+  }
+}

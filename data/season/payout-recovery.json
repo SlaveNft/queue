@@ -1,0 +1,20 @@
+{
+  "contractId": "market4.queue-demo.testnet",
+  "jobId": 276,
+  "owner": "payout-mwgdxdok.queue-demo.testnet",
+  "what": "the owner's account was deleted while its job ran; the bond transfer failed and the contract's callback restored it as a credit",
+  "ownerAccountExists": false,
+  "status": "DONE",
+  "bondYocto": "5000000000000000000000",
+  "creditBeforeYocto": "66000000000000000000000",
+  "creditAfterYocto": "71000000000000000000000",
+  "restoredYocto": "5000000000000000000000",
+  "ok": true,
+  "tx": {
+    "complete": "BsiMG2jX11ZeTY2ee7avSMASgCXZSPHrSkNMCiZEUnm3"
+  },
+  "events": [
+    "job_completed",
+    "payout_failed_credited"
+  ]
+}

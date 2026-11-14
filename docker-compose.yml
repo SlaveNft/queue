@@ -1,0 +1,44 @@
+# Default: read-only demo, bound to loopback on the host.
+# The container still listens on 0.0.0.0 because that is the port Docker exposes,
+# but the published port is only reachable from this machine.
+services:
+  queue:
+    build: .
+    ports:
+      - "127.0.0.1:8789:8789"
+    environment:
+      QUEUE_PORT: "8789"
+      QUEUE_HOST: "0.0.0.0"
+      QUEUE_DB_PATH: /data/queue.db
+      QUEUE_VERSION: "1.0.0"
+      QUEUE_BUILD: "docker"
+      QUEUE_LOG_LEVEL: "info"
+      QUEUE_READ_ONLY: "1"
+    volumes:
+      - queue-data:/data
+    restart: unless-stopped
+
+  # Write-enabled demo. Opt in explicitly:
+  #   QUEUE_OPERATOR_TOKEN=... docker compose --profile write up
+  # Every mutation must then send `x-operator-token`.
+  queue-write:
+    profiles: ["write"]
+    build: .
+    ports:
+      - "127.0.0.1:${QUEUE_WRITE_PORT:-8790}:8789"
+    environment:
+      QUEUE_PORT: "8789"
+      QUEUE_HOST: "0.0.0.0"
+      QUEUE_DB_PATH: /data/queue.db
+      QUEUE_VERSION: "1.0.0"
+      QUEUE_BUILD: "docker"
+      QUEUE_LOG_LEVEL: "info"
+      QUEUE_READ_ONLY: "0"
+      QUEUE_OPERATOR_TOKEN: "${QUEUE_OPERATOR_TOKEN:?Set QUEUE_OPERATOR_TOKEN to run the write demo}"
+    volumes:
+      - queue-write-data:/data
+    restart: unless-stopped
+
+volumes:
+  queue-data:
+  queue-write-data:

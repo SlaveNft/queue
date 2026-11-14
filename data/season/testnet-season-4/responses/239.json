@@ -1,0 +1,26 @@
+{
+  "job": 239,
+  "source": "near-ai",
+  "chatId": "26498323edfa4f759633df46dbe51cd9",
+  "latencyMs": 635,
+  "usage": {
+    "prompt_tokens": 102,
+    "completion_tokens": 83
+  },
+  "requestSha256": "ba61e94da10dc0f2deafaf68c66634d6cf5daf2533e3cd850a3de02d7cfb7e7c",
+  "responseSha256": "3f9105e0ebaf195ec752381f3234dd137df529e22dfea41a37064522cb251497",
+  "response": "{\"id\":\"26498323edfa4f759633df46dbe51cd9\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"1. Verify the merchant’s legal entity registration and tax identification number (VAT/EORI).\\n2. Conduct enhanced due diligence (EDD) to screen for Politically Exposed Persons (PEPs) and sanctions.\\n3. Assess the merchant’s business model and transaction patterns for money laundering or fraud risks.\\n4. Confirm compliance with local consumer protection laws and PSD2/SCA requirements.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600936,\"usage\":{\"prompt_tokens\":102,\"total_tokens\":185,\"completion_tokens\":83,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:ba61e94da10dc0f2deafaf68c66634d6cf5daf2533e3cd850a3de02d7cfb7e7c:3f9105e0ebaf195ec752381f3234dd137df529e22dfea41a37064522cb251497",
+    "signature": "377f6311733e359a25f703b5fb0c59a7797b55c938cd9eaa2bcceed05644cb4966245f433942bc4052e13c11e999b1348ad2141aa50124b3db5ad744467dfe06",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "377f6311733e359a25f703b5fb0c59a7797b55c938cd9eaa2bcceed05644cb4966245f433942bc4052e13c11e999b1348ad2141aa50124b3db5ad744467dfe06"
+  }
+}

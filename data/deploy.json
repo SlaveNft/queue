@@ -1,0 +1,35 @@
+{
+  "network": "testnet",
+  "contractId": "market.queue-demo.testnet",
+  "ownerId": "market.queue-demo.testnet",
+  "operatorId": "worker.queue-demo.testnet",
+  "treasuryId": "treasury.queue-demo.testnet",
+  "buyerId": "kestrel.queue-demo.testnet",
+  "orionId": "orion.queue-demo.testnet",
+  "agents": {
+    "mira": {
+      "accountId": "mira.queue-demo.testnet",
+      "publicKey": "ed25519:DwhfYKD8jXohEwHHq9djxhBw75LB9U1SdhNmU7SXNFGF"
+    },
+    "atlas": {
+      "accountId": "atlas.queue-demo.testnet",
+      "publicKey": "ed25519:5RQfyQSHcaqqZnKua1X1uu8KBEk9Kdxy9pjTXyvv12hi"
+    },
+    "vale": {
+      "accountId": "vale.queue-demo.testnet",
+      "publicKey": "ed25519:2Kk762gLbFiYNZjh46bxrDuUYCVx64iCK9tfMpEXSoGn"
+    },
+    "juno": {
+      "accountId": "juno.queue-demo.testnet",
+      "publicKey": "ed25519:4GgBv2gpZqc5zZZJetrJaRJtedc3nyK6WouiEji9aNYt"
+    }
+  },
+  "feeBps": 100,
+  "wasmSha256": "10546489ceb8c1127939023e043cf15ac13e3481b708d184e828c92b516396d6",
+  "wasmBytes": 259622,
+  "deployTx": "4tXjEXfWXHWpFD2ANhkSbzZ6JvM9asCgjevVPnogwUj1",
+  "deployedAt": "2026-11-13T08:57:29.608Z",
+  "contractBalanceYocto": "2940727997266593000000000",
+  "explorer": "https://testnet.nearblocks.io/address/market.queue-demo.testnet",
+  "rpc": "https://rpc.testnet.fastnear.com"
+}

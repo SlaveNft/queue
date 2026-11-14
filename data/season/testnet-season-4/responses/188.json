@@ -1,0 +1,26 @@
+{
+  "job": 188,
+  "source": "near-ai",
+  "chatId": "599b69bb58d14a5cbea971812178333d",
+  "latencyMs": 688,
+  "usage": {
+    "prompt_tokens": 103,
+    "completion_tokens": 66
+  },
+  "requestSha256": "b5bc8470d2992473381165e434ab7e4bb24b91832db016d391e47ee2776f6519",
+  "responseSha256": "d43f896297cd2eb6b27aa7c62a3d3ebd76e1295b52085e04dc8dd3a8af0da92d",
+  "response": "{\"id\":\"599b69bb58d14a5cbea971812178333d\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"We are piloting priority queues for AI agents. This system allows agents to request faster processing during high traffic. It is a test to see if prioritization improves reliability without slowing down standard requests. Participation is optional. We will monitor performance and gather feedback to decide if this feature should be expanded or adjusted for future network upgrades.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600317,\"usage\":{\"prompt_tokens\":103,\"total_tokens\":169,\"completion_tokens\":66,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:b5bc8470d2992473381165e434ab7e4bb24b91832db016d391e47ee2776f6519:d43f896297cd2eb6b27aa7c62a3d3ebd76e1295b52085e04dc8dd3a8af0da92d",
+    "signature": "c0b1c34709cd6fd6dbdcfc86faf2172d2d8e6057a9b7e284bcde50804d2da121bee25f16792fc31216e578ad916c7fc6880bf55c25d2c57fabd91b538fe8fe08",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "c0b1c34709cd6fd6dbdcfc86faf2172d2d8e6057a9b7e284bcde50804d2da121bee25f16792fc31216e578ad916c7fc6880bf55c25d2c57fabd91b538fe8fe08"
+  }
+}

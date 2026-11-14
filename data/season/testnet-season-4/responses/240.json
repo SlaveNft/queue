@@ -1,0 +1,26 @@
+{
+  "job": 240,
+  "source": "near-ai",
+  "chatId": "25862862fe7f464eab4397ef413df713",
+  "latencyMs": 1268,
+  "usage": {
+    "prompt_tokens": 98,
+    "completion_tokens": 79
+  },
+  "requestSha256": "0bb1a2b923b511663778932ec00ec83748a66037fece37310d75dfde287f9716",
+  "responseSha256": "2bf13ac11b44836855951526fdd8a1f72d7846a777b9aa397e082d5c3b10e899",
+  "response": "{\"id\":\"25862862fe7f464eab4397ef413df713\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"I cannot access real-time operational data, specific incident logs, or the internal status of the `market4.queue-demo.testnet` environment for Juno testnet season 4. Therefore, I cannot summarize last week's specific latency incidents.\\n\\nTo complete this task, please provide the incident details or logs, and I will summarize them into 3 concise bullets for your weekly ops note.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600947,\"usage\":{\"prompt_tokens\":98,\"total_tokens\":177,\"completion_tokens\":79,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:0bb1a2b923b511663778932ec00ec83748a66037fece37310d75dfde287f9716:2bf13ac11b44836855951526fdd8a1f72d7846a777b9aa397e082d5c3b10e899",
+    "signature": "78fd67009a2ae3bb1797d22b721cca3bbdc3f870e8e9e91b903fa0a7a894d7112d1244f3b2c69078a47f144333b2e3f562d06cd1fba2cf4c542bd405b289c803",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "78fd67009a2ae3bb1797d22b721cca3bbdc3f870e8e9e91b903fa0a7a894d7112d1244f3b2c69078a47f144333b2e3f562d06cd1fba2cf4c542bd405b289c803"
+  }
+}

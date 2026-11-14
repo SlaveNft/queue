@@ -1,0 +1,26 @@
+{
+  "job": 209,
+  "source": "near-ai",
+  "chatId": "0626b9441607434a922d74ae8e36abf6",
+  "latencyMs": 1036,
+  "usage": {
+    "prompt_tokens": 104,
+    "completion_tokens": 44
+  },
+  "requestSha256": "dcc7efec402f4256fcfcd681133de7baa8504ec33f918e7b3e6ac32842e1eb6a",
+  "responseSha256": "a00fde510dce5085b167766f18a46d3278ada0d6da42a4ff3bf156e91c890c10",
+  "response": "{\"id\":\"0626b9441607434a922d74ae8e36abf6\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"Rates remain flat as markets digest mixed signals.\\nOil climbs 3% on supply concerns and demand outlook.\\nA major tech giant beats earnings expectations after hours.\\nInvestors await further clarity on sector rotation.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600536,\"usage\":{\"prompt_tokens\":104,\"total_tokens\":148,\"completion_tokens\":44,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:dcc7efec402f4256fcfcd681133de7baa8504ec33f918e7b3e6ac32842e1eb6a:a00fde510dce5085b167766f18a46d3278ada0d6da42a4ff3bf156e91c890c10",
+    "signature": "cbec77270923cc8865672e1fd2a241b22dd3d62d10f78755d588b723776efce6808b88d947329bd7ff0aade01fac878347a1d5b5ee32184c906ffe60222e620f",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "cbec77270923cc8865672e1fd2a241b22dd3d62d10f78755d588b723776efce6808b88d947329bd7ff0aade01fac878347a1d5b5ee32184c906ffe60222e620f"
+  }
+}

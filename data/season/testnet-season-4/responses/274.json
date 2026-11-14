@@ -1,0 +1,26 @@
+{
+  "job": 274,
+  "source": "near-ai",
+  "chatId": "02585a6486f34176804fc10dac1c06c5",
+  "latencyMs": 1063,
+  "usage": {
+    "prompt_tokens": 129,
+    "completion_tokens": 96
+  },
+  "requestSha256": "aef346d8fcf523931568013ed1083566583c781071b97d400ffb531fa2f27708",
+  "responseSha256": "0cb2dbdf119c68d982172998fe24c5ca1bfdb2ad9590db27138d803eeda544be",
+  "response": "{\"id\":\"02585a6486f34176804fc10dac1c06c5\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The most likely cause is a persistent connectivity or gateway failure at the PSP, indicated by repeated timeouts from the same source.\\nThis pattern suggests the issue is not transient network jitter but a sustained service disruption or misconfiguration.\\nThe next check should be to verify the PSP's operational status via their status page or direct support contact.\\nSimultaneously, inspect local logs for specific error codes (e.g., connection refused vs. read timeout) to pinpoint the failure layer.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794601386,\"usage\":{\"prompt_tokens\":129,\"total_tokens\":225,\"completion_tokens\":96,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:aef346d8fcf523931568013ed1083566583c781071b97d400ffb531fa2f27708:0cb2dbdf119c68d982172998fe24c5ca1bfdb2ad9590db27138d803eeda544be",
+    "signature": "ca942ed9335e2012b798b20724eb7d1c3b584684f93181b62453bcfea681e546785332cc3cd233d6bb461536260e3988e2f9430a2f4b8dc63687566fac63b309",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "ca942ed9335e2012b798b20724eb7d1c3b584684f93181b62453bcfea681e546785332cc3cd233d6bb461536260e3988e2f9430a2f4b8dc63687566fac63b309"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "network": "testnet",
+  "contractId": "market4.queue-demo.testnet",
+  "ownerId": "owner2.queue-demo.testnet",
+  "operatorId": "worker.queue-demo.testnet",
+  "treasuryId": "treasury.queue-demo.testnet",
+  "wasmSha256": "591c81823d329a370d889850e6359d29b012e3be255fd61102455fd81a9cb637",
+  "wasmBytes": 297021,
+  "deployTx": "2Y8XJKXQqf7hmdy2saiFCfMaC3ULEGaRuP5yerAG4sUQ",
+  "deployedAt": "2026-11-13T19:08:55.436Z",
+  "version": "v2",
+  "agents": {
+    "kestrel": {
+      "accountId": "kestrel.queue-demo.testnet",
+      "depositTx": "25S94uwF8bpVuyqJqdksp4eFnCJTnegBJvoyPWLwa3Ks",
+      "functionCallKey": "ed25519:2FJLqswgUpoEyK4URBn2Qb4zipXV5rYVm5k4SSMYahDh",
+      "addKeyTx": "HufVFqh22DRydSNNN4xGDr1qQqjucwmLfbN9pQy8KcHe",
+      "functionCallKeyFile": ".testnet/season/kestrel.queue-demo.testnet.market4.queue-demo.testnet.fc.json",
+      "methods": [
+        "submit_job",
+        "set_move_ask",
+        "request_priority",
+        "cancel_job",
+        "withdraw_credit"
+      ]
+    },
+    "mira": {
+      "accountId": "mira.queue-demo.testnet",
+      "depositTx": "4gsqiCdJbBJ6VUUZ7au2jwGLfKr7a4WNpcSeWFDdwaf1",
+      "functionCallKey": "ed25519:6kYJdp3mcVNhySwekPjJ2VUpLzKRYMyxmD8ieJB4M6cj",
+      "addKeyTx": "4QZxq2FoMjpYYxG7EiXVX8cX1GnjDMfLBjpDYPyn149y",
+      "functionCallKeyFile": ".testnet/season/mira.queue-demo.testnet.market4.queue-demo.testnet.fc.json",
+      "methods": [
+        "submit_job",
+        "set_move_ask",
+        "request_priority",
+        "cancel_job",
+        "withdraw_credit"
+      ]
+    },
+    "atlas": {
+      "accountId": "atlas.queue-demo.testnet",
+      "depositTx": "8zWScA4cFjzcDwCyN1TJAJsjQJpjaJvy3nBgKy6VaMB",
+      "functionCallKey": "ed25519:AV8g2FpyaJLoHUbgx7sXodk8Wvjtc259U94Z21t6hRxK",
+      "addKeyTx": "6WiyzfGC768WSLEkhMRSrmz2aW18ZPSACPACaLHMWmAY",
+      "functionCallKeyFile": ".testnet/season/atlas.queue-demo.testnet.market4.queue-demo.testnet.fc.json",
+      "methods": [
+        "submit_job",
+        "set_move_ask",
+        "request_priority",
+        "cancel_job",
+        "withdraw_credit"
+      ]
+    },
+    "vale": {
+      "accountId": "vale.queue-demo.testnet",
+      "depositTx": "6g7qGjAGUiAibTiha1rVyoFeVhyrXiJ6bwNPGyqa6oBX",
+      "functionCallKey": "ed25519:2J2YHWjy72jKDGkZwZZX5Zk5tt43HNAgTmGqWSrv4vn4",
+      "addKeyTx": "9U2LyiH7EeBevFkoa9XVQdxDTcDvrztCYGY95uYoVQJs",
+      "functionCallKeyFile": ".testnet/season/vale.queue-demo.testnet.market4.queue-demo.testnet.fc.json",
+      "methods": [
+        "submit_job",
+        "set_move_ask",
+        "request_priority",
+        "cancel_job",
+        "withdraw_credit"
+      ]
+    },
+    "juno": {
+      "accountId": "juno.queue-demo.testnet",
+      "depositTx": "Bx8iMEjgppxFB482M8A6RPqakfKFRbfmyah32qmk5hw4",
+      "functionCallKey": "ed25519:BXpbiuQKeniRoZmVRbFquyppnzcC6qduC3rAYE4Rcvnu",
+      "addKeyTx": "4BnSYRX9zVzQUexqccZCPetHTQ7kWfGjVGM3FgrpjBT2",
+      "functionCallKeyFile": ".testnet/season/juno.queue-demo.testnet.market4.queue-demo.testnet.fc.json",
+      "methods": [
+        "submit_job",
+        "set_move_ask",
+        "request_priority",
+        "cancel_job",
+        "withdraw_credit"
+      ]
+    },
+    "orion": {
+      "accountId": "orion.queue-demo.testnet",
+      "depositTx": "FrJsTcnhuLV64fzSQpozvgou3HZdndNrsKvaX5LvDBe8",
+      "functionCallKey": "ed25519:B3ScDwfyZyEUfrGXep9XX6YNHFzfZmk1B1YLDvJntE24",
+      "addKeyTx": "EvLaEedpjy31cPyWZDQoaA3hko4bSLtuzDgGksWCAX3h",
+      "functionCallKeyFile": ".testnet/season/orion.queue-demo.testnet.market4.queue-demo.testnet.fc.json",
+      "methods": [
+        "submit_job",
+        "set_move_ask",
+        "request_priority",
+        "cancel_job",
+        "withdraw_credit"
+      ]
+    },
+    "lyra": {
+      "accountId": "lyra.queue-demo.testnet",
+      "depositTx": "CS3P2vhM91Rjkj2xxB7uEbqB58pWmGh8JKt77hhReMbQ",
+      "functionCallKey": "ed25519:AUZsoDKVhS99YhxmXy7yVMUV4aKFt9mMmYMbPG1cXJaJ",
+      "addKeyTx": "42fyLGrzFWP8jB591nTVMFwAx7FAXE7bCfWwEQJQP8LE",
+      "functionCallKeyFile": ".testnet/season/lyra.queue-demo.testnet.market4.queue-demo.testnet.fc.json",
+      "methods": [
+        "submit_job",
+        "set_move_ask",
+        "request_priority",
+        "cancel_job",
+        "withdraw_credit"
+      ]
+    },
+    "sable": {
+      "accountId": "sable.queue-demo.testnet",
+      "depositTx": "BKwD2nPXcdUuVGevNefqmEX1moZBtbMmgjFyfq3icouF",
+      "functionCallKey": "ed25519:4kaYwXDm5DC9uEFgmK9Zt18FJdkQoniWvDh6BAMZ8rf5",
+      "addKeyTx": "YUzdmxHxZZEwSKgV7Hkv662xLKExuRo9WYFp918SGrU",
+      "functionCallKeyFile": ".testnet/season/sable.queue-demo.testnet.market4.queue-demo.testnet.fc.json",
+      "methods": [
+        "submit_job",
+        "set_move_ask",
+        "request_priority",
+        "cancel_job",
+        "withdraw_credit"
+      ]
+    }
+  },
+  "operatorKeyFile": ".testnet/worker.queue-demo.testnet.json",
+  "teeModel": "Qwen/Qwen3.6-35B-A3B-FP8",
+  "teeSigners": [
+    "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350"
+  ],
+  "pinTx": "BGsBFJCXLVwNcYHHpt74iuqhNnc6dfFNU3jK3SxiJmEk",
+  "pinModelTx": "BCbtaagkqtQRDJkQsnq7ZLY8L9VHQArzmjyYS3RcEuQE",
+  "teeSignerSource": "model_attestations[].signing_address for this model (gateway key excluded); hardware quotes saved, not verified by this script"
+}

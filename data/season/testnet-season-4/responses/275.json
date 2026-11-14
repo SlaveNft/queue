@@ -1,0 +1,26 @@
+{
+  "job": 275,
+  "source": "near-ai",
+  "chatId": "5b19147c91174b69beff288988d1bed4",
+  "latencyMs": 1211,
+  "usage": {
+    "prompt_tokens": 129,
+    "completion_tokens": 85
+  },
+  "requestSha256": "e5978d6e7a7d2fe182427838cb6ac102e515386a1f33daba9fe645cc6fa7d823",
+  "responseSha256": "87e9c626fe43420f1ba5f2d0683843e4676a897083e8b12e64f0adacc0dffc2a",
+  "response": "{\"id\":\"5b19147c91174b69beff288988d1bed4\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The clustered timeouts from a single PSP suggest a temporary connectivity outage or gateway failure on their end.\\nVerify if the PSP's status page reports an incident or if their API response codes indicate a service unavailability.\\nCheck your own network logs for dropped packets or DNS resolution failures specifically targeting that PSP's endpoint.\\nIf the PSP confirms an outage, switch to a backup provider or retry after their stated maintenance window ends.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794601398,\"usage\":{\"prompt_tokens\":129,\"total_tokens\":214,\"completion_tokens\":85,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:e5978d6e7a7d2fe182427838cb6ac102e515386a1f33daba9fe645cc6fa7d823:87e9c626fe43420f1ba5f2d0683843e4676a897083e8b12e64f0adacc0dffc2a",
+    "signature": "ff3948fc5db790b9747d524760749a86f1a2b09b10af223e363ecbcde6a73784c03967fbbe8b6ed613e28065ed4d151c85a76128d1ece7db1e82084b0ced340d",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "ff3948fc5db790b9747d524760749a86f1a2b09b10af223e363ecbcde6a73784c03967fbbe8b6ed613e28065ed4d151c85a76128d1ece7db1e82084b0ced340d"
+  }
+}

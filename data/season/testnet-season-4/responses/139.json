@@ -1,0 +1,26 @@
+{
+  "job": 139,
+  "source": "near-ai",
+  "chatId": "396a4f9656994986b76c8444767ad51a",
+  "latencyMs": 1439,
+  "usage": {
+    "prompt_tokens": 105,
+    "completion_tokens": 188
+  },
+  "requestSha256": "a76ff00f4ab2b5e1d4920d858118392802446e3104459725b39a94b64bad0669",
+  "responseSha256": "89ae9f975786a3d0f5408da863b8477bb8e4d48732e1f19b9f549dc6cb720525",
+  "response": "{\"id\":\"396a4f9656994986b76c8444767ad51a\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"*   **Metric Alert:** Weekly Active Merchants (WAM) declined by 12% week-over-week, signaling a significant churn event or onboarding bottleneck.\\n*   **Segmentation:** Early analysis indicates the drop is concentrated in the [Specific Segment, e.g., new merchants <30 days old] cohort, suggesting onboarding friction rather than mass attrition of established partners.\\n*   **Correlation:** The decline coincides with the recent deployment of [Specific Feature/Update], implying a potential regression in merchant experience or stability.\\n*   **Impact:** At current volume, this drop represents a loss of [Estimated GMV/Revenue Impact], threatening Q3 growth targets if not reversed immediately.\\n*   **Recommended Action:** Halt all non-critical feature rollouts, initiate a targeted win-back campaign for the affected segment, and deploy a dedicated engineering squad to audit the recent deployment for bugs.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794599656,\"usage\":{\"prompt_tokens\":105,\"total_tokens\":293,\"completion_tokens\":188,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:a76ff00f4ab2b5e1d4920d858118392802446e3104459725b39a94b64bad0669:89ae9f975786a3d0f5408da863b8477bb8e4d48732e1f19b9f549dc6cb720525",
+    "signature": "175d25ec19088fb964cb6f5fdb0d98569fe950142e976c78f8a45fa4c50593e8c4b8adbb5798df38685117ddba2cc77ff070c105c51baf770a2af66876a3ee01",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "175d25ec19088fb964cb6f5fdb0d98569fe950142e976c78f8a45fa4c50593e8c4b8adbb5798df38685117ddba2cc77ff070c105c51baf770a2af66876a3ee01"
+  }
+}

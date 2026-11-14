@@ -1,0 +1,26 @@
+{
+  "job": 157,
+  "source": "near-ai",
+  "chatId": "3996dc23a19a4d1987575ff8843f5016",
+  "latencyMs": 1281,
+  "usage": {
+    "prompt_tokens": 105,
+    "completion_tokens": 157
+  },
+  "requestSha256": "2a92e2620894eea0dfc91df90e756907c18181de84f327f93b9e31a8c4666737",
+  "responseSha256": "c3eff9f1269df8898243979f34badd2ce3a77dabe1f2afb2ca9b1ec02f95cebc",
+  "response": "{\"id\":\"3996dc23a19a4d1987575ff8843f5016\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"*   **Critical Decline:** Weekly Active Merchants (WAM) dropped 12% week-over-week, signaling a significant churn event or onboarding bottleneck.\\n*   **Root Cause Analysis:** Initial data suggests the drop correlates with the recent network upgrade latency, causing transaction failures for early adopters.\\n*   **Revenue Impact:** At current average ticket sizes, this merchant loss translates to an estimated 8-10% reduction in projected weekly transaction volume.\\n*   **User Sentiment:** Support tickets regarding \\\"failed payments\\\" have spiked by 40%, indicating active friction rather than passive churn.\\n*   **Recommended Action:** Immediately deploy a targeted communication campaign offering fee waivers for affected merchants and prioritize engineering resources to patch the identified latency bug.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794599946,\"usage\":{\"prompt_tokens\":105,\"total_tokens\":262,\"completion_tokens\":157,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:2a92e2620894eea0dfc91df90e756907c18181de84f327f93b9e31a8c4666737:c3eff9f1269df8898243979f34badd2ce3a77dabe1f2afb2ca9b1ec02f95cebc",
+    "signature": "bdbec182038b382a4fefc54a1b38401bea9bc08755d68e0adf2c71aa0af39d6fbe61ce0480a5a1b8ab5f13bde3fb3b82e4127a3213e0094490d9c0a59a400501",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "bdbec182038b382a4fefc54a1b38401bea9bc08755d68e0adf2c71aa0af39d6fbe61ce0480a5a1b8ab5f13bde3fb3b82e4127a3213e0094490d9c0a59a400501"
+  }
+}

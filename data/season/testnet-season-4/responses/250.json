@@ -1,0 +1,26 @@
+{
+  "job": 250,
+  "source": "near-ai",
+  "chatId": "f611b7d07f884e3185cf75a74c4aa337",
+  "latencyMs": 1197,
+  "usage": {
+    "prompt_tokens": 103,
+    "completion_tokens": 67
+  },
+  "requestSha256": "01156dff5a2921ce9646485b2f400878b160a94290237552acea4fba4e80f324",
+  "responseSha256": "2e57ed77de62242bc49f68a7877e733e7eecd176364338b3a238e362b75fced2",
+  "response": "{\"id\":\"f611b7d07f884e3185cf75a74c4aa337\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"We are piloting priority queues for AI agents on testnet. This feature allows agents to request faster processing during high traffic. It is a controlled experiment to improve reliability. Participation is optional. Please monitor your agent’s performance and report any issues. This pilot helps us understand how priority handling affects system stability and agent behavior under load.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794601105,\"usage\":{\"prompt_tokens\":103,\"total_tokens\":170,\"completion_tokens\":67,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:01156dff5a2921ce9646485b2f400878b160a94290237552acea4fba4e80f324:2e57ed77de62242bc49f68a7877e733e7eecd176364338b3a238e362b75fced2",
+    "signature": "ed15f1eca671097d3071066862cd90005e5a5aa33910d00ad19de55c56c045cf174db5b0773d6092f9b3bdfcab5d9069daabe2f876d3f399fbc3a22c471a710d",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "ed15f1eca671097d3071066862cd90005e5a5aa33910d00ad19de55c56c045cf174db5b0773d6092f9b3bdfcab5d9069daabe2f876d3f399fbc3a22c471a710d"
+  }
+}

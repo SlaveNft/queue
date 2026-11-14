@@ -1,0 +1,167 @@
+{
+  "network": "testnet",
+  "version": "v3",
+  "contractId": "market5.queue-demo.testnet",
+  "ownerId": "owner2.queue-demo.testnet",
+  "operatorId": "worker.queue-demo.testnet",
+  "treasuryId": "treasury.queue-demo.testnet",
+  "wasmSha256": "cb6999b9c121cfda20229099a98e08f2432865f0e1be5536d9b10f85e394c00a",
+  "wasmBytes": 397962,
+  "deployTx": "6bEjc5wdc4gAhghvjBSXXuVW3iXZGQ18eyxdcLyE499d",
+  "deployedAt": "2026-11-14T20:55:25.020Z",
+  "init": {
+    "owner_id": "owner2.queue-demo.testnet",
+    "operator_id": "worker.queue-demo.testnet",
+    "treasury_id": "treasury.queue-demo.testnet",
+    "fee_bps": 100,
+    "timelock_secs": 86400,
+    "min_operator_stake": "500000000000000000000000",
+    "tee_signers": [
+      "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350"
+    ],
+    "tee_model": "Qwen/Qwen3.6-35B-A3B-FP8"
+  },
+  "stakeTx": "8yst3SE2dcMstdVkZouSWEPJ6114KjXfCRuUpRNsCked",
+  "agents": {
+    "kestrel": {
+      "accountId": "kestrel.queue-demo.testnet",
+      "depositTx": "EpejRBVqoFsRZVEK3J8CSQNZggVoYxHrcJoRrqicyps7",
+      "functionCallKey": "ed25519:AUVw6g3pf6AM5cr1SEYirfcusM4n47ua4zxVXoHcLyGi",
+      "addKeyTx": "8WGgxuRDnBt3N5KPQ1pqE1powvBcCnBpVTFMXngT5YGQ",
+      "functionCallKeyFile": ".testnet/season/kestrel.queue-demo.testnet.market5.queue-demo.testnet.fc.json",
+      "methods": [
+        "submit_job",
+        "set_move_ask",
+        "request_priority",
+        "cancel_job",
+        "withdraw_credit",
+        "release_job"
+      ]
+    },
+    "mira": {
+      "accountId": "mira.queue-demo.testnet",
+      "depositTx": "4WJ9gDYHiPvtzpPYW5FNen5PfYvqTVTiiXf8EWc2cTMJ",
+      "functionCallKey": "ed25519:3euKgAVt9UkJbgWKmcR5PN5yKpWmiB1jKpGfSUWyFAXu",
+      "addKeyTx": "GFXDKGtfdeyqiT2wMj2TTQvoSGWpLwSxZADzsn8BVzg3",
+      "functionCallKeyFile": ".testnet/season/mira.queue-demo.testnet.market5.queue-demo.testnet.fc.json",
+      "methods": [
+        "submit_job",
+        "set_move_ask",
+        "request_priority",
+        "cancel_job",
+        "withdraw_credit",
+        "release_job"
+      ]
+    },
+    "atlas": {
+      "accountId": "atlas.queue-demo.testnet",
+      "depositTx": "GPFAmTqJ72SKhfBn3YgcLm3LvC6Jq7nsqrmDTZxyN5jY",
+      "functionCallKey": "ed25519:CCAiKAKyjmwzac2rDj13UUeKpUnTuiXFK1TGXbb3wAzx",
+      "addKeyTx": "A4Q187NFPppLVGsVErKWDrUSkZ2KPUgLbmvf2Pd8s5Vv",
+      "functionCallKeyFile": ".testnet/season/atlas.queue-demo.testnet.market5.queue-demo.testnet.fc.json",
+      "methods": [
+        "submit_job",
+        "set_move_ask",
+        "request_priority",
+        "cancel_job",
+        "withdraw_credit",
+        "release_job"
+      ]
+    },
+    "vale": {
+      "accountId": "vale.queue-demo.testnet",
+      "depositTx": "Bgu61xYP5Mr121TGyfWwuAWjgDWjLmq1eLTcvK16P2QY",
+      "functionCallKey": "ed25519:8PnzzrHgKfzaNNxK6n5hiocD31T4rebvveTd6YfPK2Ru",
+      "addKeyTx": "7U2zhjEXhh4sYy2mLcssC69owhRnjasmKBeX8hsavoku",
+      "functionCallKeyFile": ".testnet/season/vale.queue-demo.testnet.market5.queue-demo.testnet.fc.json",
+      "methods": [
+        "submit_job",
+        "set_move_ask",
+        "request_priority",
+        "cancel_job",
+        "withdraw_credit",
+        "release_job"
+      ]
+    },
+    "juno": {
+      "accountId": "juno.queue-demo.testnet",
+      "depositTx": "CX23jbt7ohQeVz9RS98TXrE88XXS5vTJ7an51cb5rxwT",
+      "functionCallKey": "ed25519:Fah6yAVnB97tSyC73WnUpCRxmh1hQvMKigEkDRV4J3EL",
+      "addKeyTx": "FCA8jQZvXcJwTFrsZ7nEhLQmB8qfaFT3vmadpsfFg5eg",
+      "functionCallKeyFile": ".testnet/season/juno.queue-demo.testnet.market5.queue-demo.testnet.fc.json",
+      "methods": [
+        "submit_job",
+        "set_move_ask",
+        "request_priority",
+        "cancel_job",
+        "withdraw_credit",
+        "release_job"
+      ]
+    },
+    "orion": {
+      "accountId": "orion.queue-demo.testnet",
+      "depositTx": "4WUdMji4YQzmeMsTn14cujdBaZfge7d44of7oFUox1T3",
+      "functionCallKey": "ed25519:Djf7Y2qpH3YceG3zRnPiYFkieiLVvsGeXPC5SwEDTAwH",
+      "addKeyTx": "4nYpUmjugUkUZcHKyFL861Fx8cYEHiM38Jyc8wtcqfGn",
+      "functionCallKeyFile": ".testnet/season/orion.queue-demo.testnet.market5.queue-demo.testnet.fc.json",
+      "methods": [
+        "submit_job",
+        "set_move_ask",
+        "request_priority",
+        "cancel_job",
+        "withdraw_credit",
+        "release_job"
+      ]
+    },
+    "lyra": {
+      "accountId": "lyra.queue-demo.testnet",
+      "depositTx": "ZX4hXEV8eoUsEo3mizCsuMTjEFeF12iiyu63tWPYed1",
+      "functionCallKey": "ed25519:E8jHcqPaa6znkNegwPhE9feoTrB1QX23yhHgJw1A6Rk7",
+      "addKeyTx": "HMbnNRU3kVGHBpA59z6iMrkWGx7g8NBUzr4QmNoqTjHE",
+      "functionCallKeyFile": ".testnet/season/lyra.queue-demo.testnet.market5.queue-demo.testnet.fc.json",
+      "methods": [
+        "submit_job",
+        "set_move_ask",
+        "request_priority",
+        "cancel_job",
+        "withdraw_credit",
+        "release_job"
+      ]
+    },
+    "sable": {
+      "accountId": "sable.queue-demo.testnet",
+      "depositTx": "Bg9X4WdEcS4vTgV2iZuTRsH1FtfubhrNvYTBAjJvGUCs",
+      "functionCallKey": "ed25519:9PREnUTntS91Pat8T8s618oc1H2mTXkiqd5DS1hUwzJG",
+      "addKeyTx": "N6gyHbux2JpfwjvzTJWEZmHahzMxWoUUC9LCDaFURGB",
+      "functionCallKeyFile": ".testnet/season/sable.queue-demo.testnet.market5.queue-demo.testnet.fc.json",
+      "methods": [
+        "submit_job",
+        "set_move_ask",
+        "request_priority",
+        "cancel_job",
+        "withdraw_credit",
+        "release_job"
+      ]
+    }
+  },
+  "operatorKeyFile": ".testnet/worker.queue-demo.testnet.json",
+  "redeploys": [
+    {
+      "from": "9e207d849157b731cb66275fbd8333f91a1cab6e8b2a684e3a8caf31e0459aa4",
+      "to": "cb6999b9c121cfda20229099a98e08f2432865f0e1be5536d9b10f85e394c00a",
+      "tx": "9PZts5airWPx37UsG34QkaUtSgZYTUNJ8eDqPxkk4Cak",
+      "at": "2026-11-14T22:00:12.104Z"
+    }
+  ],
+  "clientsTx": "H3GAFLK3iTWkFggZ6rsA8cs1yfxD3JTaSvhAJnKenxYy",
+  "clients": [
+    "kestrel.queue-demo.testnet",
+    "mira.queue-demo.testnet",
+    "atlas.queue-demo.testnet",
+    "vale.queue-demo.testnet",
+    "juno.queue-demo.testnet",
+    "orion.queue-demo.testnet",
+    "lyra.queue-demo.testnet",
+    "sable.queue-demo.testnet"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "job": 247,
+  "source": "near-ai",
+  "chatId": "848c7d21bcaa43a4abf26e5e01fe96ae",
+  "latencyMs": 854,
+  "usage": {
+    "prompt_tokens": 102,
+    "completion_tokens": 133
+  },
+  "requestSha256": "fd6e5b769c3aebfd7134654335f4837332cecbed55a13a8a7b039e547e603522",
+  "responseSha256": "c1068f35a40124bca39308c1d1a2be4c930851db0a6d7408139bddc4f35a9147",
+  "response": "{\"id\":\"848c7d21bcaa43a4abf26e5e01fe96ae\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"1. Time-slicing: Preemptively switches contexts between requests to ensure fairness, but incurs high latency due to frequent context-switching overhead.\\n2. Weighted Fair Queuing: Assigns priority weights to different user tiers or models to control bandwidth share, but requires accurate estimation of request complexity for correct weighting.\\n3. Token-level scheduling: Dynamically allocates compute based on the number of tokens generated per request, optimizing throughput but complicating latency guarantees for short queries.\\n4. Speculative decoding with shared KV-cache: Allows multiple requests to share cached key-value states to reduce redundant computation, but introduces synchronization overhead and memory fragmentation risks.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794601036,\"usage\":{\"prompt_tokens\":102,\"total_tokens\":235,\"completion_tokens\":133,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:fd6e5b769c3aebfd7134654335f4837332cecbed55a13a8a7b039e547e603522:c1068f35a40124bca39308c1d1a2be4c930851db0a6d7408139bddc4f35a9147",
+    "signature": "94520efb87f6407d2151483e13a8e3a9e29d8345a688b19ea3e0724f0c946882db79eeee2bf5ab8bddc6d5405f964e40e468c983925c37e6813b76af9fe67408",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "94520efb87f6407d2151483e13a8e3a9e29d8345a688b19ea3e0724f0c946882db79eeee2bf5ab8bddc6d5405f964e40e468c983925c37e6813b76af9fe67408"
+  }
+}

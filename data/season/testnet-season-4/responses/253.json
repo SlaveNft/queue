@@ -1,0 +1,26 @@
+{
+  "job": 253,
+  "source": "near-ai",
+  "chatId": "dbbfbaa8a56b45ab8ca6a98d0e293917",
+  "latencyMs": 634,
+  "usage": {
+    "prompt_tokens": 102,
+    "completion_tokens": 69
+  },
+  "requestSha256": "f05541883aa0b2e52f9c7709c563849fb172827f66b5dcad7076ae9b563e5512",
+  "responseSha256": "d74ffdc7a5e590c22d97a8e1b55ef130128614962a57bcf3c54c8f608234270c",
+  "response": "{\"id\":\"dbbfbaa8a56b45ab8ca6a98d0e293917\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"We are piloting priority queues for AI agents on testnet. This feature allows agents to request faster processing during high traffic. It is a controlled experiment to improve reliability. Participation is optional. Monitor performance metrics closely. Feedback helps us refine the system for future mainnet deployment. Please report any latency issues or unexpected behavior to the development team.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794601148,\"usage\":{\"prompt_tokens\":102,\"total_tokens\":171,\"completion_tokens\":69,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:f05541883aa0b2e52f9c7709c563849fb172827f66b5dcad7076ae9b563e5512:d74ffdc7a5e590c22d97a8e1b55ef130128614962a57bcf3c54c8f608234270c",
+    "signature": "75d7c15b0bfd2ffe96eed016a659b63c0c6ffefe8193cb3ba451ee6551ea1768e17bdde5ac919648c3a80a840097c499a47a81fc9a673ea156eb5cb70855de0d",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "75d7c15b0bfd2ffe96eed016a659b63c0c6ffefe8193cb3ba451ee6551ea1768e17bdde5ac919648c3a80a840097c499a47a81fc9a673ea156eb5cb70855de0d"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "job": 246,
+  "source": "near-ai",
+  "chatId": "25c675848c7c40a2834b29a9c23c9d03",
+  "latencyMs": 1018,
+  "usage": {
+    "prompt_tokens": 103,
+    "completion_tokens": 61
+  },
+  "requestSha256": "245079700c7df00ae434000d7378ed18ec652fbc6bd1c6c0aec709c996625fd6",
+  "responseSha256": "065d8ebe4884e33bb90faceafc23508e91eb0cb878d7a4465bda3c6324dc6425",
+  "response": "{\"id\":\"25c675848c7c40a2834b29a9c23c9d03\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"We are piloting priority queues for AI agents on testnet. This update allows agents to manage job ordering more effectively, ensuring critical tasks are processed first. The feature is currently available for testing. Please review the documentation for implementation details and report any issues to help us refine the system before general availability.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794601025,\"usage\":{\"prompt_tokens\":103,\"total_tokens\":164,\"completion_tokens\":61,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:245079700c7df00ae434000d7378ed18ec652fbc6bd1c6c0aec709c996625fd6:065d8ebe4884e33bb90faceafc23508e91eb0cb878d7a4465bda3c6324dc6425",
+    "signature": "c6f78919bc230d276437abcfeca1d5f82809f208bc9e855ef2bc5fadf69744ad9c080e62fb3c3f10dda61663913b38297bae7c4ef13689f683cc4dab2284570c",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "c6f78919bc230d276437abcfeca1d5f82809f208bc9e855ef2bc5fadf69744ad9c080e62fb3c3f10dda61663913b38297bae7c4ef13689f683cc4dab2284570c"
+  }
+}

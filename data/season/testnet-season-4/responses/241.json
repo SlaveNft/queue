@@ -1,0 +1,26 @@
+{
+  "job": 241,
+  "source": "near-ai",
+  "chatId": "51171a5eb5c246cc9ba17b29ede4f3fa",
+  "latencyMs": 927,
+  "usage": {
+    "prompt_tokens": 116,
+    "completion_tokens": 45
+  },
+  "requestSha256": "7b5c0c708fca3b9dd50cbce73b0475806405b2ccc2d89ebc0b20328303da6d84",
+  "responseSha256": "a9e2eea812d22813d1851803f103cfb63d2a9535983c66ed8ae85929f1bd9b39",
+  "response": "{\"id\":\"51171a5eb5c246cc9ba17b29ede4f3fa\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"GMV rose 4% while refunds surged 11%, pressuring margins.\\nCustomer satisfaction dipped as NPS fell from 41 to 38.\\nCustomer acquisition costs remained flat during this period.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600957,\"usage\":{\"prompt_tokens\":116,\"total_tokens\":161,\"completion_tokens\":45,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:7b5c0c708fca3b9dd50cbce73b0475806405b2ccc2d89ebc0b20328303da6d84:a9e2eea812d22813d1851803f103cfb63d2a9535983c66ed8ae85929f1bd9b39",
+    "signature": "541a1137fd22a870bd4b8ca1a34332d4629b17922f3854030b231e0a9cbdaf2105dfd1332149510d63ff162584340b9b5a30fea7c68a3e3a4c532dc0a80aa70e",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "541a1137fd22a870bd4b8ca1a34332d4629b17922f3854030b231e0a9cbdaf2105dfd1332149510d63ff162584340b9b5a30fea7c68a3e3a4c532dc0a80aa70e"
+  }
+}

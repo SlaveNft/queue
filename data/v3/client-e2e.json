@@ -1,0 +1,80 @@
+{
+  "generatedBy": "scripts/v3/client-e2e.mjs",
+  "contractId": "market5.queue-demo.testnet",
+  "agent": "mira.queue-demo.testnet",
+  "operator": "worker.queue-demo.testnet",
+  "startedAt": "2026-11-14T22:10:24.282Z",
+  "finishedAt": "2026-11-14T22:10:51.792Z",
+  "jobId": 25,
+  "jobStatus": "DONE",
+  "balanceBeforeYocto": "33190000000000000000000",
+  "balanceAfterYocto": "30190000000000000000000",
+  "spentFromBalanceYocto": "3000000000000000000000",
+  "bondYocto": "1000000000000000000000",
+  "rewardYocto": "2000000000000000000000",
+  "costYocto": "2000000000000000000000",
+  "complete": true,
+  "steps": [
+    {
+      "step": 0,
+      "label": "operator heartbeat (the contract takes no work while the worker is silent)",
+      "signer": "worker.queue-demo.testnet",
+      "method": "heartbeat",
+      "tx": "9kbT6yZ7FvfvwAK2qQUWeS73WtW7X6tkvsNtST91J1oP",
+      "ok": true,
+      "error": null,
+      "events": []
+    },
+    {
+      "step": 1,
+      "label": "agent submits through the client (function-call key, paid from its balance)",
+      "signer": "mira.queue-demo.testnet",
+      "method": "submit_job",
+      "tx": "DxTfdpWu9ktwajuUYiGjDhG3hbdCXXhmEbFUYWxsxbmN",
+      "ok": true,
+      "error": null,
+      "events": [
+        "job_submitted"
+      ],
+      "job_id": 25
+    },
+    {
+      "step": 2,
+      "label": "operator starts the head of the queue",
+      "signer": "worker.queue-demo.testnet",
+      "method": "start_next",
+      "tx": "4oAx7BibX6huRLhPFvhseGqSx7mkzmydvuF8bqJjNdz9",
+      "ok": true,
+      "error": null,
+      "events": [
+        "job_started"
+      ]
+    },
+    {
+      "step": 3,
+      "label": "operator settles it on time",
+      "signer": "worker.queue-demo.testnet",
+      "method": "complete_job",
+      "tx": "4ftwqsz3DpeCiFXZHYjiVgobtSUf7SuA3J22o6Ecbz3Q",
+      "ok": true,
+      "error": null,
+      "events": [
+        "job_completed"
+      ],
+      "job_id": 25
+    },
+    {
+      "step": 4,
+      "label": "agent releases the finished record (storage deposit back)",
+      "signer": "mira.queue-demo.testnet",
+      "method": "release_job",
+      "tx": "C1ZgdxXZZVE1CNWsAmocvePgRAn4kGaH3eQ6BM6JdR6t",
+      "ok": true,
+      "error": null,
+      "events": [
+        "job_released"
+      ],
+      "job_id": 25
+    }
+  ]
+}

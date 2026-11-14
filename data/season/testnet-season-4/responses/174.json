@@ -1,0 +1,26 @@
+{
+  "job": 174,
+  "source": "near-ai",
+  "chatId": "8f792eb6f2b14b19b7fd7f5d93df272e",
+  "latencyMs": 642,
+  "usage": {
+    "prompt_tokens": 102,
+    "completion_tokens": 70
+  },
+  "requestSha256": "7f975be67b90d562e8792013beb67458950d578b5e1daff1114e8ada4acb1a3a",
+  "responseSha256": "ff0a5ea81cc7f53b701e6c0849c43972c7060bb52486d23741594c13726189d7",
+  "response": "{\"id\":\"8f792eb6f2b14b19b7fd7f5d93df272e\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"1. Verify the merchant’s legal entity registration and valid business license.\\n2. Conduct enhanced due diligence on beneficial owners and key management.\\n3. Screen the merchant and its owners against EU sanctions and PEP lists.\\n4. Assess the merchant’s business model for high-risk activity compliance (e.g., AML/KYC policies).\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600169,\"usage\":{\"prompt_tokens\":102,\"total_tokens\":172,\"completion_tokens\":70,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:7f975be67b90d562e8792013beb67458950d578b5e1daff1114e8ada4acb1a3a:ff0a5ea81cc7f53b701e6c0849c43972c7060bb52486d23741594c13726189d7",
+    "signature": "2fc8c262b5d510882b830fc8d8119f5386f4d7576c3072d65f2277b5841ba3edaff8eb2b1e8b5839a30c202dde382cdde64fbb51b4c566f7e91f4127887b5703",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "2fc8c262b5d510882b830fc8d8119f5386f4d7576c3072d65f2277b5841ba3edaff8eb2b1e8b5839a30c202dde382cdde64fbb51b4c566f7e91f4127887b5703"
+  }
+}

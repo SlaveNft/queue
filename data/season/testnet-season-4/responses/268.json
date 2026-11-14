@@ -1,0 +1,26 @@
+{
+  "job": 268,
+  "source": "near-ai",
+  "chatId": "21902d1e5f344cd789e3da9666ff339a",
+  "latencyMs": 7615,
+  "usage": {
+    "prompt_tokens": 129,
+    "completion_tokens": 102
+  },
+  "requestSha256": "624f3ed3165e6826ae39acc665979cfef408c5fafe6771d57a6c399c8027796d",
+  "responseSha256": "96b5feab5806481b2bd580d0dab9416c9d08e138833d68b046587a859ff3b3c3",
+  "response": "{\"id\":\"21902d1e5f344cd789e3da9666ff339a\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The repeated timeouts from a single PSP suggest a connectivity issue or PSP-side processing bottleneck rather than transient network glitches.\\nVerify the PSP's operational status and recent incident reports to confirm if they are experiencing known outages or latency spikes.\\nCheck local gateway logs for specific HTTP status codes (e.g., 504 Gateway Timeout) to distinguish between network drops and server-side delays.\\nIf the PSP is healthy, escalate to their support team with the specific timestamps and transaction IDs to request backend investigation.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794601321,\"usage\":{\"prompt_tokens\":129,\"total_tokens\":231,\"completion_tokens\":102,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:624f3ed3165e6826ae39acc665979cfef408c5fafe6771d57a6c399c8027796d:96b5feab5806481b2bd580d0dab9416c9d08e138833d68b046587a859ff3b3c3",
+    "signature": "4af33fa03af5423de9b4459bd03a92fc86a07da54380c8f1da091beec6a8cf4b328388cdfb5033434db1fa06c197c744bb41d9536172aff7ef2cc285a9f83004",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "4af33fa03af5423de9b4459bd03a92fc86a07da54380c8f1da091beec6a8cf4b328388cdfb5033434db1fa06c197c744bb41d9536172aff7ef2cc285a9f83004"
+  }
+}

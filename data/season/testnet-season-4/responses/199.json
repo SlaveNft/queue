@@ -1,0 +1,26 @@
+{
+  "job": 199,
+  "source": "near-ai",
+  "chatId": "aecfd71d14ab4fe08893b2158a432d2e",
+  "latencyMs": 1177,
+  "usage": {
+    "prompt_tokens": 129,
+    "completion_tokens": 92
+  },
+  "requestSha256": "07a91449ea4a031053700deb30d5f218a25ef807c95da2506c93a4bc903c34d9",
+  "responseSha256": "f9968f3cb997e5bd548ad503c4891f3c93f941490764753cf12f3835ef45c413",
+  "response": "{\"id\":\"aecfd71d14ab4fe08893b2158a432d2e\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The clustered timeouts from a single PSP suggest a connectivity issue or PSP-side processing failure rather than transient network glitches.\\nVerify the PSP's operational status and recent incident reports to confirm if they are experiencing outages or maintenance.\\nCheck your own outbound firewall rules and IP allowlists to ensure no recent changes are blocking or throttling their responses.\\nIf the PSP is healthy, escalate to their support team with the specific timestamps and transaction IDs for immediate investigation.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600435,\"usage\":{\"prompt_tokens\":129,\"total_tokens\":221,\"completion_tokens\":92,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:07a91449ea4a031053700deb30d5f218a25ef807c95da2506c93a4bc903c34d9:f9968f3cb997e5bd548ad503c4891f3c93f941490764753cf12f3835ef45c413",
+    "signature": "5d7ca1724fd27a56a9bac2bc3ad9f4dc53941c230817615ab7261563bbd20c5b73c10951130cf1c11f4bdc20a2f6094ce8a830e25c8ad9a1664531c8349f520e",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "5d7ca1724fd27a56a9bac2bc3ad9f4dc53941c230817615ab7261563bbd20c5b73c10951130cf1c11f4bdc20a2f6094ce8a830e25c8ad9a1664531c8349f520e"
+  }
+}

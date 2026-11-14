@@ -1,0 +1,46 @@
+{
+  "name": "@queue/web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "QUEUE operations console",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 4178",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4178",
+    "typecheck": "tsc -b",
+    "test": "node --import tsx --test test/*.test.ts",
+    "render:explainer": "remotion render remotion/index.ts QueueExplainer ../../docs/media/queue-explainer.mp4 --codec=h264 --crf=20 && remotion render remotion/index.ts QueueExplainerVertical ../../docs/media/queue-explainer-vertical.mp4 --codec=h264 --crf=20",
+    "studio": "remotion studio remotion/index.ts"
+  },
+  "dependencies": {
+    "@fontsource-variable/inconsolata": "^5.3.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/manrope": "^5.2.10",
+    "@fontsource-variable/nunito": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.2.7",
+    "@fontsource/instrument-serif": "^5.2.6",
+    "@queue/core": "*",
+    "@queue/ledger": "*",
+    "@remotion/player": "4.0.538",
+    "@ui-sdk/core": "0.1.0-beta.1",
+    "@ui-sdk/react": "0.1.0-beta.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.12",
+    "lucide-react": "^0.468.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "remotion": "4.0.538"
+  },
+  "devDependencies": {
+    "@remotion/cli": "4.0.538",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.0.4",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.2"
+  }
+}

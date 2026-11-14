@@ -1,0 +1,6 @@
+# near-sdk 5.30 only routes panics to the NEAR host (`panic_utf8`) when the `near` cfg is set,
+# which `cargo near build` does for you. A plain `cargo build` without it still produces a
+# working contract, but every refusal surfaces on chain as an anonymous
+# "WebAssembly trap: unreachable" instead of the contract's own reason. Keep this flag.
+[target.wasm32-unknown-unknown]
+rustflags = ["--cfg", "near"]

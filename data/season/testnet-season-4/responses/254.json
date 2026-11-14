@@ -1,0 +1,26 @@
+{
+  "job": 254,
+  "source": "near-ai",
+  "chatId": "7b2974e57f7a4b308f873c7e1d830f17",
+  "latencyMs": 1231,
+  "usage": {
+    "prompt_tokens": 98,
+    "completion_tokens": 69
+  },
+  "requestSha256": "45eb906e0baf64dc524e5eeb839863abc622af8a1371ae9fe89541a87f45f96e",
+  "responseSha256": "187b0b18353b083f593f60505c20f03960edd64b74e2741f3ff1be528fc5999c",
+  "response": "{\"id\":\"7b2974e57f7a4b308f873c7e1d830f17\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"I cannot access real-time monitoring data or specific incident logs for `market4.queue-demo.testnet` or Juno testnet season 4. To summarize last week's latency incidents for your ops note, please provide the specific incident details, timestamps, or error logs.\\n\\nOnce provided, I can format them into 3 concise bullets.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794601163,\"usage\":{\"prompt_tokens\":98,\"total_tokens\":167,\"completion_tokens\":69,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:45eb906e0baf64dc524e5eeb839863abc622af8a1371ae9fe89541a87f45f96e:187b0b18353b083f593f60505c20f03960edd64b74e2741f3ff1be528fc5999c",
+    "signature": "afabee370c0e4de8a7adabfe4229338aa7e8a87b6d96320fca5214a167b83862e3c72efe8b3c166c195945f2f618b0e8ebabfbe64adcbd51cd9345c4f0ca1e04",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "afabee370c0e4de8a7adabfe4229338aa7e8a87b6d96320fca5214a167b83862e3c72efe8b3c166c195945f2f618b0e8ebabfbe64adcbd51cd9345c4f0ca1e04"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "job": 155,
+  "source": "near-ai",
+  "chatId": "1306d25055b14fe584499b2db7cb3468",
+  "latencyMs": 984,
+  "usage": {
+    "prompt_tokens": 104,
+    "completion_tokens": 36
+  },
+  "requestSha256": "51df44c97aed93cebc65acb1ae7fd6fef51c6f1d05210e804daf579c98348118",
+  "responseSha256": "861483bc66d5b2dcc307dc1776d24608c8e951dc835dc77f264a9c82928cd6aa",
+  "response": "{\"id\":\"1306d25055b14fe584499b2db7cb3468\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"Rates remain flat across the board.\\nOil climbs 3% on fresh momentum.\\nA large tech firm beats earnings after hours.\\nPre-open sentiment leans cautiously bullish.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794599904,\"usage\":{\"prompt_tokens\":104,\"total_tokens\":140,\"completion_tokens\":36,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:51df44c97aed93cebc65acb1ae7fd6fef51c6f1d05210e804daf579c98348118:861483bc66d5b2dcc307dc1776d24608c8e951dc835dc77f264a9c82928cd6aa",
+    "signature": "c70d59d07792671ec35491685df61ac9bd34e2c3987d01c9f520c623331d48a0e363c77b7ff8d7346f7f3b8ff2f8c6282f98325afa472a9f4859915f46d6a90a",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "c70d59d07792671ec35491685df61ac9bd34e2c3987d01c9f520c623331d48a0e363c77b7ff8d7346f7f3b8ff2f8c6282f98325afa472a9f4859915f46d6a90a"
+  }
+}

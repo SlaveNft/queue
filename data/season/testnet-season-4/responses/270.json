@@ -1,0 +1,26 @@
+{
+  "job": 270,
+  "source": "near-ai",
+  "chatId": "559ca0c41f80423bbdb2858ad4162b88",
+  "latencyMs": 1040,
+  "usage": {
+    "prompt_tokens": 129,
+    "completion_tokens": 74
+  },
+  "requestSha256": "08516f1d9fd2d6e107478a8c2eaece35670dc552ab39dcdcf64a6445f5449203",
+  "responseSha256": "3027154642ee974a85089d973f1efeec1dc34df384c6d6b63f76bac13ddc9679",
+  "response": "{\"id\":\"559ca0c41f80423bbdb2858ad4162b88\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The most likely cause is a persistent network connectivity issue or PSP-side outage preventing transaction confirmation.\\nThe timeouts are clustered closely, suggesting a systemic failure rather than transient individual errors.\\nCheck the PSP’s operational status page or support channels for known outages or maintenance windows.\\nVerify local network connectivity and firewall rules to ensure no outbound block is affecting the PSP endpoint.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794601338,\"usage\":{\"prompt_tokens\":129,\"total_tokens\":203,\"completion_tokens\":74,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:08516f1d9fd2d6e107478a8c2eaece35670dc552ab39dcdcf64a6445f5449203:3027154642ee974a85089d973f1efeec1dc34df384c6d6b63f76bac13ddc9679",
+    "signature": "e1dd7a69314ad6ff160d51b9e2b76a27bca59c50a188a0120c9e7318a236ba0968e5f76db759830f9e157094a429f88406e72004d0a67044792558d3c1aa3007",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "e1dd7a69314ad6ff160d51b9e2b76a27bca59c50a188a0120c9e7318a236ba0968e5f76db759830f9e157094a429f88406e72004d0a67044792558d3c1aa3007"
+  }
+}

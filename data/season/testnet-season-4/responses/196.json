@@ -1,0 +1,26 @@
+{
+  "job": 196,
+  "source": "near-ai",
+  "chatId": "7cf4651b310d431cb74ba0c68753f587",
+  "latencyMs": 868,
+  "usage": {
+    "prompt_tokens": 125,
+    "completion_tokens": 118
+  },
+  "requestSha256": "35ce284d9c170d3ee98a511c1e3b924ab21dd3c36f2a6710b2f248ea1280a6e8",
+  "responseSha256": "21c2a74d548f5020b551e276f0be59677ed56e83003a62c841cad9808147088b",
+  "response": "{\"id\":\"7cf4651b310d431cb74ba0c68753f587\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"**Likely Cause:** Cache invalidation storm or key collision due to a schema change in the checkout payload, causing cache misses and increased database load.\\n\\n**Ordered Steps:**\\n1. **Rollback** deploy 4412 immediately to restore p95 latency and cache hit rates.\\n2. **Analyze** cache keys and invalidation logic in deploy 4412 to identify the mismatch or missing invalidation trigger.\\n3. **Fix** the cache key generation or invalidation strategy, then re-deploy with monitoring for cache hit rate recovery.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600398,\"usage\":{\"prompt_tokens\":125,\"total_tokens\":243,\"completion_tokens\":118,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:35ce284d9c170d3ee98a511c1e3b924ab21dd3c36f2a6710b2f248ea1280a6e8:21c2a74d548f5020b551e276f0be59677ed56e83003a62c841cad9808147088b",
+    "signature": "8978baa39b5aef7cca931f9211753568bf3945eb06eef3ced5f869b1beb3fa94b4ffa6ba9ee5cb22d89358c03fcd034d0f90088878ba7390ed7fa7a0672ada07",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "8978baa39b5aef7cca931f9211753568bf3945eb06eef3ced5f869b1beb3fa94b4ffa6ba9ee5cb22d89358c03fcd034d0f90088878ba7390ed7fa7a0672ada07"
+  }
+}

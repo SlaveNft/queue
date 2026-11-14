@@ -1,0 +1,26 @@
+{
+  "job": 180,
+  "source": "near-ai",
+  "chatId": "249b5537a7c5433e94f3baa17784ec2b",
+  "latencyMs": 1284,
+  "usage": {
+    "prompt_tokens": 101,
+    "completion_tokens": 146
+  },
+  "requestSha256": "235a46a314bfb12fe8e9166ee98aa180bc1140259024ff3e74826deb3685264d",
+  "responseSha256": "b0935309f1ad227652e62078608bbda46de5cda2eeb2c6520ad9a98d96aa4eb8",
+  "response": "{\"id\":\"249b5537a7c5433e94f3baa17784ec2b\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"1. **Time-Slicing (Round-Robin):** Assigns fixed time quanta to each request, trading off high latency for guaranteed fairness and isolation.\\n2. **Proportional Fairness (Weighted):** Allocates resources based on user-defined weights or priority levels, trading off strict equality for optimized throughput of high-priority jobs.\\n3. **Earliest Deadline First (EDF):** Prioritizes requests with the nearest deadline, trading off predictability for minimized tail latency and better adherence to SLAs.\\n4. **Fair Queuing (e.g., WFQ):** Serves packets or requests in proportion to their share of bandwidth, trading off implementation complexity for smooth, jitter-free service distribution.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600234,\"usage\":{\"prompt_tokens\":101,\"total_tokens\":247,\"completion_tokens\":146,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:235a46a314bfb12fe8e9166ee98aa180bc1140259024ff3e74826deb3685264d:b0935309f1ad227652e62078608bbda46de5cda2eeb2c6520ad9a98d96aa4eb8",
+    "signature": "82ffb2b2ea0cf2dc487b3d4c30f1b8bcf78fa465730e52294169b29df886093a040948dc18458ea3e2e57f124e011ff2f30bd9c6d0f2d94f00e6edf9cbe09806",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "82ffb2b2ea0cf2dc487b3d4c30f1b8bcf78fa465730e52294169b29df886093a040948dc18458ea3e2e57f124e011ff2f30bd9c6d0f2d94f00e6edf9cbe09806"
+  }
+}

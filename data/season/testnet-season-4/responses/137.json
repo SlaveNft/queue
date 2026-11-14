@@ -1,0 +1,26 @@
+{
+  "job": 137,
+  "source": "near-ai",
+  "chatId": "819343f6dbb541838a5177da7c89de96",
+  "latencyMs": 625,
+  "usage": {
+    "prompt_tokens": 129,
+    "completion_tokens": 84
+  },
+  "requestSha256": "494ab75107af11c7ca7f00db014e559851450ef8feab5a19ce881a0e2fae625f",
+  "responseSha256": "1cf8e40dedf743bb6a3c76516593f6c1f528035819dfa81206b5989a2ed888eb",
+  "response": "{\"id\":\"819343f6dbb541838a5177da7c89de96\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The most likely cause is a persistent network connectivity issue or PSP-side outage preventing transaction finalization.\\nThe timeouts are spaced closely, suggesting the PSP is unreachable or rejecting requests due to a service disruption.\\nCheck the PSP's status page or API health endpoint to confirm if they are experiencing an outage or degradation.\\nVerify your own network connectivity and firewall rules to ensure no local blocks are interfering with the PSP connection.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794599635,\"usage\":{\"prompt_tokens\":129,\"total_tokens\":213,\"completion_tokens\":84,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:494ab75107af11c7ca7f00db014e559851450ef8feab5a19ce881a0e2fae625f:1cf8e40dedf743bb6a3c76516593f6c1f528035819dfa81206b5989a2ed888eb",
+    "signature": "d9b29e6afd5c20451bd15bacdcfa550c2b249d007880b6c2b50dcd46dccc417a537a06c53b912e12ab663542cda3dd31028e2bd139dbd752f01310b2add69a08",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "d9b29e6afd5c20451bd15bacdcfa550c2b249d007880b6c2b50dcd46dccc417a537a06c53b912e12ab663542cda3dd31028e2bd139dbd752f01310b2add69a08"
+  }
+}

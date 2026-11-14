@@ -1,0 +1,26 @@
+{
+  "job": 257,
+  "source": "near-ai",
+  "chatId": "7d9a41bdf3044dbca8f868639a1f7319",
+  "latencyMs": 610,
+  "usage": {
+    "prompt_tokens": 102,
+    "completion_tokens": 74
+  },
+  "requestSha256": "630ff19073cac137b480114131c1a6025740cb15e97dd265e74abfe315275610",
+  "responseSha256": "9f06ea1d6fb50a11316e83079105cf0ffd61fa2bc14193fe032bd4b17092aa39",
+  "response": "{\"id\":\"7d9a41bdf3044dbca8f868639a1f7319\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"1. Verify the merchant’s legal entity registration and valid EU tax identification number.\\n2. Conduct a comprehensive KYC/KYB check including beneficial ownership and director identification.\\n3. Perform sanctions, PEP, and adverse media screening against global watchlists.\\n4. Assess the merchant’s business model for compliance with EU payment regulations and AML directives.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794601207,\"usage\":{\"prompt_tokens\":102,\"total_tokens\":176,\"completion_tokens\":74,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:630ff19073cac137b480114131c1a6025740cb15e97dd265e74abfe315275610:9f06ea1d6fb50a11316e83079105cf0ffd61fa2bc14193fe032bd4b17092aa39",
+    "signature": "0f3301aaffb86ed05870439d00d5d5c5649ce1ca174af3ec9bf0f66834024d76eb63f09854676c7e18febd57b917f24f8f49d40c6d88e2a7f7c93103fb49170e",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "0f3301aaffb86ed05870439d00d5d5c5649ce1ca174af3ec9bf0f66834024d76eb63f09854676c7e18febd57b917f24f8f49d40c6d88e2a7f7c93103fb49170e"
+  }
+}

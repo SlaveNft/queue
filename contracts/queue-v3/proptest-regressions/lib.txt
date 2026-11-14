@@ -1,0 +1,8 @@
+# Seeds for failure cases proptest has generated in the past. It is
+# automatically read and these particular cases re-run before any
+# novel cases are generated.
+#
+# It is recommended to check this file in to source control so that
+# everyone who runs the test benefits from these saved cases.
+cc d6eed6b1860d669a0d62a63cf21f2e4a51154e80523357190598c52a3fde09a0 # shrinks to acts = [Probe { who: 0, buyer: 0, dur: 4, need: 29, ahead: 0, edge: 1, buyer_edge: Some(1), ask: 0 }, Submit { who: 0, dur: 1, slack: 0, tight: Some(0), ask: 0, from_balance: false }, Buy { pick: 2, cutoff: 0, slot: None }]
+cc ee0a554504544c3b1998621000918cb2bb8d4ef5141a992d039223e0c3c5a5db # shrinks to acts = [Probe { who: 0, buyer: 0, dur: 29, need: 27, ahead: 0, edge: 2, buyer_edge: None, ask: 0 }, Start, SetAsk { pick: 0, ask: 1 }, Submit { who: 0, dur: 1, slack: 0, tight: Some(0), ask: 0, from_balance: false }, Complete { extra: 3 }, Buy { pick: 7, cutoff: 0, slot: None }]

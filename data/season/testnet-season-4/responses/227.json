@@ -1,0 +1,26 @@
+{
+  "job": 227,
+  "source": "near-ai",
+  "chatId": "50a2a633524e4ab4be2724328470deae",
+  "latencyMs": 1190,
+  "usage": {
+    "prompt_tokens": 102,
+    "completion_tokens": 66
+  },
+  "requestSha256": "104bacdfb45f6f61aad666e6b08b71f55eeaa340b448b433b475e40e19502404",
+  "responseSha256": "625ceffb1f0680fa38f3086829dcda7431a4e57bd3bc1cf4aa8241d905fa3892",
+  "response": "{\"id\":\"50a2a633524e4ab4be2724328470deae\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"We are piloting priority queues for AI agents on testnet. This system allows agents to request faster processing during high traffic. Participation is optional. You can opt-in to improve response times for critical tasks. We are monitoring performance to ensure stability. Feedback is welcome as we refine the mechanism for broader deployment in the coming weeks.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600771,\"usage\":{\"prompt_tokens\":102,\"total_tokens\":168,\"completion_tokens\":66,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:104bacdfb45f6f61aad666e6b08b71f55eeaa340b448b433b475e40e19502404:625ceffb1f0680fa38f3086829dcda7431a4e57bd3bc1cf4aa8241d905fa3892",
+    "signature": "62b407af11baaf98c1b4b7c74be873e7d97d08cfa28d2925bb3cb288ffc56dcdf47667ce01ade9e41fa84e6b741e971117e9f36c0ef7a78fed26476a34836f06",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "62b407af11baaf98c1b4b7c74be873e7d97d08cfa28d2925bb3cb288ffc56dcdf47667ce01ade9e41fa84e6b741e971117e9f36c0ef7a78fed26476a34836f06"
+  }
+}

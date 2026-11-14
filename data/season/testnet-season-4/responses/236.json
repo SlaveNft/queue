@@ -1,0 +1,26 @@
+{
+  "job": 236,
+  "source": "near-ai",
+  "chatId": "a3b5ceab35bd4ca69aba455fde4ed5fc",
+  "latencyMs": 867,
+  "usage": {
+    "prompt_tokens": 125,
+    "completion_tokens": 173
+  },
+  "requestSha256": "758ef09f0d71a5e57553db61d7045fe35b9e8535be4c9e655a1bc2383beddeb5",
+  "responseSha256": "6d14aef27367d14f85d48e6b172374a8b6471fa7be64afb5fd2bc69b6df92efa",
+  "response": "{\"id\":\"a3b5ceab35bd4ca69aba455fde4ed5fc\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"**Likely Cause:** The deploy (4412) likely introduced a regression in cache key generation, cache invalidation logic, or a downstream dependency that bypassed the cache, causing increased database load and latency.\\n\\n**Ordered Steps:**\\n\\n1.  **Immediate Mitigation:** Roll back to the previous stable version (pre-deploy 4412) to restore p95 latency and cache hit rates.\\n2.  **Investigation:** Analyze deployment 4412 diffs for changes to cache keys, TTLs, or checkout service dependencies; check error logs for cache misses or downstream timeouts.\\n3.  **Verification & Fix:** After identifying the root cause (e.g., broken cache key hash), fix the code, re-deploy, and monitor p95 latency and cache hit rate to confirm resolution.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600902,\"usage\":{\"prompt_tokens\":125,\"total_tokens\":298,\"completion_tokens\":173,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:758ef09f0d71a5e57553db61d7045fe35b9e8535be4c9e655a1bc2383beddeb5:6d14aef27367d14f85d48e6b172374a8b6471fa7be64afb5fd2bc69b6df92efa",
+    "signature": "372dba565c23f9a6350acb218b9e7d448b0e7611539badbffc8513d30802829143b38c72240b4cc3dd90d692dd8714bf6514b4250b509220f3a5c5eed0a5ef07",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "372dba565c23f9a6350acb218b9e7d448b0e7611539badbffc8513d30802829143b38c72240b4cc3dd90d692dd8714bf6514b4250b509220f3a5c5eed0a5ef07"
+  }
+}

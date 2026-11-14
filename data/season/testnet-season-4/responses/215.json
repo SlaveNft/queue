@@ -1,0 +1,26 @@
+{
+  "job": 215,
+  "source": "near-ai",
+  "chatId": "c73fef0d2de645d8aac88d47ae7828c2",
+  "latencyMs": 1685,
+  "usage": {
+    "prompt_tokens": 102,
+    "completion_tokens": 128
+  },
+  "requestSha256": "01e5071e837798900488f2b88d9dd162cdfd13fdb16c9bf66c90a46295bf121a",
+  "responseSha256": "ff926f2f6ef7fa0df10ff8a6086907e5f4fd6cfe0b8be08b3be0c1d2f7e93caa",
+  "response": "{\"id\":\"c73fef0d2de645d8aac88d47ae7828c2\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"1. Time-slicing: Isolates GPUs into time slots for strict fairness but suffers from high context-switching overhead and idle latency.\\n2. Multi-tenancy batching: Aggregates requests from multiple users into single batches to maximize throughput but risks straggler effects and latency unfairness.\\n3. Priority-based scheduling: Allocates resources based on user tier or job urgency to ensure SLA compliance but can lead to starvation of lower-priority requests.\\n4. Fair queuing (e.g., WFQ): Distributes bandwidth proportionally to weighted shares to guarantee equity but adds complexity in queue management and state tracking.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600630,\"usage\":{\"prompt_tokens\":102,\"total_tokens\":230,\"completion_tokens\":128,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:01e5071e837798900488f2b88d9dd162cdfd13fdb16c9bf66c90a46295bf121a:ff926f2f6ef7fa0df10ff8a6086907e5f4fd6cfe0b8be08b3be0c1d2f7e93caa",
+    "signature": "f10b154f64bae77867e7d0a34353b397a6edb362af243b9b073360803a880ffe8ff35db983116c86c60155af610299c5c6d84784946e331bb4184a59882a5f03",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "f10b154f64bae77867e7d0a34353b397a6edb362af243b9b073360803a880ffe8ff35db983116c86c60155af610299c5c6d84784946e331bb4184a59882a5f03"
+  }
+}

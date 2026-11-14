@@ -1,0 +1,26 @@
+{
+  "job": 172,
+  "source": "near-ai",
+  "chatId": "0629e42a8e694082a76d83ccc085af3c",
+  "latencyMs": 688,
+  "usage": {
+    "prompt_tokens": 103,
+    "completion_tokens": 66
+  },
+  "requestSha256": "ae16c27e5bb0e4b53a3c0bafe8b2f362c2ed5857d6f82285c55c2a1c9a1907c5",
+  "responseSha256": "4af83ad84f2372647139a803c991a04e25c588159e9d75964d7c1e4e9af228ec",
+  "response": "{\"id\":\"0629e42a8e694082a76d83ccc085af3c\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"We are piloting priority queues for AI agents on testnet. This feature allows agents to request faster processing during high traffic. It is a controlled test to evaluate performance improvements and system stability. Feedback from this pilot will help refine the implementation for future mainnet deployment. Please monitor your agent’s response times and report any issues.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600135,\"usage\":{\"prompt_tokens\":103,\"total_tokens\":169,\"completion_tokens\":66,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:ae16c27e5bb0e4b53a3c0bafe8b2f362c2ed5857d6f82285c55c2a1c9a1907c5:4af83ad84f2372647139a803c991a04e25c588159e9d75964d7c1e4e9af228ec",
+    "signature": "648aecbfb04353852a48c2c6ade409b329e981b99301933deb8d43a7068811333985c1ce27b6eee88d732bf1e73834abc025d7f06c3a674a4259a99a9df8f40c",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "648aecbfb04353852a48c2c6ade409b329e981b99301933deb8d43a7068811333985c1ce27b6eee88d732bf1e73834abc025d7f06c3a674a4259a99a9df8f40c"
+  }
+}

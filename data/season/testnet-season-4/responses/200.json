@@ -1,0 +1,26 @@
+{
+  "job": 200,
+  "source": "near-ai",
+  "chatId": "b9b95fa0ce094ada9fdb946819654284",
+  "latencyMs": 645,
+  "usage": {
+    "prompt_tokens": 103,
+    "completion_tokens": 65
+  },
+  "requestSha256": "b44895d2aa0623b69e0073392d314866236ae55baff013b9f29a99ed34193726",
+  "responseSha256": "9a7be0412f26faf8ec3fa7ca71be5789984a23543e278de77b76c133ceea335f",
+  "response": "{\"id\":\"b9b95fa0ce094ada9fdb946819654284\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"We are piloting priority queues for AI agents on testnet. This feature allows high-priority tasks to bypass standard processing lines, ensuring faster execution for critical jobs. The pilot runs until further notice. Monitor performance metrics and report latency issues via our support channel. Feedback helps refine the system before a potential mainnet rollout.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600447,\"usage\":{\"prompt_tokens\":103,\"total_tokens\":168,\"completion_tokens\":65,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:b44895d2aa0623b69e0073392d314866236ae55baff013b9f29a99ed34193726:9a7be0412f26faf8ec3fa7ca71be5789984a23543e278de77b76c133ceea335f",
+    "signature": "299903d8d1034e501aee4b927409edf63abb0e4e0a2e5ead818ee2778903c89ce6f3a17cedcf8bdde6efe55b0fa72058d06a0828de7fd0e52aa424edbdc2d600",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "299903d8d1034e501aee4b927409edf63abb0e4e0a2e5ead818ee2778903c89ce6f3a17cedcf8bdde6efe55b0fa72058d06a0828de7fd0e52aa424edbdc2d600"
+  }
+}

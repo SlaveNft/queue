@@ -1,0 +1,577 @@
+{
+  "what": "paired discrete-event simulation of one worker under six rules",
+  "command": "npx tsx scripts/research/queue-sim.ts --seeds 200 --loads 0.6,0.8,0.95,1.1,1.3,1.6 --markup 1",
+  "assumptions": {
+    "meanDurationSecs": 20,
+    "durationSecs": [
+      8,
+      32
+    ],
+    "deadlineWindow": "2x-15x duration",
+    "valueNear": [
+      0.02,
+      0.1
+    ],
+    "waitCost": "value x U(0.1, 0.9) / deadline window, per second",
+    "gapSecs": 0,
+    "startMarginSecs": 2,
+    "moveMarginSecs": 3,
+    "feeBps": 100,
+    "horizonSecs": 1800,
+    "asks": "true waiting cost x 1"
+  },
+  "results": {
+    "0.6": {
+      "fifo": {
+        "onTimeShare": 0.9682345995768437,
+        "welfareMean": 2.7655187295470385,
+        "welfareGainVsFifo": 0,
+        "welfareGainVsFifoCi95": [
+          0,
+          0
+        ],
+        "shareOfPlannerGain": 0,
+        "worseOffThanFifoShare": 0,
+        "fifoOnTimeMadeLateShare": 0,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 54.435
+      },
+      "edf": {
+        "onTimeShare": 0.993805412730699,
+        "welfareMean": 2.8466523973452103,
+        "welfareGainVsFifo": 0.08113366779817469,
+        "welfareGainVsFifoCi95": [
+          0.07238565650990207,
+          0.09031681992921388
+        ],
+        "shareOfPlannerGain": 0.8984515473564303,
+        "worseOffThanFifoShare": 0.135168540500482,
+        "fifoOnTimeMadeLateShare": 0.0006065902904088264,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 54.435
+      },
+      "smith": {
+        "onTimeShare": 0.9869689952757125,
+        "welfareMean": 2.8558226174271346,
+        "welfareGainVsFifo": 0.09030388788009694,
+        "welfareGainVsFifoCi95": [
+          0.0801866765869169,
+          0.10035003712685216
+        ],
+        "shareOfPlannerGain": 1,
+        "worseOffThanFifoShare": 0.12050325056741532,
+        "fifoOnTimeMadeLateShare": 0.005913529234636716,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 54.435
+      },
+      "blind": {
+        "onTimeShare": 0.9890968445986501,
+        "welfareMean": 2.8031075437256123,
+        "welfareGainVsFifo": 0.037588814178573224,
+        "welfareGainVsFifoCi95": [
+          0.031427389582521184,
+          0.04406090306406415
+        ],
+        "shareOfPlannerGain": 0.4162480161262008,
+        "worseOffThanFifoShare": 0.12684354093200098,
+        "fifoOnTimeMadeLateShare": 0.004781676742689624,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 54.435
+      },
+      "queue-v2": {
+        "onTimeShare": 0.9913154654218276,
+        "welfareMean": 2.855280025587193,
+        "welfareGainVsFifo": 0.08976129604015595,
+        "welfareGainVsFifoCi95": [
+          0.08056713649030325,
+          0.09906923989913834
+        ],
+        "shareOfPlannerGain": 0.9939914897057209,
+        "worseOffThanFifoShare": 0.04445345201351608,
+        "fifoOnTimeMadeLateShare": 0.0009456116258141467,
+        "purchasesPerSeason": 10.22,
+        "compensationPerSeasonNear": 0.023016411900207773,
+        "jobsPerSeason": 54.435
+      },
+      "queue-v3": {
+        "onTimeShare": 0.9916380460669889,
+        "welfareMean": 2.8558846190811233,
+        "welfareGainVsFifo": 0.09036588953408631,
+        "welfareGainVsFifoCi95": [
+          0.08074501688850665,
+          0.10016509172682256
+        ],
+        "shareOfPlannerGain": 1.0006865889768966,
+        "worseOffThanFifoShare": 0.04501796814254834,
+        "fifoOnTimeMadeLateShare": 0.0009456116258141467,
+        "purchasesPerSeason": 10.27,
+        "compensationPerSeasonNear": 0.02353863172000121,
+        "jobsPerSeason": 54.435
+      }
+    },
+    "0.8": {
+      "fifo": {
+        "onTimeShare": 0.93170289225604,
+        "welfareMean": 3.4356566007588487,
+        "welfareGainVsFifo": 0,
+        "welfareGainVsFifoCi95": [
+          0,
+          0
+        ],
+        "shareOfPlannerGain": 0,
+        "worseOffThanFifoShare": 0,
+        "fifoOnTimeMadeLateShare": 0,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 72.48
+      },
+      "edf": {
+        "onTimeShare": 0.9881007208850886,
+        "welfareMean": 3.600836722413045,
+        "welfareGainVsFifo": 0.16518012165419385,
+        "welfareGainVsFifoCi95": [
+          0.15017290468560282,
+          0.18040551716471318
+        ],
+        "shareOfPlannerGain": 0.7170263147308482,
+        "worseOffThanFifoShare": 0.2727048063004507,
+        "fifoOnTimeMadeLateShare": 0.0037446287096495096,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 72.48
+      },
+      "smith": {
+        "onTimeShare": 0.965543004859896,
+        "welfareMean": 3.6660248846846635,
+        "welfareGainVsFifo": 0.23036828392581085,
+        "welfareGainVsFifoCi95": [
+          0.2122982205219469,
+          0.24956558791998545
+        ],
+        "shareOfPlannerGain": 1,
+        "worseOffThanFifoShare": 0.20463870016258912,
+        "fifoOnTimeMadeLateShare": 0.02307931822111466,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 72.48
+      },
+      "blind": {
+        "onTimeShare": 0.9715170411185474,
+        "welfareMean": 3.5156613546025604,
+        "welfareGainVsFifo": 0.08000475384371007,
+        "welfareGainVsFifoCi95": [
+          0.06764816614693003,
+          0.09230327615938445
+        ],
+        "shareOfPlannerGain": 0.3472906620664643,
+        "worseOffThanFifoShare": 0.3482091676247361,
+        "fifoOnTimeMadeLateShare": 0.019799107222910294,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 72.48
+      },
+      "queue-v2": {
+        "onTimeShare": 0.9750402608270409,
+        "welfareMean": 3.622053959289607,
+        "welfareGainVsFifo": 0.18639735853075678,
+        "welfareGainVsFifoCi95": [
+          0.1729473651841084,
+          0.20013680450017346
+        ],
+        "shareOfPlannerGain": 0.8091276948123001,
+        "worseOffThanFifoShare": 0.15825032064258693,
+        "fifoOnTimeMadeLateShare": 0.004616239451917644,
+        "purchasesPerSeason": 25.09,
+        "compensationPerSeasonNear": 0.0650444545742229,
+        "jobsPerSeason": 72.48
+      },
+      "queue-v3": {
+        "onTimeShare": 0.9777866232441788,
+        "welfareMean": 3.6345364849569894,
+        "welfareGainVsFifo": 0.1988798841981377,
+        "welfareGainVsFifoCi95": [
+          0.18449926428962915,
+          0.21361634720282846
+        ],
+        "shareOfPlannerGain": 0.8633127825104003,
+        "worseOffThanFifoShare": 0.162719387479547,
+        "fifoOnTimeMadeLateShare": 0.004272592589296022,
+        "purchasesPerSeason": 26.12,
+        "compensationPerSeasonNear": 0.07959400308590642,
+        "jobsPerSeason": 72.48
+      }
+    },
+    "0.95": {
+      "fifo": {
+        "onTimeShare": 0.8859459873843347,
+        "welfareMean": 3.7513944739718115,
+        "welfareGainVsFifo": 0,
+        "welfareGainVsFifoCi95": [
+          0,
+          0
+        ],
+        "shareOfPlannerGain": 0,
+        "worseOffThanFifoShare": 0,
+        "fifoOnTimeMadeLateShare": 0,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 85.825
+      },
+      "edf": {
+        "onTimeShare": 0.9682785241372212,
+        "welfareMean": 3.9219472294004705,
+        "welfareGainVsFifo": 0.17055275542865939,
+        "welfareGainVsFifoCi95": [
+          0.14766172041570644,
+          0.1919573985605912
+        ],
+        "shareOfPlannerGain": 0.4297111455387588,
+        "worseOffThanFifoShare": 0.4010670468413722,
+        "fifoOnTimeMadeLateShare": 0.019541574276498715,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 85.825
+      },
+      "smith": {
+        "onTimeShare": 0.9317990534194545,
+        "welfareMean": 4.148295408935522,
+        "welfareGainVsFifo": 0.39690093496370804,
+        "welfareGainVsFifoCi95": [
+          0.37028592471747696,
+          0.42350425971944106
+        ],
+        "shareOfPlannerGain": 1,
+        "worseOffThanFifoShare": 0.2575087382976725,
+        "fifoOnTimeMadeLateShare": 0.05052009863233439,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 85.825
+      },
+      "blind": {
+        "onTimeShare": 0.9358592524014763,
+        "welfareMean": 3.8763171693774536,
+        "welfareGainVsFifo": 0.12492269540563888,
+        "welfareGainVsFifoCi95": [
+          0.10662457673853312,
+          0.1426367489594681
+        ],
+        "shareOfPlannerGain": 0.3147452787357672,
+        "worseOffThanFifoShare": 0.547180049976709,
+        "fifoOnTimeMadeLateShare": 0.048146154916945294,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 85.825
+      },
+      "queue-v2": {
+        "onTimeShare": 0.9373772303753057,
+        "welfareMean": 3.970312721515233,
+        "welfareGainVsFifo": 0.21891824754342068,
+        "welfareGainVsFifoCi95": [
+          0.20114624415008808,
+          0.2362474306842546
+        ],
+        "shareOfPlannerGain": 0.5515689892830266,
+        "worseOffThanFifoShare": 0.28194275840198935,
+        "fifoOnTimeMadeLateShare": 0.013594174663833053,
+        "purchasesPerSeason": 38.99,
+        "compensationPerSeasonNear": 0.11211173187115592,
+        "jobsPerSeason": 85.825
+      },
+      "queue-v3": {
+        "onTimeShare": 0.9444898832456022,
+        "welfareMean": 4.004987085282493,
+        "welfareGainVsFifo": 0.25359261131067934,
+        "welfareGainVsFifoCi95": [
+          0.2370158862059317,
+          0.2700016248907037
+        ],
+        "shareOfPlannerGain": 0.6389317559402258,
+        "worseOffThanFifoShare": 0.29553163360793955,
+        "fifoOnTimeMadeLateShare": 0.012730304121803331,
+        "purchasesPerSeason": 42.34,
+        "compensationPerSeasonNear": 0.17601765644751372,
+        "jobsPerSeason": 85.825
+      }
+    },
+    "1.1": {
+      "fifo": {
+        "onTimeShare": 0.8246027391928509,
+        "welfareMean": 3.908438176590769,
+        "welfareGainVsFifo": 0,
+        "welfareGainVsFifoCi95": [
+          0,
+          0
+        ],
+        "shareOfPlannerGain": 0,
+        "worseOffThanFifoShare": 0,
+        "fifoOnTimeMadeLateShare": 0,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 99.485
+      },
+      "edf": {
+        "onTimeShare": 0.9258561561116843,
+        "welfareMean": 4.035412818930915,
+        "welfareGainVsFifo": 0.126974642340142,
+        "welfareGainVsFifoCi95": [
+          0.09487472622997602,
+          0.15659220163743062
+        ],
+        "shareOfPlannerGain": 0.204516553878708,
+        "worseOffThanFifoShare": 0.4886858051814423,
+        "fifoOnTimeMadeLateShare": 0.05163760643070996,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 99.485
+      },
+      "smith": {
+        "onTimeShare": 0.8852487130067975,
+        "welfareMean": 4.52929081630152,
+        "welfareGainVsFifo": 0.6208526397107514,
+        "welfareGainVsFifoCi95": [
+          0.5867477666384522,
+          0.6561300536541065
+        ],
+        "shareOfPlannerGain": 1,
+        "worseOffThanFifoShare": 0.28205832671413755,
+        "fifoOnTimeMadeLateShare": 0.08860239006333295,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 99.485
+      },
+      "blind": {
+        "onTimeShare": 0.8795766107990299,
+        "welfareMean": 4.135259178671269,
+        "welfareGainVsFifo": 0.2268210020804992,
+        "welfareGainVsFifoCi95": [
+          0.1991544091941306,
+          0.25675699669440255
+        ],
+        "shareOfPlannerGain": 0.3653379039930839,
+        "worseOffThanFifoShare": 0.714491651462316,
+        "fifoOnTimeMadeLateShare": 0.09065401878591554,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 99.485
+      },
+      "queue-v2": {
+        "onTimeShare": 0.8724699852897697,
+        "welfareMean": 4.1045162123587655,
+        "welfareGainVsFifo": 0.19607803576799465,
+        "welfareGainVsFifoCi95": [
+          0.1750264929123548,
+          0.21833642062295008
+        ],
+        "shareOfPlannerGain": 0.31582057194658186,
+        "worseOffThanFifoShare": 0.3908690754505299,
+        "fifoOnTimeMadeLateShare": 0.02913401134192952,
+        "purchasesPerSeason": 48.88,
+        "compensationPerSeasonNear": 0.15440733127278367,
+        "jobsPerSeason": 99.485
+      },
+      "queue-v3": {
+        "onTimeShare": 0.8868275384596239,
+        "welfareMean": 4.193824188397693,
+        "welfareGainVsFifo": 0.2853860118069246,
+        "welfareGainVsFifoCi95": [
+          0.265459687414618,
+          0.3048022617575015
+        ],
+        "shareOfPlannerGain": 0.4596678721377151,
+        "worseOffThanFifoShare": 0.41651276900301637,
+        "fifoOnTimeMadeLateShare": 0.02891057073187053,
+        "purchasesPerSeason": 57.575,
+        "compensationPerSeasonNear": 0.34480168456970206,
+        "jobsPerSeason": 99.485
+      }
+    },
+    "1.3": {
+      "fifo": {
+        "onTimeShare": 0.7278504237392266,
+        "welfareMean": 3.887148052543753,
+        "welfareGainVsFifo": 0,
+        "welfareGainVsFifoCi95": [
+          0,
+          0
+        ],
+        "shareOfPlannerGain": 0,
+        "worseOffThanFifoShare": 0,
+        "fifoOnTimeMadeLateShare": 0,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 117.785
+      },
+      "edf": {
+        "onTimeShare": 0.8419019039671357,
+        "welfareMean": 4.006191507511479,
+        "welfareGainVsFifo": 0.119043454967724,
+        "welfareGainVsFifoCi95": [
+          0.08972026322087272,
+          0.15046003634470204
+        ],
+        "shareOfPlannerGain": 0.11679553998146465,
+        "worseOffThanFifoShare": 0.5184148574483193,
+        "fifoOnTimeMadeLateShare": 0.10675054671582522,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 117.785
+      },
+      "smith": {
+        "onTimeShare": 0.8100826017858064,
+        "welfareMean": 4.906394634961337,
+        "welfareGainVsFifo": 1.019246582417583,
+        "welfareGainVsFifoCi95": [
+          0.9741768522846767,
+          1.062445159743149
+        ],
+        "shareOfPlannerGain": 1,
+        "worseOffThanFifoShare": 0.2875272102043696,
+        "fifoOnTimeMadeLateShare": 0.14433055714903786,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 117.785
+      },
+      "blind": {
+        "onTimeShare": 0.7846351396404445,
+        "welfareMean": 4.516997357446292,
+        "welfareGainVsFifo": 0.6298493049025389,
+        "welfareGainVsFifoCi95": [
+          0.5785407052487334,
+          0.6818439662251191
+        ],
+        "shareOfPlannerGain": 0.6179557682779564,
+        "worseOffThanFifoShare": 0.8041877011480634,
+        "fifoOnTimeMadeLateShare": 0.14636661470492937,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 117.785
+      },
+      "queue-v2": {
+        "onTimeShare": 0.7624963072920699,
+        "welfareMean": 4.007762097575458,
+        "welfareGainVsFifo": 0.12061404503170362,
+        "welfareGainVsFifoCi95": [
+          0.09940069243003462,
+          0.14192348260453302
+        ],
+        "shareOfPlannerGain": 0.11833647236335626,
+        "worseOffThanFifoShare": 0.441765456134634,
+        "fifoOnTimeMadeLateShare": 0.045081963035827004,
+        "purchasesPerSeason": 52.865,
+        "compensationPerSeasonNear": 0.1842598172712912,
+        "jobsPerSeason": 117.785
+      },
+      "queue-v3": {
+        "onTimeShare": 0.7895825415241343,
+        "welfareMean": 4.2746299275755,
+        "welfareGainVsFifo": 0.38748187503174947,
+        "welfareGainVsFifoCi95": [
+          0.35957985140563153,
+          0.41646183869594067
+        ],
+        "shareOfPlannerGain": 0.3801649980642261,
+        "worseOffThanFifoShare": 0.4697033918928613,
+        "fifoOnTimeMadeLateShare": 0.05061121032510288,
+        "purchasesPerSeason": 71.16,
+        "compensationPerSeasonNear": 0.698074540126003,
+        "jobsPerSeason": 117.785
+      }
+    },
+    "1.6": {
+      "fifo": {
+        "onTimeShare": 0.5980704833067657,
+        "welfareMean": 3.704130333419089,
+        "welfareGainVsFifo": 0,
+        "welfareGainVsFifoCi95": [
+          0,
+          0
+        ],
+        "shareOfPlannerGain": 0,
+        "worseOffThanFifoShare": 0,
+        "fifoOnTimeMadeLateShare": 0,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 144.565
+      },
+      "edf": {
+        "onTimeShare": 0.7274695463259384,
+        "welfareMean": 3.972665115206356,
+        "welfareGainVsFifo": 0.26853478178726464,
+        "welfareGainVsFifoCi95": [
+          0.23180779380774358,
+          0.30297084820442605
+        ],
+        "shareOfPlannerGain": 0.1698623970963914,
+        "worseOffThanFifoShare": 0.4811772895645031,
+        "fifoOnTimeMadeLateShare": 0.1623541509553429,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 144.565
+      },
+      "smith": {
+        "onTimeShare": 0.7104648671647754,
+        "welfareMean": 5.285026319685434,
+        "welfareGainVsFifo": 1.5808959862663416,
+        "welfareGainVsFifoCi95": [
+          1.528388477491684,
+          1.6329573518642178
+        ],
+        "shareOfPlannerGain": 1,
+        "worseOffThanFifoShare": 0.2914131076152588,
+        "fifoOnTimeMadeLateShare": 0.20623096081186162,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 144.565
+      },
+      "blind": {
+        "onTimeShare": 0.650993806482696,
+        "welfareMean": 5.104450778493104,
+        "welfareGainVsFifo": 1.4003204450740134,
+        "welfareGainVsFifoCi95": [
+          1.3398627842231725,
+          1.4675105730806701
+        ],
+        "shareOfPlannerGain": 0.8857764566669564,
+        "worseOffThanFifoShare": 0.7798923073908451,
+        "fifoOnTimeMadeLateShare": 0.18618922868504784,
+        "purchasesPerSeason": 0,
+        "compensationPerSeasonNear": 0,
+        "jobsPerSeason": 144.565
+      },
+      "queue-v2": {
+        "onTimeShare": 0.6198031750329224,
+        "welfareMean": 3.765327652188765,
+        "welfareGainVsFifo": 0.06119731876967552,
+        "welfareGainVsFifoCi95": [
+          0.04165396722774865,
+          0.08108218698385665
+        ],
+        "shareOfPlannerGain": 0.03871052827087467,
+        "worseOffThanFifoShare": 0.4035352815488176,
+        "fifoOnTimeMadeLateShare": 0.04896889788361571,
+        "purchasesPerSeason": 48.11,
+        "compensationPerSeasonNear": 0.17545175296795812,
+        "jobsPerSeason": 144.565
+      },
+      "queue-v3": {
+        "onTimeShare": 0.6617218702186055,
+        "welfareMean": 4.384588284741033,
+        "welfareGainVsFifo": 0.6804579513219449,
+        "welfareGainVsFifoCi95": [
+          0.6409486817925358,
+          0.7181738725053088
+        ],
+        "shareOfPlannerGain": 0.4304255037859933,
+        "worseOffThanFifoShare": 0.43654739301770357,
+        "fifoOnTimeMadeLateShare": 0.07763273776101691,
+        "purchasesPerSeason": 83.945,
+        "compensationPerSeasonNear": 1.373265789790751,
+        "jobsPerSeason": 144.565
+      }
+    }
+  }
+}

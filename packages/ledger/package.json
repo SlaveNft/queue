@@ -1,0 +1,22 @@
+{
+  "name": "@queue/ledger",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "QUEUE local settlement ledger: the queue engine, the deterministic worker and the demo cast. Runs in Node and in a browser tab.",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@queue/core": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "~5.9.3"
+  }
+}

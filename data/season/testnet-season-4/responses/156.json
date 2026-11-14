@@ -1,0 +1,26 @@
+{
+  "job": 156,
+  "source": "near-ai",
+  "chatId": "dd018f9911b34581a86920c5cb93d34f",
+  "latencyMs": 1056,
+  "usage": {
+    "prompt_tokens": 103,
+    "completion_tokens": 69
+  },
+  "requestSha256": "1439376096c1544030e3ab65a20a758cade34b4aed768051f3696d3caaefa7a1",
+  "responseSha256": "376a43fb120055f1e59cafd611b8e926e976867bd9817e599a478b14915ee21a",
+  "response": "{\"id\":\"dd018f9911b34581a86920c5cb93d34f\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"We are testing priority queues for AI agents. This pilot lets high-priority tasks move ahead of others. It aims to reduce wait times for critical jobs. We are monitoring performance and stability. Feedback helps us improve the system. This is a trial phase. Please report any issues or suggestions to help us refine the queue logic for future releases.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794599934,\"usage\":{\"prompt_tokens\":103,\"total_tokens\":172,\"completion_tokens\":69,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:1439376096c1544030e3ab65a20a758cade34b4aed768051f3696d3caaefa7a1:376a43fb120055f1e59cafd611b8e926e976867bd9817e599a478b14915ee21a",
+    "signature": "aff8404fcb427047b653cfa30331b126c9e4842fde8ba2753aec6057c7f07ee9e3000519c70b7481cf81982a01a483133ea6d9edfb417d65d26033bf3811550a",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "aff8404fcb427047b653cfa30331b126c9e4842fde8ba2753aec6057c7f07ee9e3000519c70b7481cf81982a01a483133ea6d9edfb417d65d26033bf3811550a"
+  }
+}

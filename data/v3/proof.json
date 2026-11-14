@@ -1,0 +1,1232 @@
+{
+  "generatedBy": "scripts/v3/proof.ts",
+  "contractId": "market5.queue-demo.testnet",
+  "wasmSha256": "cb6999b9c121cfda20229099a98e08f2432865f0e1be5536d9b10f85e394c00a",
+  "startedAt": "2026-11-14T22:02:03.397Z",
+  "complete": true,
+  "steps": [
+    {
+      "step": 0,
+      "label": "operator heartbeat",
+      "signer": "worker.queue-demo.testnet",
+      "method": "heartbeat",
+      "tx": "Fe1KzGbMz7d6uSWBb3t6iLJa5akhjeXcysYgGiAF2gFV",
+      "ok": true,
+      "error": null,
+      "events": [],
+      "result": 1794693725,
+      "expect": {}
+    },
+    {
+      "step": 1,
+      "label": "mira submits M1 (40 s, ask 1e18/s)",
+      "signer": "mira.queue-demo.testnet",
+      "method": "submit_job",
+      "tx": "8YcBaHMee5xxZuYdYadSTXrBEYYkYTXGeKkzE3mBPutb",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_submitted",
+          "data": {
+            "job_id": 16,
+            "owner": "mira.queue-demo.testnet",
+            "title": "M1 report",
+            "duration_secs": 40,
+            "deadline_at": 1794694629,
+            "submitted_at": 1794693729,
+            "reward": "2000000000000000000000",
+            "bond": "1000000000000000000000",
+            "ask_per_sec": "1000000000000000000",
+            "position": 1,
+            "funded_from": "balance",
+            "verify": "operator"
+          }
+        }
+      ],
+      "result": 16,
+      "expect": {}
+    },
+    {
+      "step": 1,
+      "label": "mira raises M1's ask to 5e18/s (takes effect in 30 s)",
+      "signer": "mira.queue-demo.testnet",
+      "method": "set_move_ask",
+      "tx": "ADHo7JHhvqbNHAvE3Ab8gLfX3FWFUHhG6LnpJ7Fjpb58",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "ask_updated",
+          "data": {
+            "job_id": 16,
+            "owner": "mira.queue-demo.testnet",
+            "ask_per_sec": "5000000000000000000",
+            "effective_at": 1794693762
+          }
+        }
+      ],
+      "result": null,
+      "expect": {
+        "effective_after_secs": 30
+      }
+    },
+    {
+      "step": 2,
+      "label": "kestrel submits K1 and buys the front in the same call",
+      "signer": "kestrel.queue-demo.testnet",
+      "method": "submit_job",
+      "tx": "6TxhvUPpQoHbLg8QnPCgiyB8gxXhVoLB4knH8WC2cnp2",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_submitted",
+          "data": {
+            "job_id": 17,
+            "owner": "kestrel.queue-demo.testnet",
+            "title": "K1 urgent brief",
+            "duration_secs": 10,
+            "deadline_at": 1794693857,
+            "submitted_at": 1794693737,
+            "reward": "2000000000000000000000",
+            "bond": "1000000000000000000000",
+            "ask_per_sec": "0",
+            "position": 2,
+            "funded_from": "balance",
+            "verify": "operator"
+          }
+        },
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "priority_purchased",
+          "data": {
+            "priority_id": 7,
+            "job_id": 17,
+            "requester": "kestrel.queue-demo.testnet",
+            "at": 1794693737,
+            "insert_index": 0,
+            "compensation": "10000000000000000000",
+            "fee": "100000000000000000",
+            "total": "10100000000000000000",
+            "attached": "0",
+            "refunded": "0",
+            "funded_from": "balance",
+            "latest_start_at": 1794693740,
+            "displaced_count": 1,
+            "displaced_ids": [
+              16
+            ]
+          }
+        }
+      ],
+      "result": 17,
+      "expect": {
+        "compensation": "10000000000000000000",
+        "displaced": [
+          16
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "label": "atlas submits A1",
+      "signer": "atlas.queue-demo.testnet",
+      "method": "submit_job",
+      "tx": "GD1rFUY7mivkoCujrBAnjD42UQUYMeo5XrpWv7BAcRwT",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_submitted",
+          "data": {
+            "job_id": 18,
+            "owner": "atlas.queue-demo.testnet",
+            "title": "A1 audit",
+            "duration_secs": 10,
+            "deadline_at": 1794694066,
+            "submitted_at": 1794693766,
+            "reward": "2000000000000000000000",
+            "bond": "1000000000000000000000",
+            "ask_per_sec": "0",
+            "position": 3,
+            "funded_from": "balance",
+            "verify": "operator"
+          }
+        }
+      ],
+      "result": 18,
+      "expect": {}
+    },
+    {
+      "step": 3,
+      "label": "atlas buys the front for A1: M1's raised ask has landed",
+      "signer": "atlas.queue-demo.testnet",
+      "method": "request_priority",
+      "tx": "6Z3ps4d1qH6rDsWKgqaNykMgqzhJNNK1Who5xEXwPNjL",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "priority_purchased",
+          "data": {
+            "priority_id": 8,
+            "job_id": 18,
+            "requester": "atlas.queue-demo.testnet",
+            "at": 1794693770,
+            "insert_index": 0,
+            "compensation": "50000000000000000000",
+            "fee": "500000000000000000",
+            "total": "50500000000000000000",
+            "attached": "0",
+            "refunded": "0",
+            "funded_from": "balance",
+            "latest_start_at": 1794693773,
+            "displaced_count": 2,
+            "displaced_ids": [
+              17,
+              16
+            ]
+          }
+        }
+      ],
+      "result": {
+        "id": 8,
+        "job_id": 18,
+        "requester": "atlas.queue-demo.testnet",
+        "at": 1794693770,
+        "insert_index": 0,
+        "compensation": "50000000000000000000",
+        "fee": "500000000000000000",
+        "total": "50500000000000000000",
+        "latest_start_at": 1794693773,
+        "attached": "0",
+        "refunded": "0",
+        "displaced": [
+          {
+            "job_id": 17,
+            "owner": "kestrel.queue-demo.testnet",
+            "amount": "0",
+            "delay_secs": 10,
+            "new_finish_at": 1794693790,
+            "deadline_at": 1794693857,
+            "slack_secs": 67
+          },
+          {
+            "job_id": 16,
+            "owner": "mira.queue-demo.testnet",
+            "amount": "50000000000000000000",
+            "delay_secs": 10,
+            "new_finish_at": 1794693830,
+            "deadline_at": 1794694629,
+            "slack_secs": 799
+          }
+        ]
+      },
+      "expect": {
+        "compensation": "50000000000000000000",
+        "displaced": [
+          17,
+          16
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "label": "operator rejects A1 before it starts",
+      "signer": "worker.queue-demo.testnet",
+      "method": "reject_job",
+      "tx": "EtKpUrAqmi52fr1f8MAnPRq7iTSPawvhWrnC2NNt1PRQ",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_rejected",
+          "data": {
+            "job_id": 18,
+            "owner": "atlas.queue-demo.testnet",
+            "reason": "unsupported input",
+            "refund": "3000000000000000000000",
+            "priority_refund": "50500000000000000000",
+            "at": 1794693773
+          }
+        },
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_released",
+          "data": {
+            "job_id": 18,
+            "owner": "atlas.queue-demo.testnet",
+            "storage_refund": "29000000000000000000000"
+          }
+        }
+      ],
+      "result": null,
+      "expect": {
+        "priority_refund": "50500000000000000000",
+        "released": true
+      }
+    },
+    {
+      "step": 5,
+      "label": "operator starts K1",
+      "signer": "worker.queue-demo.testnet",
+      "method": "start_next",
+      "tx": "EvRP4v3DneM9ixKQLMXmHmC2B2G7CH1vwP7aXZr2KuQz",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_started",
+          "data": {
+            "job_id": 17,
+            "owner": "kestrel.queue-demo.testnet",
+            "operator": "worker.queue-demo.testnet",
+            "started_at": 1794693778,
+            "projected_finish_at": 1794693788
+          }
+        }
+      ],
+      "result": 17,
+      "expect": {
+        "job": 17
+      }
+    },
+    {
+      "step": 5,
+      "label": "operator delivers K1 (operator-verified job)",
+      "signer": "worker.queue-demo.testnet",
+      "method": "complete_job",
+      "tx": "AXStkuQsVEsgoWY42QjDehHXYJAtU4t9p6doFAu2i15t",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_completed",
+          "data": {
+            "job_id": 17,
+            "owner": "kestrel.queue-demo.testnet",
+            "operator": "worker.queue-demo.testnet",
+            "reward": "2000000000000000000000",
+            "bond": "1000000000000000000000",
+            "artifact_hash": "93010403ee6eaf067da823bf46419503504bdc8b302f322de817af5be37e888c",
+            "finished_at": 1794693793,
+            "deadline_at": 1794693857,
+            "on_time": true,
+            "attestation": null
+          }
+        }
+      ],
+      "result": null,
+      "expect": {
+        "on_time": true
+      }
+    },
+    {
+      "step": 5,
+      "label": "kestrel releases K1 and gets its whole storage deposit back",
+      "signer": "kestrel.queue-demo.testnet",
+      "method": "release_job",
+      "tx": "GDDVDQviXFhvJ8VyhFvSGHyeAjH7VBDgkwSj4PEjadmS",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_released",
+          "data": {
+            "job_id": 17,
+            "owner": "kestrel.queue-demo.testnet",
+            "storage_refund": "26000000000000000000000"
+          }
+        }
+      ],
+      "result": "26000000000000000000000",
+      "expect": {
+        "storage_refund": "26000000000000000000000"
+      }
+    },
+    {
+      "step": 5,
+      "label": "operator starts M1",
+      "signer": "worker.queue-demo.testnet",
+      "method": "start_next",
+      "tx": "F231HipWJdoozwQkTs41CUALD1YWdgyqzFQyotNiwLGH",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_started",
+          "data": {
+            "job_id": 16,
+            "owner": "mira.queue-demo.testnet",
+            "operator": "worker.queue-demo.testnet",
+            "started_at": 1794693801,
+            "projected_finish_at": 1794693841
+          }
+        }
+      ],
+      "result": 16,
+      "expect": {
+        "job": 16
+      }
+    },
+    {
+      "step": 5,
+      "label": "operator delivers M1",
+      "signer": "worker.queue-demo.testnet",
+      "method": "complete_job",
+      "tx": "97SPXUzqeqmunatiyKmybZ1ADDut4djevWjJbxZyb48Q",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_completed",
+          "data": {
+            "job_id": 16,
+            "owner": "mira.queue-demo.testnet",
+            "operator": "worker.queue-demo.testnet",
+            "reward": "2000000000000000000000",
+            "bond": "1000000000000000000000",
+            "artifact_hash": "fa82725d5db4ae2175607e018ad4b9f847755038aac23a5e0152e214a4dcae96",
+            "finished_at": 1794693846,
+            "deadline_at": 1794694629,
+            "on_time": true,
+            "attestation": null
+          }
+        }
+      ],
+      "result": null,
+      "expect": {
+        "on_time": true
+      }
+    },
+    {
+      "step": 6,
+      "label": "juno submits D1 (20 s, deadline 30 s) on an empty queue: promised",
+      "signer": "juno.queue-demo.testnet",
+      "method": "submit_job",
+      "tx": "BbwLvXHKgTm8jzw8CJUfFYWiCa8ifY5FGvzYRnoLJ9qK",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_submitted",
+          "data": {
+            "job_id": 19,
+            "owner": "juno.queue-demo.testnet",
+            "title": "D1 tight job",
+            "duration_secs": 20,
+            "deadline_at": 1794693881,
+            "submitted_at": 1794693851,
+            "reward": "2000000000000000000000",
+            "bond": "1000000000000000000000",
+            "ask_per_sec": "1000000000000000000",
+            "position": 1,
+            "funded_from": "balance",
+            "verify": "operator"
+          }
+        }
+      ],
+      "result": 19,
+      "expect": {}
+    },
+    {
+      "step": 6,
+      "label": "kestrel submits K2 behind it",
+      "signer": "kestrel.queue-demo.testnet",
+      "method": "submit_job",
+      "tx": "YYLXtk7jbz4gYgBJvZy9cUK6EuXANF8SvghMAaqCH3V",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_submitted",
+          "data": {
+            "job_id": 20,
+            "owner": "kestrel.queue-demo.testnet",
+            "title": "K2 follow-up",
+            "duration_secs": 5,
+            "deadline_at": 1794694155,
+            "submitted_at": 1794693855,
+            "reward": "2000000000000000000000",
+            "bond": "1000000000000000000000",
+            "ask_per_sec": "0",
+            "position": 2,
+            "funded_from": "balance",
+            "verify": "operator"
+          }
+        }
+      ],
+      "result": 20,
+      "expect": {}
+    },
+    {
+      "step": 6,
+      "label": "kestrel buys past D1, which can no longer finish in time: D1 does not block and is paid",
+      "signer": "kestrel.queue-demo.testnet",
+      "method": "request_priority",
+      "tx": "5vooXG1VRxN8uwgbuJZuQoBYAJzVkqe744BULZw6QJZ5",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "priority_purchased",
+          "data": {
+            "priority_id": 9,
+            "job_id": 20,
+            "requester": "kestrel.queue-demo.testnet",
+            "at": 1794693866,
+            "insert_index": 0,
+            "compensation": "5000000000000000000",
+            "fee": "50000000000000000",
+            "total": "5050000000000000000",
+            "attached": "0",
+            "refunded": "0",
+            "funded_from": "balance",
+            "latest_start_at": 1794693869,
+            "displaced_count": 1,
+            "displaced_ids": [
+              19
+            ]
+          }
+        }
+      ],
+      "result": {
+        "id": 9,
+        "job_id": 20,
+        "requester": "kestrel.queue-demo.testnet",
+        "at": 1794693866,
+        "insert_index": 0,
+        "compensation": "5000000000000000000",
+        "fee": "50000000000000000",
+        "total": "5050000000000000000",
+        "latest_start_at": 1794693869,
+        "attached": "0",
+        "refunded": "0",
+        "displaced": [
+          {
+            "job_id": 19,
+            "owner": "juno.queue-demo.testnet",
+            "amount": "5000000000000000000",
+            "delay_secs": 5,
+            "new_finish_at": 1794693891,
+            "deadline_at": 1794693881,
+            "slack_secs": -10
+          }
+        ]
+      },
+      "expect": {
+        "compensation": "5000000000000000000",
+        "displaced": [
+          19
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "label": "operator starts K2",
+      "signer": "worker.queue-demo.testnet",
+      "method": "start_next",
+      "tx": "41xd7vdN7vCDeHiEM2BtfJ3thL266MpQmjKFbZrnrLYe",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_started",
+          "data": {
+            "job_id": 20,
+            "owner": "kestrel.queue-demo.testnet",
+            "operator": "worker.queue-demo.testnet",
+            "started_at": 1794693869,
+            "projected_finish_at": 1794693874
+          }
+        }
+      ],
+      "result": 20,
+      "expect": {
+        "job": 20
+      }
+    },
+    {
+      "step": 6,
+      "label": "operator delivers K2",
+      "signer": "worker.queue-demo.testnet",
+      "method": "complete_job",
+      "tx": "C7mgnYgkeAZmF4iZNgUqwEx5DuBsdHgWNdU3CHszH7Fw",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_completed",
+          "data": {
+            "job_id": 20,
+            "owner": "kestrel.queue-demo.testnet",
+            "operator": "worker.queue-demo.testnet",
+            "reward": "2000000000000000000000",
+            "bond": "1000000000000000000000",
+            "artifact_hash": "c41294d12d70cdde927579e4c8621df172d0577482fbfd470f6e17a14c296038",
+            "finished_at": 1794693879,
+            "deadline_at": 1794694155,
+            "on_time": true,
+            "attestation": null
+          }
+        }
+      ],
+      "result": null,
+      "expect": {
+        "on_time": true
+      }
+    },
+    {
+      "step": 6,
+      "label": "operator reaches D1 too late: missed, and the stake pays the broken promise",
+      "signer": "worker.queue-demo.testnet",
+      "method": "start_next",
+      "tx": "HXD2NxwTNTWZ2NDEtN2EYc29dzMTzmees2Zrr8ZrabG9",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "promise_broken",
+          "data": {
+            "job_id": 19,
+            "owner": "juno.queue-demo.testnet",
+            "owed": "2000000000000000000000",
+            "paid": "2000000000000000000000",
+            "stake_left": "997949500000000000000000"
+          }
+        },
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_missed",
+          "data": {
+            "job_id": 19,
+            "owner": "juno.queue-demo.testnet",
+            "reward": "2000000000000000000000",
+            "bond": "1000000000000000000000",
+            "reason": "deadline_passed_before_start",
+            "artifact_hash": null,
+            "at": 1794693884
+          }
+        }
+      ],
+      "result": 19,
+      "expect": {
+        "job": 19,
+        "missed": true,
+        "penalty": "2000000000000000000000"
+      }
+    },
+    {
+      "step": 7,
+      "label": "juno submits J1 naming its request by sha256: a model job",
+      "signer": "juno.queue-demo.testnet",
+      "method": "submit_job",
+      "tx": "CKKCLoqj8ASpnXqCZRhoj2h7tQk56i7Q3PTCFupmWhXA",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_submitted",
+          "data": {
+            "job_id": 21,
+            "owner": "juno.queue-demo.testnet",
+            "title": "J1 model job",
+            "duration_secs": 10,
+            "deadline_at": 1794694489,
+            "submitted_at": 1794693889,
+            "reward": "2000000000000000000000",
+            "bond": "1000000000000000000000",
+            "ask_per_sec": "0",
+            "position": 1,
+            "funded_from": "balance",
+            "verify": "model"
+          }
+        }
+      ],
+      "result": 21,
+      "expect": {
+        "verify": "model"
+      }
+    },
+    {
+      "step": 7,
+      "label": "operator starts J1",
+      "signer": "worker.queue-demo.testnet",
+      "method": "start_next",
+      "tx": "9mfUVVDQ8kiYer27x2QVgbdYKoeL2uK1mHpirZkQoudi",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_started",
+          "data": {
+            "job_id": 21,
+            "owner": "juno.queue-demo.testnet",
+            "operator": "worker.queue-demo.testnet",
+            "started_at": 1794693893,
+            "projected_finish_at": 1794693903
+          }
+        }
+      ],
+      "result": 21,
+      "expect": {
+        "job": 21
+      }
+    },
+    {
+      "step": 7,
+      "label": "operator tries to settle J1 on its own word: refused",
+      "signer": "worker.queue-demo.testnet",
+      "method": "complete_job",
+      "tx": "Bnu984ND2hrab39d91UQYK3f7KXtWcey67akCsGHopqP",
+      "ok": false,
+      "error": "this job asked for a model answer: settle it with complete_job_attested, or fail_job",
+      "events": [],
+      "result": null,
+      "expect": {
+        "error": "asked for a model answer"
+      }
+    },
+    {
+      "step": 7,
+      "label": "operator fails J1: escrow back, and the stake pays the promise",
+      "signer": "worker.queue-demo.testnet",
+      "method": "fail_job",
+      "tx": "9oUWyo9tHifpRJS6bZcPNjwkYzUGsZJYfHeccCNpQh1",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "promise_broken",
+          "data": {
+            "job_id": 21,
+            "owner": "juno.queue-demo.testnet",
+            "owed": "2000000000000000000000",
+            "paid": "2000000000000000000000",
+            "stake_left": "995949500000000000000000"
+          }
+        },
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_failed",
+          "data": {
+            "job_id": 21,
+            "owner": "juno.queue-demo.testnet",
+            "operator": "worker.queue-demo.testnet",
+            "reward_refund": "2000000000000000000000",
+            "bond_refund": "1000000000000000000000",
+            "reason_hash": "9152e88e3e5af819a95b2dd0058057df01aa0fe139270328e2050159a25d2979",
+            "at": 1794693901
+          }
+        }
+      ],
+      "result": null,
+      "expect": {
+        "penalty": "2000000000000000000000"
+      }
+    },
+    {
+      "step": 8,
+      "label": "vale submits while the worker has been silent for 180 s: refused, nothing charged",
+      "signer": "vale.queue-demo.testnet",
+      "method": "submit_job",
+      "tx": "vnKxhGgUi2tXSR53MkAJ1e7JHH52aRDC5hvXFiXbzq1",
+      "ok": false,
+      "error": "the worker is offline (no operator call in the last 180 s): no new work is accepted, nothing was charged",
+      "events": [],
+      "result": null,
+      "expect": {
+        "error": "the worker is offline"
+      }
+    },
+    {
+      "step": 8,
+      "label": "operator heartbeat",
+      "signer": "worker.queue-demo.testnet",
+      "method": "heartbeat",
+      "tx": "9fZ6t8CoGeY6NvkWzHDkva5VG5GVPuTxeSre3VeBmMgS",
+      "ok": true,
+      "error": null,
+      "events": [],
+      "result": 1794694089,
+      "expect": {}
+    },
+    {
+      "step": 8,
+      "label": "vale submits again: accepted",
+      "signer": "vale.queue-demo.testnet",
+      "method": "submit_job",
+      "tx": "B2XCiN8j3pvRmo1JNxs5PxzYFb8jLFnb8TSDa59xfM2T",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_submitted",
+          "data": {
+            "job_id": 22,
+            "owner": "vale.queue-demo.testnet",
+            "title": "V1",
+            "duration_secs": 5,
+            "deadline_at": 1794694392,
+            "submitted_at": 1794694092,
+            "reward": "2000000000000000000000",
+            "bond": "1000000000000000000000",
+            "ask_per_sec": "0",
+            "position": 1,
+            "funded_from": "balance",
+            "verify": "operator"
+          }
+        }
+      ],
+      "result": 22,
+      "expect": {}
+    },
+    {
+      "step": 8,
+      "label": "vale cancels V1 (exits always work)",
+      "signer": "vale.queue-demo.testnet",
+      "method": "cancel_job",
+      "tx": "Ddiu4vGV9P8bzHLTnwr6S6oAQXzdNGHkodJVUzLC1g7c",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_cancelled",
+          "data": {
+            "job_id": 22,
+            "owner": "vale.queue-demo.testnet",
+            "reward_refund": "2000000000000000000000",
+            "bond_refund": "750000000000000000000",
+            "bond_to_treasury": "250000000000000000000",
+            "expedited": false,
+            "at": 1794694095
+          }
+        }
+      ],
+      "result": null,
+      "expect": {}
+    },
+    {
+      "step": 8,
+      "label": "vale releases V1 and gets its whole storage deposit back",
+      "signer": "vale.queue-demo.testnet",
+      "method": "release_job",
+      "tx": "H6nJo5ESt6nKS22NH5QScxcyrM659RdfV3AP79zbkDif",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_released",
+          "data": {
+            "job_id": 22,
+            "owner": "vale.queue-demo.testnet",
+            "storage_refund": "17000000000000000000000"
+          }
+        }
+      ],
+      "result": "17000000000000000000000",
+      "expect": {
+        "storage_refund": "17000000000000000000000"
+      }
+    },
+    {
+      "step": 9,
+      "label": "owner proposes fee 0.5% (runs in 24 h at the earliest)",
+      "signer": "owner2.queue-demo.testnet",
+      "method": "propose",
+      "tx": "BggcWZZ59hCsjnoSVyCGi5f5nayvYfgciFUFgjSbAmpq",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "proposal_queued",
+          "data": {
+            "id": 3,
+            "proposal": {
+              "kind": "set_fee_bps",
+              "fee_bps": 50
+            },
+            "executable_at": 1794780503
+          }
+        }
+      ],
+      "result": {
+        "id": 3,
+        "proposal": {
+          "kind": "set_fee_bps",
+          "fee_bps": 50
+        },
+        "proposed_at": 1794694103,
+        "executable_at": 1794780503
+      },
+      "expect": {
+        "timelock_secs": 86400
+      }
+    },
+    {
+      "step": 9,
+      "label": "anyone executes it now: refused, still timelocked",
+      "signer": "kestrel.queue-demo.testnet",
+      "method": "execute_proposal",
+      "tx": "3zf2QYyhSdxwvg2BvhjBrYqvuegxwZdjnrn6RsdJLdi8",
+      "ok": false,
+      "error": "proposal 3 is timelocked until 1794780503",
+      "events": [],
+      "result": null,
+      "expect": {
+        "error": "timelocked"
+      }
+    },
+    {
+      "step": 9,
+      "label": "owner cancels the proposal",
+      "signer": "owner2.queue-demo.testnet",
+      "method": "cancel_proposal",
+      "tx": "93e8p96osBEeFn1KCpuLEhj6AT7NY5iRGNAcq4MvEs29",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "proposal_cancelled",
+          "data": {
+            "id": 3
+          }
+        }
+      ],
+      "result": null,
+      "expect": {}
+    },
+    {
+      "step": 10,
+      "label": "operator asks to unstake 0.1 NEAR (withdrawable in 24 h)",
+      "signer": "worker.queue-demo.testnet",
+      "method": "request_unstake",
+      "tx": "3JKQosGPjUfBX6E9i5WzNCxWoCjYPThxTJa1Ej6zbJ3m",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "unstake_requested",
+          "data": {
+            "amount": "100000000000000000000000",
+            "at": 1794780513
+          }
+        }
+      ],
+      "result": null,
+      "expect": {
+        "timelock_secs": 86400
+      }
+    },
+    {
+      "step": 10,
+      "label": "operator withdraws at once: refused, still timelocked",
+      "signer": "worker.queue-demo.testnet",
+      "method": "withdraw_unstaked",
+      "tx": "26foJafhMcKxGtURGBm1LcZJNkUBQMrFe7VjbdQChupY",
+      "ok": false,
+      "error": "unstake is still timelocked",
+      "events": [],
+      "result": null,
+      "expect": {
+        "error": "timelocked"
+      }
+    },
+    {
+      "step": 11,
+      "label": "operator removes juno from its approved clients",
+      "signer": "worker.queue-demo.testnet",
+      "method": "remove_client",
+      "tx": "2CeziBGMScrkDqhXetfjK8PcaPDP6TRvEnr96a7hrqCo",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "client_removed",
+          "data": {
+            "account_id": "juno.queue-demo.testnet"
+          }
+        }
+      ],
+      "result": null,
+      "expect": {}
+    },
+    {
+      "step": 11,
+      "label": "juno submits: refused before escrow, storage or a purchase",
+      "signer": "juno.queue-demo.testnet",
+      "method": "submit_job",
+      "tx": "FikXjJ6RMHmDi8uY1ynq35u5UXPKk7hdXvC2SwnzXJk7",
+      "ok": false,
+      "error": "juno.queue-demo.testnet is not an approved client of this queue: the operator approves accounts with allow_clients; nothing was charged",
+      "events": [],
+      "result": null,
+      "expect": {
+        "error": "not an approved client"
+      }
+    },
+    {
+      "step": 11,
+      "label": "operator approves juno again",
+      "signer": "worker.queue-demo.testnet",
+      "method": "allow_clients",
+      "tx": "CHxMA1r1DfhPsytZweJ2CDt6LkW5GQzfXJSs3U8pgm2n",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "clients_allowed",
+          "data": {
+            "accounts": [
+              "juno.queue-demo.testnet"
+            ]
+          }
+        }
+      ],
+      "result": null,
+      "expect": {
+        "clients": [
+          "juno.queue-demo.testnet"
+        ]
+      }
+    },
+    {
+      "step": 12,
+      "label": "mira submits S1",
+      "signer": "mira.queue-demo.testnet",
+      "method": "submit_job",
+      "tx": "FKRpptihEMcsxRBztaBrxXVxcQMT981PeLmmin8bfaWX",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_submitted",
+          "data": {
+            "job_id": 23,
+            "owner": "mira.queue-demo.testnet",
+            "title": "S1 short job",
+            "duration_secs": 5,
+            "deadline_at": 1794694432,
+            "submitted_at": 1794694132,
+            "reward": "2000000000000000000000",
+            "bond": "1000000000000000000000",
+            "ask_per_sec": "0",
+            "position": 1,
+            "funded_from": "balance",
+            "verify": "operator"
+          }
+        }
+      ],
+      "result": 23,
+      "expect": {}
+    },
+    {
+      "step": 12,
+      "label": "operator withdraws its unstake while S1 is queued: refused",
+      "signer": "worker.queue-demo.testnet",
+      "method": "withdraw_unstaked",
+      "tx": "AzYzvFiU75nmg9dm8rU2KJtwNF884JDRsmfkhZgJqJ2i",
+      "ok": false,
+      "error": "the stake cannot be withdrawn while a job is queued or running: the stake answers for every open job",
+      "events": [],
+      "result": null,
+      "expect": {
+        "error": "while a job is queued or running"
+      }
+    },
+    {
+      "step": 12,
+      "label": "operator starts S1",
+      "signer": "worker.queue-demo.testnet",
+      "method": "start_next",
+      "tx": "GcKYAWUaNxbXGvsbfxJc4jTHhNxRq1oC4gPwkqHRAbXp",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_started",
+          "data": {
+            "job_id": 23,
+            "owner": "mira.queue-demo.testnet",
+            "operator": "worker.queue-demo.testnet",
+            "started_at": 1794694140,
+            "projected_finish_at": 1794694145
+          }
+        }
+      ],
+      "result": 23,
+      "expect": {
+        "job": 23
+      }
+    },
+    {
+      "step": 12,
+      "label": "operator delivers S1",
+      "signer": "worker.queue-demo.testnet",
+      "method": "complete_job",
+      "tx": "8Nys7CLeSQD6wYFv1nsoNV4C3x2DWw3C1k4JVMMPb5HJ",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_completed",
+          "data": {
+            "job_id": 23,
+            "owner": "mira.queue-demo.testnet",
+            "operator": "worker.queue-demo.testnet",
+            "reward": "2000000000000000000000",
+            "bond": "1000000000000000000000",
+            "artifact_hash": "32ca81e93350afe6a9b9f5070f84fe5561774a3e0d065eda1363499064b09d5e",
+            "finished_at": 1794694150,
+            "deadline_at": 1794694432,
+            "on_time": true,
+            "attestation": null
+          }
+        }
+      ],
+      "result": null,
+      "expect": {
+        "on_time": true
+      }
+    },
+    {
+      "step": 12,
+      "label": "mira releases S1 and gets its whole storage deposit back",
+      "signer": "mira.queue-demo.testnet",
+      "method": "release_job",
+      "tx": "A4XPZ2R3N1qNJaNaHe7tY7fYiyD75kJeSTCnbT6H1xjB",
+      "ok": true,
+      "error": null,
+      "events": [
+        {
+          "standard": "queue",
+          "version": "1.0.0",
+          "event": "job_released",
+          "data": {
+            "job_id": 23,
+            "owner": "mira.queue-demo.testnet",
+            "storage_refund": "17000000000000000000000"
+          }
+        }
+      ],
+      "result": "17000000000000000000000",
+      "expect": {
+        "storage_refund": "17000000000000000000000"
+      }
+    }
+  ],
+  "finishedAt": "2026-11-14T22:09:17.687Z",
+  "statsAfter": {
+    "submitted": 23,
+    "completed": 11,
+    "missed": 3,
+    "cancelled": 2,
+    "failed": 3,
+    "attested": 0,
+    "running": 0,
+    "queued": 0,
+    "moves": 12,
+    "total_priority": "196950000000000000000",
+    "total_compensation": "195000000000000000000",
+    "total_fees": "1950000000000000000",
+    "on_time_bps": 7857,
+    "total_escrow": "0",
+    "total_credits": "787641500000000000000000",
+    "rejected": 4,
+    "released": 11,
+    "promises_broken": 6,
+    "total_penalties": "12151500000000000000000",
+    "operator_stake": "995949500000000000000000",
+    "storage_held": "231000000000000000000000"
+  },
+  "configAfter": {
+    "owner_id": "owner2.queue-demo.testnet",
+    "operator_id": "worker.queue-demo.testnet",
+    "treasury_id": "treasury.queue-demo.testnet",
+    "fee_bps": 100,
+    "paused": false,
+    "max_queue": 128,
+    "max_activity": 128,
+    "tee_signers": [
+      "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350"
+    ],
+    "tee_model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "timelock_secs": 86400,
+    "min_operator_stake": "500000000000000000000000",
+    "operator_stake": "995949500000000000000000",
+    "operator_last_seen": 1794694150,
+    "accepting_work": true,
+    "unstake_pending": [
+      "100000000000000000000000",
+      1794780513
+    ],
+    "clients_only": true
+  }
+}

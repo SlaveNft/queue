@@ -1,0 +1,26 @@
+{
+  "job": 181,
+  "source": "near-ai",
+  "chatId": "4fe01cd29ed74e4591e6893029e3d034",
+  "latencyMs": 1020,
+  "usage": {
+    "prompt_tokens": 103,
+    "completion_tokens": 63
+  },
+  "requestSha256": "4dc0d6a02982c4b807c190a6cfa174b87b408c9a5f33c94f8a94cc8571b6b0d2",
+  "responseSha256": "58bd31b92f48743fdf033d1d2731e7b6e393bf420fac84fccd2eb8f6bd059ee6",
+  "response": "{\"id\":\"4fe01cd29ed74e4591e6893029e3d034\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"We are piloting priority queues for AI agents. This system ensures critical tasks process first, reducing wait times during high traffic. It is a test phase to evaluate stability and fairness. We invite you to try the new queue logic. Your feedback helps us refine the infrastructure for more reliable agent operations across the network.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600247,\"usage\":{\"prompt_tokens\":103,\"total_tokens\":166,\"completion_tokens\":63,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:4dc0d6a02982c4b807c190a6cfa174b87b408c9a5f33c94f8a94cc8571b6b0d2:58bd31b92f48743fdf033d1d2731e7b6e393bf420fac84fccd2eb8f6bd059ee6",
+    "signature": "6f800b8e8f3bcd85f93fbdffb27303923ffcfe0acf535634d362490254ebb124edb4ccb0f9a5a2f4473289ef2a31cc12f5a35877448e895066728352628bb40b",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "6f800b8e8f3bcd85f93fbdffb27303923ffcfe0acf535634d362490254ebb124edb4ccb0f9a5a2f4473289ef2a31cc12f5a35877448e895066728352628bb40b"
+  }
+}

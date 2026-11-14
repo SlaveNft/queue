@@ -1,0 +1,26 @@
+{
+  "job": 203,
+  "source": "near-ai",
+  "chatId": "d700bf05afd24f5a8b9c92c673887475",
+  "latencyMs": 603,
+  "usage": {
+    "prompt_tokens": 103,
+    "completion_tokens": 61
+  },
+  "requestSha256": "d414505ac015eb75d4ae810260feb26751f7ce01d83b18509f2b5e9ef6f83bb5",
+  "responseSha256": "592ab2d484273f206c4c0e9c9b0ae53023565a5f673f8978fc6b09197e060dfa",
+  "response": "{\"id\":\"d700bf05afd24f5a8b9c92c673887475\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"We are piloting priority queues for AI agents on testnet. This feature allows agents to manage task ordering more efficiently. It is a test phase to gather feedback and improve performance. Please report any issues or suggestions. This update aims to enhance reliability for developers using our queue system during this trial period.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600486,\"usage\":{\"prompt_tokens\":103,\"total_tokens\":164,\"completion_tokens\":61,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:d414505ac015eb75d4ae810260feb26751f7ce01d83b18509f2b5e9ef6f83bb5:592ab2d484273f206c4c0e9c9b0ae53023565a5f673f8978fc6b09197e060dfa",
+    "signature": "13c166116a893fddcfd0343757f69c6b10b82a441e534c683fb7d88b724ef9b8bcfb7caa9c3d250e0d9f5653d7d790c25abd51b111f5033a186c2efab2c12209",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "13c166116a893fddcfd0343757f69c6b10b82a441e534c683fb7d88b724ef9b8bcfb7caa9c3d250e0d9f5653d7d790c25abd51b111f5033a186c2efab2c12209"
+  }
+}

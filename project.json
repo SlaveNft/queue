@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 1,
+  "name": "QUEUE",
+  "version": "1.0.0",
+  "description": "A paid slot market for one FIFO agent-work queue. An urgent job buys earlier positions; every displaced job is paid its published per-second ask and must still meet its stated deadline, or the NEAR contract refuses the purchase.",
+  "hostedDemo": {
+    "url": "https://slavenft.github.io/queue/",
+    "action": "Press \"Run the live scenario\"",
+    "expect": "Kestrel's urgent job jumps four places; Mira, Atlas, Vale and Juno are paid 0.00504, 0.00696, 0.00432 and 0.00372 NEAR; the receipt ends at \"4 of 4 crossed promises kept\"",
+    "how": "Static build (npm run build:pages). The ledger engine in packages/ledger runs in the browser tab; there is no backend and no wallet. The Season and Proof sections read NEAR testnet and the published proof records.",
+    "check": "npm run verify:pages"
+  },
+  "status": "hackathon build; NEAR testnet only; not audited",
+  "event": "NEAR HACKATHON",
+  "license": "MIT",
+  "tracks": [
+    "swarms",
+    "agents"
+  ],
+  "primaryTrack": "swarms",
+  "network": "testnet",
+  "audit": "not audited",
+  "mainnet": false,
+  "externalLlm": "none in the local demo and the v1 proof; the v2 season uses NEAR AI (Qwen/Qwen3.6-35B-A3B-FP8) for the agents and the worker",
+  "apiKeyRequired": "no, to run the demo or to re-check any proof; a NEAR AI key is needed only to run a new season",
+  "cast": {
+    "kind": "scripted economic actors",
+    "worker": "deterministic analyst (incident-triage, csv-audit, launch-brief)",
+    "agents": [
+      "kestrel",
+      "mira",
+      "atlas",
+      "vale",
+      "juno",
+      "worker",
+      "auditor"
+    ],
+    "note": "Seven roles in one server for the local demo; the testnet proof uses separate signing accounts. The auditor is console-only."
+  },
+  "contract": {
+    "id": "market.queue-demo.testnet",
+    "language": "Rust",
+    "sdk": "near-sdk 5.30.1",
+    "codeHash": "26kAJzTxYTiqMJcMznpsLYetzfXcyShqAWb4hLZUbCoX",
+    "deployedWasmSha256": "10546489ceb8c1127939023e043cf15ac13e3481b708d184e828c92b516396d6",
+    "deployedWasmBytes": 259622,
+    "deployTx": "4tXjEXfWXHWpFD2ANhkSbzZ6JvM9asCgjevVPnogwUj1",
+    "sourceNote": "The live proof is tied to the deployed wasm, and npm run build:contract on this tree reproduces the live code hash."
+  },
+  "proof": {
+    "file": "data/onchain-proof.json",
+    "ok": true,
+    "transactions": 27,
+    "signers": 7,
+    "deploySigners": 1,
+    "totalSigners": 8,
+    "episodeA": "5 of 5 jobs on time; 4 displaced and paid; 4 credits withdrawn",
+    "episodeB": "1 refused jump; 2 of 2 jobs on time",
+    "totalOnTime": "7 of 7",
+    "missed": 0,
+    "refusedTx": "CvUazoMTWsvWozwd1x4BJFyo4Fy4wzhi4pxCcj5hdcRi",
+    "artifact": {
+      "file": "data/onchain-artifact.md",
+      "sha256": "5159aede574aa3d9c8c872702bab483344731f97c767ba4ca893e5a9657c9259"
+    }
+  },
+  "season": {
+    "contract": "market4.queue-demo.testnet",
+    "source": "contracts/queue-v2",
+    "wasmSha256": "591c81823d329a370d889850e6359d29b012e3be255fd61102455fd81a9cb637",
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8 on NEAR AI",
+    "run": "data/season/testnet-season-4",
+    "agents": 8,
+    "minutes": 30,
+    "decisionsByModel": "262 of 262",
+    "jobsRun": 138,
+    "onTime": 135,
+    "paidPurchases": 4,
+    "jobsMovedBackAndPaid": 5,
+    "movedJobsLate": 0,
+    "paidToMovedNear": "0.0965",
+    "contractRefusals": 7,
+    "unsafeJumpRefusedTx": "3BrEneh1ypSrWAGtr73nU6hE4u5wRSzJFsWbeKjtUhdj",
+    "attestedSettlements": 135,
+    "counterfactuals": {
+      "fifoOnTime": 134,
+      "blindFeeOnTime": 134,
+      "blindFeePromisesBroken": 4,
+      "note": "replays of the same jobs; within 0.5 s of the measured worker gap the three rules stay within a job or two of each other"
+    },
+    "verify": "npm run verify:season (read-only, no keys)",
+    "sweep": {
+      "file": "data/season/sweep.json",
+      "seasons": 300,
+      "jobs": 39318,
+      "movedJobs": 3464,
+      "movedJobsLate": 0,
+      "marketMinusFifoOnTimeShare": "+1.19% (95% CI 1.07-1.31%)",
+      "note": "simulator with a scripted policy; rules checked against the contract by the sim_parity test"
+    },
+    "payoutRecoveryTx": "BsiMG2jX11ZeTY2ee7avSMASgCXZSPHrSkNMCiZEUnm3"
+  },
+  "tests": {
+    "contract": 37,
+    "contractNote": "37 v1 + 62 v2 + 95 v3 tests on this tree; run npm run verify on the submission commit for the authoritative output.",
+    "core": 13,
+    "ledger": 8,
+    "server": 34,
+    "web": 9,
+    "contractV2": 62,
+    "season": 17,
+    "methods": {
+      "doc": "docs/TESTING.md",
+      "invariants": "random histories (proptest): 48 per run, a 600-history run passes; each quote is checked against the rule worked out independently from the public queue",
+      "differential": "Rust contract replayed against the TypeScript rules: 20 histories / 1,284 steps committed, a 300-history / 24,866-step run agrees",
+      "sweep": "300 simulated seasons: 0 of 3,464 moved jobs late; +1.19% on time vs FIFO",
+      "mutation": "cargo-mutants on the money, deadline and queue functions: 92 of 95 viable mutants caught, 3 equivalent",
+      "plantedBugs": "8 of 8 caught by the unit, invariant and differential suites, each on its own (data/season/planted-bugs.json)",
+      "reproducibleBuild": "npm run verify:v2-deployed (byte-for-byte on macOS/Apple silicon, the deployer's platform, under any cargo home; the compiled wasm is host-dependent, so a Linux host reports a different build)",
+      "hostedConsole": "npm run verify:pages: the static build driven end to end in headless Chromium (one click, four agents paid, 4 of 4 promises kept, no backend)"
+    },
+    "contractV3": 95,
+    "client": 8
+  },
+  "verify": [
+    {
+      "command": "npm run verify",
+      "exitCodes": {
+        "0": "every gate that ran passed",
+        "nonZero": "a gate failed"
+      },
+      "needs": [
+        "Node.js >= 22.22.2",
+        "npm dependencies installed once",
+        "cargo for the contract gate"
+      ],
+      "note": "No wallet, no RPC, no API key. Without Rust the contract gate is skipped and the output says so. Includes secret scan, artifact reproduction, a scenario poll of up to 30s, and a drain of up to ~70s."
+    },
+    {
+      "command": "npm run verify:pages",
+      "exitCodes": {
+        "0": "the hosted console ran the full scenario in a headless browser with no backend",
+        "nonZero": "a check failed"
+      },
+      "needs": [
+        "Node.js",
+        "npm dependencies installed once",
+        "Playwright Chromium (npx playwright install chromium)"
+      ],
+      "note": "Builds apps/web/dist-pages, serves it from a sub-path and drives it: one click, four agents paid, 4 of 4 promises kept, a credit withdrawn; fails on any request to /api, failed request or script error."
+    },
+    {
+      "command": "npm run verify:onchain",
+      "exitCodes": {
+        "0": "all checks passed (41 PASS lines; 42 with a local reproducible build)",
+        "1": "a check failed",
+        "2": "RPC unreachable (SKIP)"
+      },
+      "needs": [
+        "internet",
+        "Node.js",
+        "no keys"
+      ],
+      "note": "Read-only. Compares the proof with the live testnet chain and, if a local wasm exists, with the local build."
+    },
+    {
+      "command": "npm run verify:artifact",
+      "exitCodes": {
+        "0": "8 checks passed; recomputed artifact matches the file, proof, and job record",
+        "nonZero": "artifact mismatch or missing input"
+      },
+      "needs": [
+        "Node.js",
+        "npm dependencies installed once"
+      ]
+    },
+    {
+      "command": "npm run verify:secrets",
+      "exitCodes": {
+        "0": "public tree clean",
+        "1": "possible key material found"
+      },
+      "needs": [
+        "Node.js"
+      ]
+    },
+    {
+      "command": "npm run test:contract",
+      "exitCodes": {
+        "0": "Rust suite passed",
+        "nonZero": "test failure or missing cargo"
+      },
+      "needs": [
+        "cargo"
+      ]
+    },
+    {
+      "command": "npm run typecheck",
+      "exitCodes": {
+        "0": "no TypeScript errors",
+        "nonZero": "type error"
+      }
+    },
+    {
+      "command": "npm run build",
+      "exitCodes": {
+        "0": "core, server, and web build passed",
+        "nonZero": "build error"
+      }
+    },
+    {
+      "command": "npm run verify:v3",
+      "exitCodes": {
+        "0": "every v3 proof transaction re-read from an archival node and checked",
+        "1": "a check failed",
+        "2": "RPC unreachable"
+      },
+      "needs": [
+        "internet",
+        "Node.js",
+        "no keys"
+      ]
+    }
+  ],
+  "run": {
+    "command": "npm install && npm run dev",
+    "console": "http://localhost:4178",
+    "api": "http://localhost:8789",
+    "headless": "docs/HEADLESS.md",
+    "hosted": "https://slavenft.github.io/queue/"
+  },
+  "limits": {
+    "oneWorker": true,
+    "sybilResistance": false,
+    "operatorTrustedFor": [
+      "liveness",
+      "artifact attestation"
+    ],
+    "bondPrices": "cancellation, not no-show",
+    "noHoldoutProtection": true,
+    "quotesPrivate": false,
+    "localApiAuth": "none by default; binds 127.0.0.1; optional x-operator-token",
+    "storage": "caller-paid non-refundable deposits (deployed contract: 0.0125 NEAR per job; 0.003 + 0.003 per displaced NEAR per purchase)",
+    "disclosedStorageEdgeCases": [
+      "C1 priority deposit shortfall for 1-3 displaced jobs with 64-byte accounts",
+      "C2 largest terminal job record can exceed its deposit",
+      "C3 failed native payout does not automatically restore the credit"
+    ],
+    "admin": "v1 and v2: no built-in upgrade API and no timelock. v3: 24 h timelock on admin methods and upgrades. Every contract account retains a test FullAccess key that can redeploy directly and move the account balance; no multisig",
+    "testnetOnly": true
+  },
+  "cutoffSensitivity": {
+    "note": "Same seed; four displaced is a 5s start preference, not a deadline result. At 34s the urgent deadline binds and the result is two.",
+    "rows": [
+      {
+        "latestStartSec": 5,
+        "displaced": 4,
+        "totalNear": "0.0202404"
+      },
+      {
+        "latestStartSec": 18,
+        "displaced": 3,
+        "totalNear": "0.01515"
+      },
+      {
+        "latestStartSec": 20,
+        "displaced": 2,
+        "totalNear": "0.0081204"
+      },
+      {
+        "latestStartSec": 34,
+        "displaced": 2,
+        "totalNear": "0.0081204"
+      }
+    ]
+  },
+  "docs": {
+    "readme": "README.md",
+    "machine": "llms.txt",
+    "spec": "docs/SPEC.md",
+    "mechanism": "docs/MECHANISM.md",
+    "security": "docs/SECURITY.md",
+    "onchain": "docs/ONCHAIN.md",
+    "headless": "docs/HEADLESS.md",
+    "research": "docs/RESEARCH.md",
+    "results": "docs/RESULTS.md",
+    "agents": "AGENTS.md",
+    "season": "docs/SEASON.md",
+    "testing": "docs/TESTING.md",
+    "v3": "docs/V3.md"
+  },
+  "links": {
+    "hostedDemo": "https://slavenft.github.io/queue/",
+    "explorer": "https://testnet.nearblocks.io/address/market.queue-demo.testnet",
+    "refusedTransaction": "https://testnet.nearblocks.io/txns/CvUazoMTWsvWozwd1x4BJFyo4Fy4wzhi4pxCcj5hdcRi",
+    "seasonContract": "https://testnet.nearblocks.io/address/market4.queue-demo.testnet",
+    "seasonRefusedJump": "https://testnet.nearblocks.io/txns/3BrEneh1ypSrWAGtr73nU6hE4u5wRSzJFsWbeKjtUhdj",
+    "v3Contract": "https://testnet.nearblocks.io/address/market5.queue-demo.testnet"
+  },
+  "v3": {
+    "contract": "market5.queue-demo.testnet",
+    "source": "contracts/queue-v3",
+    "wasmSha256": "cb6999b9c121cfda20229099a98e08f2432865f0e1be5536d9b10f85e394c00a",
+    "wasmBytes": 397962,
+    "rules": [
+      "operator stake (minimum 0.5 NEAR) pays a promised job that misses or fails: priority spend plus reward, as far as the stake goes",
+      "no new work when the stake is below the minimum or the operator has not called the contract for 180 s",
+      "the stake cannot be withdrawn and the operator cannot be replaced while a job is queued or running",
+      "only accounts the operator approved can submit (closed pilot: the eight season accounts); others are refused before anything is charged",
+      "a model job is paid only for a model-signed answer",
+      "ask raises take effect 30 s later; cuts are immediate",
+      "storage deposits are credited back whole when a finished job is released, less only bytes that stay in the contract",
+      "24 h timelock on the contract's admin methods and its own upgrade method"
+    ],
+    "limits": [
+      "the contract account still holds a test FullAccess key that can redeploy the code directly, outside the timelock",
+      "compensation is capped by what is left of the stake; the minimum stake is a floor, not a reserve per job",
+      "two approved accounts acting together can still make the operator pay a priority refund"
+    ],
+    "proof": "data/v3/proof.json",
+    "clientEndToEnd": "data/v3/client-e2e.json",
+    "verify": "npm run verify:v3 (read-only, no keys); npm run verify:v3-deployed (reproducible build)",
+    "doc": "docs/V3.md"
+  },
+  "client": {
+    "package": "packages/client",
+    "cli": "npm run queue -- status|job|quote|admission|balance|deposit|submit|buy|set-ask|cancel|release|withdraw",
+    "mcp": "npm run queue:mcp (stdio, 12 tools, per-call spend cap QUEUE_MCP_MAX_SPEND_NEAR)",
+    "defaultContract": "market5.queue-demo.testnet"
+  }
+}

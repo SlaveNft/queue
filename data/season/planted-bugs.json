@@ -1,0 +1,61 @@
+{
+  "what": "each bug is planted alone in a temporary copy of contracts/queue-v2; a suite catches it when at least one of its tests fails",
+  "command": "node scripts/planted-bugs.mjs",
+  "bugs": 8,
+  "caught": {
+    "unit": 8,
+    "invariants": 8,
+    "differential": 8
+  },
+  "ok": true,
+  "rows": [
+    {
+      "bug": "a passed job's safety margin is dropped",
+      "unit": "caught",
+      "invariants": "caught",
+      "differential": "caught"
+    },
+    {
+      "bug": "a passed job's deadline is not checked at all",
+      "unit": "caught",
+      "invariants": "caught",
+      "differential": "caught"
+    },
+    {
+      "bug": "the extra margin per hand-off is dropped",
+      "unit": "caught",
+      "invariants": "caught",
+      "differential": "caught"
+    },
+    {
+      "bug": "the buyer's own margin is dropped when the slot is chosen",
+      "unit": "caught",
+      "invariants": "caught",
+      "differential": "caught"
+    },
+    {
+      "bug": "compensation uses the passed job's duration, not the buyer's",
+      "unit": "caught",
+      "invariants": "caught",
+      "differential": "caught"
+    },
+    {
+      "bug": "the fee is rounded up by one yocto",
+      "unit": "caught",
+      "invariants": "caught",
+      "differential": "caught"
+    },
+    {
+      "bug": "the worker may start a job that can no longer finish",
+      "unit": "caught",
+      "invariants": "caught",
+      "differential": "caught"
+    },
+    {
+      "bug": "a late delivery is paid as if it were on time",
+      "unit": "caught",
+      "invariants": "caught",
+      "differential": "caught"
+    }
+  ]
+}

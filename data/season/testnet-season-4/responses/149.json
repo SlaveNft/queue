@@ -1,0 +1,26 @@
+{
+  "job": 149,
+  "source": "near-ai",
+  "chatId": "a4b638ecb80b4d5b8c7bcb3c94a01126",
+  "latencyMs": 1485,
+  "usage": {
+    "prompt_tokens": 102,
+    "completion_tokens": 145
+  },
+  "requestSha256": "a9198ab5bbd73ac808ae5cb48af6877c08fbfacf9537a4f167528510153a44aa",
+  "responseSha256": "fc882ea4c16cafdfa633792b2006e81e464323dbd986ae59f66602709a1f4c71",
+  "response": "{\"id\":\"a4b638ecb80b4d5b8c7bcb3c94a01126\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"1. Time-slicing: Preemptively switching contexts at fixed intervals to ensure fairness, trading off high latency and context-switch overhead for guaranteed access.\\n2. Multi-tenancy batching: Dynamically packing requests from multiple users into a single batch for joint processing, trading off increased latency for higher throughput and better GPU utilization.\\n3. Priority-based scheduling: Assigning weights or priorities to users/queues to allocate compute resources proportionally, trading off strict fairness for flexibility and SLA adherence.\\n4. Fair queuing (e.g., WFQ): Maintaining separate queues per user and serving them in a weighted round-robin fashion based on virtual time, trading off implementation complexity for precise long-term fairness.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794599807,\"usage\":{\"prompt_tokens\":102,\"total_tokens\":247,\"completion_tokens\":145,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:a9198ab5bbd73ac808ae5cb48af6877c08fbfacf9537a4f167528510153a44aa:fc882ea4c16cafdfa633792b2006e81e464323dbd986ae59f66602709a1f4c71",
+    "signature": "c31f0a035bb1017dfc3ab4c92ffda01e4f383e2cd784b10d741ad59c15ac002f10b7ee6d65ea89137215de9b0204b241d6e882b90267c6f17ca1e1037bc79f0c",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "c31f0a035bb1017dfc3ab4c92ffda01e4f383e2cd784b10d741ad59c15ac002f10b7ee6d65ea89137215de9b0204b241d6e882b90267c6f17ca1e1037bc79f0c"
+  }
+}

@@ -1,0 +1,17 @@
+node_modules
+**/node_modules
+.git
+.github
+.env
+.env.*
+.testnet
+data/queue.db*
+apps/web/dist
+apps/web/dist-pages
+contracts/queue/target
+coverage
+*.log
+.DS_Store
+dist
+contracts/queue-v2/target
+data/season/*/comparison.recomputed.json

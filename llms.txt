@@ -1,0 +1,222 @@
+# QUEUE
+
+> QUEUE is a paid slot market for a single FIFO agent-work queue. An urgent job buys earlier slots from the jobs ahead of it; each displaced job moves back by exactly the urgent job's duration, is paid its published per-second ask, and must still meet its own deadline. Settlement is native NEAR escrow on testnet. The demo console runs the same rules on a labelled local settlement ledger.
+
+## Status
+
+- Hackathon project built at NEAR HACKATHON.
+- Videos: `docs/media/queue-demo.mp4` (74 s screen recording of the console with captions: one click, the paid jump, 4 of 4 promises kept, the live season, the refused jump; recorded by `npm run film:demo`) and `docs/media/queue-explainer.mp4` (44 s narrated cartoon of the mechanism).
+- Hosted console (nothing to install): https://slavenft.github.io/queue/ — press "Run the live scenario"; expect four agents paid and "4 of 4 crossed promises kept". The page runs the ledger engine (`packages/ledger`) in the browser tab with no backend; its Season and Proof sections read NEAR testnet. `npm run verify:pages` builds the same static site and drives it end to end in headless Chromium.
+- Tracks: `swarms` (primary), `agents`.
+- NEAR testnet only. No mainnet, no NEAR Intents, no cross-chain settlement.
+- Not audited. Do not use with real funds.
+- Live on NEAR testnet: `market.queue-demo.testnet`. Real proof in `data/onchain-proof.json` (`ok: true`).
+- Proof scope: 27 proof transactions from seven role accounts (Mira, Atlas, Vale, Juno, Kestrel, worker, Orion); deploy/init is a separate transaction signed by the contract account (eight signers total). Episode A: 5 of 5 jobs on time, four credits withdrawn. Episode B: one real refused jump, 2 of 2 on time. Total 7 of 7, 0 missed.
+- Scripted cast in the local demo and the v1 proof: five job actors, one operator, one auditor. That worker is a deterministic analyst; no API key needed.
+- v2 live season: `market4.queue-demo.testnet` (source `contracts/queue-v2`, 62 tests; `npm run verify:v2-deployed` builds it and compares it with the code on chain). 8 agents deciding with `Qwen/Qwen3.6-35B-A3B-FP8` on NEAR AI, each signing with a function-call key limited to five methods and paying from a balance in the contract. Settlements go through `complete_job_attested` (the contract verifies the model's ed25519 signature over `{model}:{sha256(request)}:{sha256(response)}` against an owner-pinned key; the request hash is the job's `input_hash`, claimed at submission). The season (30 min, one seed): 262 decisions, all by the model; 138 jobs ran, 135 on time; 4 paid priority purchases moved 5 jobs back, each paid its own ask (0.0965 NEAR in total), 0 of them late; 7 contract refusals, one of them a model's unsafe jump (`priority infeasible: displaced job 217 would finish … after its deadline`); 135 settlements model-signed and checked on chain. Replays of the same jobs: FIFO 134 on time, blind fee 134 with 4 broken promises; within ±0.5 s of the measured worker gap the three stay within a job or two of each other, so throughput is level with FIFO. Run: `data/season/testnet-season-4/`. Check: `npm run verify:season` (read-only, no keys). Docs: `docs/SEASON.md`.
+- v3 contract (current rules): `market5.queue-demo.testnet` (source `contracts/queue-v3`, 95 tests; `npm run verify:v3-deployed` builds it and compares it with the code on chain). Adds to v2: an operator stake (minimum 0.5 NEAR) that pays a promised job that misses or fails its priority spend plus its reward, as far as the stake goes; no new work when the stake is below the minimum or the operator has not called the contract for 180 s; the stake cannot be withdrawn, and the operator cannot be replaced, while any job is queued or running; only accounts the operator approved can submit (closed pilot: the eight season accounts), anyone else is refused before anything is charged; a model job can be paid only for a model-signed answer; ask raises take effect 30 s later; storage deposits (0.017 NEAR per job, 0.006 + 0.003 per job passed) are credited back whole when the finished job is released, less only bytes that stay; a 24 h timelock on the contract's admin methods and its own upgrade method. Limit: the contract account still holds a test FullAccess key that can redeploy the code directly, outside the timelock. Every rule was exercised by real transactions (`data/v3/proof.json`); check: `npm run verify:v3` (read-only, no keys). Docs: `docs/V3.md`.
+- Client for agents: `packages/client` (SDK, CLI `npm run queue -- status|quote|submit|…`, MCP server `npm run queue:mcp` with 12 tools and a per-call spend cap). One job taken through it end to end on testnet: `data/v3/client-e2e.json`.
+- Research simulator: `npm run research:sim` compares FIFO, EDF, a planner, a blind fee, v2 and v3 on the same jobs when waiting has a cost (`data/research/queue-sim.json`). EDF delivers the most jobs on time at every load; at loads 0.95–1.3 v3 recovers 38–64% of what a planner would gain over FIFO (EDF 12–43%) and makes the fewest FIFO-on-time jobs late; in heavy overload a blind fee recovers more welfare.
+- Simulation sweep: 300 seeded seasons of the simulator (rules checked step by step against the contract by a differential test), scripted agent policy, paired with FIFO and a blind fee. 0 of 3,464 jobs moved by a purchase ended late; market +1.19% on-time deliveries vs FIFO (95% CI 1.07–1.31%); 1.7% of never-moved jobs finish later than under FIFO (blind fee: 9.9%). Data: `data/season/sweep.json`. Reproduce: `npm run season:sweep`.
+- Testing (`docs/TESTING.md`): property-based invariants over random histories (600-history run passes; each quote is also checked against the rule worked out independently from the public queue); differential test of the Rust contract against the TypeScript rules (`npm run test:parity`; a 300-history, 24,866-step run agrees); mutation testing with cargo-mutants (92 of 95 viable mutants caught, 3 equivalent); 8 planted bugs each caught by the unit, invariant and differential suites (`npm run test:planted-bugs`); `cargo audit`; reproducible-build check against the chain (`npm run verify:v2-deployed`).
+- License: MIT.
+- Machine manifest: `project.json`. Headless walkthrough: `docs/HEADLESS.md`.
+
+## Problem
+
+One owned worker processes agent jobs in FIFO order. FIFO cannot express urgency: one long job makes every later job late. Blind priority fees bid up the same slot and pay nobody who moved; operator discretion is unaccountable.
+
+## Mechanism
+
+- Queue is FIFO; one job runs at a time.
+- Each job has `durationSec`, `deadlineAt`, `reward`, `bond`, `askPerSec`.
+- Projected start = `max(now, running finish) + sum of durations ahead`.
+- A buyer supplies `latestStartAt` and `maxSpend`.
+- Eligible insertion: projected start `<= latestStartAt` and own finish `<=` deadline.
+- The protocol picks the largest eligible index (fewest displaced).
+- Every displaced job moves back by the urgent duration and is paid `askPerSec * urgent.durationSec`.
+- If any displaced job's new finish would pass its deadline, the purchase is refused.
+- Fee = `floor(compensation * feeBps / 10_000)`; demo `feeBps = 100` (1%).
+- Displaced owners receive pull-payment credits; `withdraw_credit` clears them.
+- Cancel queued: reward refunded; 25% bond to treasury, 75% refunded. Cancel expedited: reward refunded; 100% bond to treasury.
+- On-time completion: reward to operator, bond to owner. Late: missed; reward + bond refunded; artifact hash recorded.
+- Pause blocks new obligations but keeps cancel/complete/fail/timeout/withdraw available. A malicious owner can still freeze new work; no multisig, and no timelock in v1 and v2 (v3: 24 h on admin methods).
+- Fee cap: 1,000 bps (10%) in the contract; the demo is 100 bps (1%).
+
+## Demo (local)
+
+- Four queued jobs: Mira 11s/0.00042, Atlas 9s/0.00058, Vale 10s/0.00036, Juno 12s/0.00031 NEAR per second.
+- Kestrel's urgent job: 12s, 34s deadline, 0.02 NEAR reward, 0.015 NEAR bond.
+- Cutoff `now + 5s`; four displaced (a start-as-soon-as-possible preference, not a deadline requirement).
+- Compensation 0.02004 NEAR; fee 0.0002004 NEAR; total 0.0202404 NEAR.
+- Worker produces a Markdown artifact with a SHA-256 before the deadline.
+- Four claimable credits; zero displaced-deadline breaks; Episode A ends 5 of 5 on time.
+- Cutoff sensitivity (same seed): 5s -> 4 displaced / 0.0202404 total; 18s -> 3 / 0.01515; 20-34s -> 2 / 0.0081204. Four is not a deadline result; two is what the 34s deadline alone allows.
+
+## State machine
+
+```text
+submit -> QUEUED
+QUEUED -> QUEUED          request_priority (reorder, expedited=true, credits)
+QUEUED -> QUEUED          set_move_ask (owner only)
+QUEUED -> CANCELLED       cancel_job (25% bond penalty; 100% if expedited)
+QUEUED -> RUNNING         start_next (head only, operator only)
+QUEUED -> MISSED          start_next after deadline, or claim_timeout
+RUNNING -> DONE           complete_job on time (reward to operator)
+RUNNING -> MISSED         complete_job late, or claim_timeout
+RUNNING -> FAILED         fail_job (reward + bond refunded)
+terminal -> *             any mutation must fail
+```
+
+- Terminal states: `DONE`, `MISSED`, `CANCELLED`, `FAILED`.
+- Pause is global, not a status. It blocks `submit_job`, `set_move_ask`, `request_priority`, `start_next`; exits (`cancel_job`, `complete_job`, `fail_job`, `claim_timeout`, `withdraw_credit`) stay open.
+
+## Trust model
+
+- The contract enforces queue order, deadline checks, exact compensation, pull credits, and access control.
+- The operator is trusted for **liveness** (it starts and finishes work) and **attestation** (the artifact hash corresponds to useful work). The contract does not verify work quality.
+- v1/local worker: deterministic extraction over the submitted text/CSV. v2 worker: NEAR AI chat completion; the contract checks the model's signature over the job's exact request and the response (pinned-key attestation; the hardware quote is not verified on chain or by this project). The contract also has an unsigned `complete_job` (operator's word); a job settled that way is marked `attested: false` on chain. The season used the signed path for all 135 delivered jobs; the contract does not forbid the unsigned one.
+- The owner controls its own stated deadline and ask; the contract guarantees the *stated* promise, not the owner's honesty.
+- The local console is a local settlement ledger, not a chain. The CLI proof is the only path that signs testnet transactions.
+- FullAccess risk: there is no built-in upgrade/migrate API, but the retained FullAccess key can redeploy the wasm and move the account balance. Testnet only.
+
+## NEAR role
+
+- `contracts/queue`: Rust `near-sdk` contract, live on testnet at `market.queue-demo.testnet`; 37 passing contract tests on this tree; `npm run verify:v1-deployed` rebuilds it and matches the live code hash on macOS/Apple silicon (the platform that built the deployed code; a Linux host builds a different binary from the same source and the command reports that); not audited.
+- Native NEAR escrow for `reward + bond`; priority payment; pull credits; 1% fee to treasury.
+- Caller-paid, non-refundable storage deposits (deployed contract): `submit_job` 0.0125 NEAR on top of `reward + bond`; `request_priority` 0.003 + 0.003 x displaced NEAR on top of `total`. The contract balance only backs the capped root vectors; it is not a general subsidy.
+- Views: `get_config`, `get_job`, `get_queue`, `get_quote`, `get_priority`, `get_credit`, `get_stats`, `get_activity`, `get_storage_deposits`.
+- `quote_priority(job_id, latest_start_at)` is the pure quote view; `get_quote` is its alias. Both recompute and never mutate. A purchase that displaces nobody is refused.
+- Mutations: `submit_job`, `set_move_ask`, `cancel_job`, `request_priority`, `start_next`, `complete_job`, `fail_job`, `claim_timeout`, `withdraw_credit`, `set_operator`, `set_treasury`, `set_fee_bps`, `set_paused`. `request_priority` is owner-only.
+- Deploy/proof: `npm run deploy:testnet`, `npm run demo:onchain`; public proof in `data/deploy.json` and `data/onchain-proof.json`.
+- Not used: NEAR Intents, chain signatures, NEP-141, mainnet, stablecoins. TEE: not used by v1; v2 checks a NEAR AI model key's signature that the owner pinned (pinned-key attestation, hardware quotes not verified here).
+
+## Local vs testnet
+
+- Local console: `npm run dev`; API on `http://localhost:8789`, web on `http://localhost:4178`; SQLite snapshot; SSE; local settlement ledger; no tokens move.
+- Hosted console: `npm run build:pages` → `apps/web/dist-pages/` (static; the same engine runs in the browser tab, in memory; the two proof payloads are static JSON written by the functions that serve `GET /api/onchain` and `GET /api/season`).
+- Testnet proof: CLI only; browser does not sign; `GET /api/onchain` reads the public proof; if absent, `deployed: false`.
+- Local rows are never presented as blockchain transactions.
+
+## Commands
+
+```bash
+npm install
+npm run dev
+npm run verify
+npm run verify:pages
+npm run verify:onchain
+npm run verify:season
+npm run verify:v2-deployed
+npm run verify:v3
+npm run verify:v3-deployed
+npm run queue -- status
+npm run verify:artifact
+npm run verify:secrets
+npm run typecheck
+npm run test
+npm run test:contract
+npm run build
+npm run build:contract
+npm run deploy:testnet
+npm run demo:onchain
+npm run seed
+```
+
+- `npm run verify`: typecheck, TS tests, production build, contract tests/wasm when Rust is installed, public-tree secret scan, artifact reproduction (`verify:artifact`), live API smoke test, scenario with `audit.passed`, then the 5/5 drain (up to ~70s). Exit `0` = every gate that ran passed; non-zero = a gate failed. Without Rust the contract gate is skipped and the output says so.
+- `npm run verify:onchain`: read-only RPC check of the proof. Exit `0` = all checks passed (41 `PASS` lines; 42 once `npm run verify:v1-deployed` has built the contract locally); `1` = mismatch; `2` = RPC unreachable (SKIP).
+- `npm run verify:pages`: builds the hosted console, serves it from a sub-path and drives it in headless Chromium: one click starts the scenario, four agents are paid their own asks, the receipt ends at "4 of 4 crossed promises kept", a credit is withdrawn; fails on any request to `/api`, failed request or script error. Exit `0` = all checks passed. Needs Playwright's Chromium (`npx playwright install chromium`).
+- `npm run verify:season`: read-only RPC re-check of the live season; includes "every delivered job was settled with a model signature the contract verified (none on the operator's word)". Exit `0` = all checks passed.
+- `npm run verify:artifact`: rebuild the artifact from the fixture input and compare it with the file, proof, and job record. Exit `0` = 8 checks passed.
+- `npm run verify:secrets`: scan the public tree for key material. Exit `0` = clean.
+- `npm run test:contract`: exit `0` when the Rust suite passes. `cargo` is required.
+- Node.js >= 22.22.2. `npm install` and `cargo test` need network/dependencies once; the demo itself needs no wallet, no RPC, and no API key.
+- `QUEUE_PORT` default 8789; `QUEUE_HOST` default `127.0.0.1`; `QUEUE_DB_PATH` default `./data/queue.db`; `QUEUE_OPERATOR_TOKEN` optional; `QUEUE_READ_ONLY=1` optional.
+- The local API has no user auth by default. Do not expose it without a proxy and auth.
+
+## HTTP API
+
+- `GET /api/health`
+- `GET /api/version`
+- `GET /api/state`
+- `GET /api/quote?jobId=…&latestStartInSec=…`
+- `POST /api/jobs`
+- `POST /api/jobs/:id/priority`
+- `POST /api/jobs/:id/move-ask`
+- `POST /api/jobs/:id/cancel`
+- `POST /api/operator/start`
+- `POST /api/credits/:agentId/withdraw`
+- `POST /api/demo/run`
+- `POST /api/demo/reset`
+- `GET /api/artifacts/:id`
+- `GET /api/jobs/:id/artifact`
+- `GET /api/onchain`
+- `GET /api/events` (SSE snapshot; heartbeat 15s)
+- `GET /api/metrics` (Prometheus text)
+
+Errors: `{ "ok": false, "error": string, "code"?: string }`.
+
+State fields an agent needs: `GET /api/state` returns `{ ok, state }`; the queue is `state.queue` (not `state.jobs`), the running job is `state.running`, counters are `state.stats` (`submitted`, `completed`, `missed`), and the scenario phase is `state.scenario.phase` (`standby | arrival | quote | purchase | work | settled`). See `docs/HEADLESS.md` for a six-command sequence with expected JSON.
+
+## Source entry points
+
+- Scheduler / quote: `packages/core/src/scheduler.ts`
+- Money: `packages/core/src/money.ts`
+- Types: `packages/core/src/types.ts`
+- Ledger engine and scenario: `packages/ledger/src/engine.ts` (runs in Node behind the API and in the browser tab on the hosted page)
+- API: `apps/server/src/app.ts`
+- Worker tasks: `packages/ledger/src/tasks.ts`
+- Fixtures: `packages/ledger/src/fixtures.ts`
+- In-browser backend: `apps/web/src/lib/localLedger.ts`; hosted build: `scripts/build-pages.mjs`; its end-to-end check: `scripts/verify-pages.mjs`
+- Console: `apps/web/src/App.tsx`, `apps/web/src/components/LiveConsole.tsx`
+- Contract: `contracts/queue/src/lib.rs` (v1), `contracts/queue-v2/src/lib.rs` (season), `contracts/queue-v3/src/lib.rs` (current rules)
+- Client: `packages/client/src/index.mjs` (SDK), `cli.mjs`, `mcp.mjs`
+- Deploy: `scripts/deploy.mjs`
+- On-chain proof: `scripts/onchain-demo.ts`
+- Verify: `scripts/verify.sh`
+
+## Invariants
+
+1. Exact integer yoctoNEAR; no floats in money paths.
+2. No accepted purchase moves a displaced job past its deadline.
+3. FIFO except for accepted priority purchases, cancellation, and starting the head.
+4. Compensation is exactly `askPerSec * urgent.durationSec`; fee is floored.
+5. The latest eligible insertion minimizes displaced jobs and compensation.
+6. Terminal jobs cannot be settled twice; credits are pull payments.
+7. Pause does not block cancel/complete/fail/timeout/withdraw.
+8. Contract and TypeScript scheduler return the same displacement, compensation, fee, and feasibility.
+
+## Honest limitations
+
+- One worker; no throughput or scaling claim.
+- Operator is trusted for liveness and artifact attestation; the contract does not verify work quality.
+- Bond prices cancellation, not no-show; missed jobs are refunded reward + bond.
+- No Sybil resistance; testnet accounts are free.
+- A front job can hold out with a high ask or tight deadline; no forced sale.
+- Quotes are not private; another purchase can change the queue.
+- Local API is unauthenticated by default and single-tenant.
+- Pause blocks new obligations but keeps cancel/complete/fail/timeout/withdraw available. A malicious owner can still freeze new work; no multisig, and no timelock in v1 and v2 (v3: 24 h on admin methods).
+- `data/deploy.json` contains public metadata only; `/api/onchain` projects an allowlist. The release secret scan covers public proof/deploy JSON (`data/deploy.json`, `data/onchain-proof.json`); `scripts/package.sh` additionally scans the archive for `secretKey`, `PRIVATE_KEY`, and `ed25519:<64 hex>` before writing it.
+- Not audited; testnet only; no mainnet, NEAR Intents, or production custody.
+- The local demo and v1 proof need no LLM or API key. The v2 season used NEAR AI; re-checking it (`npm run verify:season`) needs no key.
+- The demo's four-displaced result depends on the 5s cutoff; with a fifth urgent job behind four queued jobs, the manual ticket's 18s default shows three, and a deadline-only cutoff shows two.
+- Counts on this tree: 13 core, 8 ledger, 34 server, 9 web, 8 client, 17 season tests; 37 v1 + 62 v2 + 95 v3 contract tests. Run `npm run verify` for the authoritative output on the submission commit.
+- Storage caveats disclosed in `docs/SECURITY.md`: C1 (priority deposit can be short for 1-3 displaced jobs with 64-byte accounts), C2 (the largest terminal job record can exceed its deposit by ~0.00014 NEAR), C3 (a failed native payout does not automatically restore the credit).
+
+## Docs
+
+- [README](README.md)
+- [Product specification](docs/SPEC.md)
+- [Mechanism](docs/MECHANISM.md)
+- [Security](docs/SECURITY.md)
+- [Demo runbook](docs/DEMO.md)
+- [Headless API walkthrough](docs/HEADLESS.md)
+- [Research](docs/RESEARCH.md)
+- [Results and counterfactuals](docs/RESULTS.md)
+- [On-chain proof](docs/ONCHAIN.md)
+- [v2 live season](docs/SEASON.md)
+- [v3 contract and its proof](docs/V3.md)
+- [How it is tested](docs/TESTING.md)
+- [Agents](AGENTS.md)
+- [Machine manifest](project.json)
+- License: [MIT](LICENSE)

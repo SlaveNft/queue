@@ -1,0 +1,26 @@
+{
+  "job": 202,
+  "source": "near-ai",
+  "chatId": "09f9d57f320b43239eb58de94b6b13c3",
+  "latencyMs": 1193,
+  "usage": {
+    "prompt_tokens": 102,
+    "completion_tokens": 132
+  },
+  "requestSha256": "6437935d9208e54e6b5fc5972e4af271bae3ad58cbf38dfaa3b741f9497d493d",
+  "responseSha256": "7bd57b6d923dc07efb4733ad1d846500efd9d02ceb33f1920f35bd371ed4c9c6",
+  "response": "{\"id\":\"09f9d57f320b43239eb58de94b6b13c3\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"1. Time-slicing: Preemptively switches contexts between requests to ensure fairness, but incurs high context-switching overhead and latency.\\n2. Weighted Fair Queuing: Assigns priority weights to different user classes to guarantee proportional resource share, but requires complex weight configuration and monitoring.\\n3. Token-level scheduling: Serves tokens from multiple requests in a round-robin or weighted manner within a single batch, reducing latency variance but complicating kernel implementation.\\n4. Demand-aware batching: Dynamically groups requests based on size and priority to maximize throughput while meeting SLAs, but suffers from increased tail latency due to waiting for small requests.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600471,\"usage\":{\"prompt_tokens\":102,\"total_tokens\":234,\"completion_tokens\":132,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:6437935d9208e54e6b5fc5972e4af271bae3ad58cbf38dfaa3b741f9497d493d:7bd57b6d923dc07efb4733ad1d846500efd9d02ceb33f1920f35bd371ed4c9c6",
+    "signature": "cb2522c6617f31d9f3b9848a219a846a1dec60cc23aab555ca1a48970067b65dbe0f974e77b2c111caf0687b5d3e6d8f23c81cd3e95944218d3553f328da7d05",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "cb2522c6617f31d9f3b9848a219a846a1dec60cc23aab555ca1a48970067b65dbe0f974e77b2c111caf0687b5d3e6d8f23c81cd3e95944218d3553f328da7d05"
+  }
+}

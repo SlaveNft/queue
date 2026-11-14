@@ -1,0 +1,26 @@
+{
+  "job": 220,
+  "source": "near-ai",
+  "chatId": "f9dfe0f58a564f2a9db7f06ff4c86a5f",
+  "latencyMs": 1245,
+  "usage": {
+    "prompt_tokens": 102,
+    "completion_tokens": 128
+  },
+  "requestSha256": "c66919f35f2f986d252c3370dd87ba473673d91cfcc049fe3bae9f1b07dd8d31",
+  "responseSha256": "f9061b38167b307f6488723daaa6d5f0d501b317c6ec8ce838dccb4fe3390268",
+  "response": "{\"id\":\"f9dfe0f58a564f2a9db7f06ff4c86a5f\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"1. Time-Slicing: Preemptively switching contexts at fixed intervals to ensure fairness, trading off high context-switching overhead for strict temporal isolation.\\n2. Batch Scheduling: Grouping requests into dynamic batches to maximize throughput, trading off increased latency for better hardware utilization.\\n3. Priority Queuing: Assigning weights or priorities to requests based on user tier or urgency, trading off fairness for guaranteed service levels for high-priority users.\\n4. Fair Queuing (e.g., WFQ): Maintaining separate queues per user and serving them in proportion to their share, trading off implementation complexity for equitable resource distribution.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600692,\"usage\":{\"prompt_tokens\":102,\"total_tokens\":230,\"completion_tokens\":128,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:c66919f35f2f986d252c3370dd87ba473673d91cfcc049fe3bae9f1b07dd8d31:f9061b38167b307f6488723daaa6d5f0d501b317c6ec8ce838dccb4fe3390268",
+    "signature": "ab1e1d9ff93a1b46ba96bc6912827d462468e9dc4e23326ae316f4f14da76bfb6e02b9f770f7d7e8162f7d64b796e79a00da9b9227e8882cc824b2610e012e0a",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "ab1e1d9ff93a1b46ba96bc6912827d462468e9dc4e23326ae316f4f14da76bfb6e02b9f770f7d7e8162f7d64b796e79a00da9b9227e8882cc824b2610e012e0a"
+  }
+}

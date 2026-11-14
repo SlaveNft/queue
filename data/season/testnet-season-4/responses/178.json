@@ -1,0 +1,26 @@
+{
+  "job": 178,
+  "source": "near-ai",
+  "chatId": "55648ba6b1ce40068b4366249ff4ac0a",
+  "latencyMs": 740,
+  "usage": {
+    "prompt_tokens": 129,
+    "completion_tokens": 90
+  },
+  "requestSha256": "1f4903be00e7ef35769a753643ab1c81a20f0d797a5bfd503c0df4fa475ef3bd",
+  "responseSha256": "e1b5b66dcf67238af87ba3e2731137f218822f42b5561082e0fc817e437171c3",
+  "response": "{\"id\":\"55648ba6b1ce40068b4366249ff4ac0a\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The most likely cause is a persistent connectivity or gateway issue with the specific PSP, indicated by repeated timeouts from the same source.\\nThis pattern suggests the PSP's endpoint is unreachable or unresponsive rather than a transient network glitch.\\nThe next check should be to verify the PSP's operational status and connectivity via their status page or direct support.\\nAdditionally, inspect local network logs for DNS resolution failures or firewall blocks targeting that PSP's IP range.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600213,\"usage\":{\"prompt_tokens\":129,\"total_tokens\":219,\"completion_tokens\":90,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:1f4903be00e7ef35769a753643ab1c81a20f0d797a5bfd503c0df4fa475ef3bd:e1b5b66dcf67238af87ba3e2731137f218822f42b5561082e0fc817e437171c3",
+    "signature": "15a8c4246e9a1777a0a63755581160e254bd8cd6b3b45088571e85538c25a8314a3e12aa25f2d73c2a894496a9bd5b070faa1d80a25354f088d5beb61fa59602",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "15a8c4246e9a1777a0a63755581160e254bd8cd6b3b45088571e85538c25a8314a3e12aa25f2d73c2a894496a9bd5b070faa1d80a25354f088d5beb61fa59602"
+  }
+}

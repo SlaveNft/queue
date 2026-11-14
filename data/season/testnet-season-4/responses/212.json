@@ -1,0 +1,26 @@
+{
+  "job": 212,
+  "source": "near-ai",
+  "chatId": "6825f2ae98e448ee8deb9cfc69e1de0c",
+  "latencyMs": 495,
+  "usage": {
+    "prompt_tokens": 104,
+    "completion_tokens": 36
+  },
+  "requestSha256": "0b072208105a2b159dc82978195c794a141a76ea20926dbf8cf36f3843826cc8",
+  "responseSha256": "17664aa6aee9051e47af61d236cd0be172abf4a9d7821bdcd68202b26ee076d0",
+  "response": "{\"id\":\"6825f2ae98e448ee8deb9cfc69e1de0c\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"Rates remain flat across the curve.\\nOil prices rise 3% on supply concerns.\\nA major tech giant beats earnings after hours.\\nMarket sentiment shifts cautiously optimistic.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794600595,\"usage\":{\"prompt_tokens\":104,\"total_tokens\":140,\"completion_tokens\":36,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:0b072208105a2b159dc82978195c794a141a76ea20926dbf8cf36f3843826cc8:17664aa6aee9051e47af61d236cd0be172abf4a9d7821bdcd68202b26ee076d0",
+    "signature": "dade2102521df24af7fbf012ebd61a7fa389bea922e69e44bfadd9bd9c206e92b5c6a6c148666dd6ed2a19749658e4b5500c66dbf35b93025ccec9cd01e78705",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "dade2102521df24af7fbf012ebd61a7fa389bea922e69e44bfadd9bd9c206e92b5c6a6c148666dd6ed2a19749658e4b5500c66dbf35b93025ccec9cd01e78705"
+  }
+}

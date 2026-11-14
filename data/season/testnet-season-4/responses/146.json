@@ -1,0 +1,26 @@
+{
+  "job": 146,
+  "source": "near-ai",
+  "chatId": "9a86347483d54d128822591be84e35d2",
+  "latencyMs": 1071,
+  "usage": {
+    "prompt_tokens": 102,
+    "completion_tokens": 70
+  },
+  "requestSha256": "85cfde694e9a243f2d02003eba8a8e955caec097e7a68fecf2065b1dcfecc4c6",
+  "responseSha256": "63c88cf5379f15c353fbb682981131f40cd4998e248af44132a09f1e6793bd30",
+  "response": "{\"id\":\"9a86347483d54d128822591be84e35d2\",\"object\":\"chat.completion\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"We are piloting priority queues for AI agents. This system ensures critical tasks process first, reducing wait times and improving reliability. It is a test phase to gather feedback and refine performance. Participation is optional. We aim to build a more efficient infrastructure for agent interactions, focusing on stability and predictable execution speeds for all users involved in this initial rollout.\"},\"finish_reason\":\"stop\",\"logprobs\":null,\"matched_stop\":248046}],\"model\":\"Qwen/Qwen3.6-35B-A3B-FP8\",\"created\":1794599752,\"usage\":{\"prompt_tokens\":102,\"total_tokens\":172,\"completion_tokens\":70,\"prompt_tokens_details\":{\"cached_tokens\":0},\"reasoning_tokens\":0,\"completion_tokens_details\":null}}",
+  "signature": {
+    "text": "Qwen/Qwen3.6-35B-A3B-FP8:85cfde694e9a243f2d02003eba8a8e955caec097e7a68fecf2065b1dcfecc4c6:63c88cf5379f15c353fbb682981131f40cd4998e248af44132a09f1e6793bd30",
+    "signature": "dd01fda8b72ee7ea6e48d899ef9d77de3a2126f8dd8d3b9040eb0ce6b4c4c0ea9ff8896670bd501531cc6201740efbf0541301a41505b3bafb05147415016e03",
+    "signing_address": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signing_algo": "ed25519",
+    "signature_kind": "provider_tee"
+  },
+  "check": {
+    "ok": true,
+    "model": "Qwen/Qwen3.6-35B-A3B-FP8",
+    "signer": "89fb781a9530473a6d3bddd6bb0a0536c8d155058798edae88b19153bd8f4350",
+    "signature": "dd01fda8b72ee7ea6e48d899ef9d77de3a2126f8dd8d3b9040eb0ce6b4c4c0ea9ff8896670bd501531cc6201740efbf0541301a41505b3bafb05147415016e03"
+  }
+}
